@@ -68,7 +68,7 @@ export function Nav() {
       {open && (
         <div className="fixed inset-0 z-[60] flex flex-col bg-ink px-6 py-6 md:hidden">
           <div className="flex items-center justify-between">
-            <span className="font-display text-[17px] font-extrabold text-headline-dark">
+            <span className="font-display text-[24px] font-bold text-headline-dark">
               Haruna Visuals
             </span>
             <button
