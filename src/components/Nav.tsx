@@ -31,11 +31,12 @@ export function Nav() {
     >
       <nav className="shell flex h-[68px] items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <span className="font-display text-[17px] font-extrabold text-headline-dark">
+          <span className="font-display text-[24px] font-bold text-headline-dark">
             Haruna Visuals
           </span>
           <span className="h-2 w-2 rounded-full bg-lime" />
         </Link>
+
 
         <div className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
