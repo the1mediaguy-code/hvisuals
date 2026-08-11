@@ -31,11 +31,12 @@ export function Nav() {
     >
       <nav className="shell flex h-[68px] items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <span className="font-display text-[17px] font-extrabold text-headline-dark">
+          <span className="font-display text-[24px] font-bold text-headline-dark">
             Haruna Visuals
           </span>
           <span className="h-2 w-2 rounded-full bg-lime" />
         </Link>
+
 
         <div className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
@@ -46,9 +47,10 @@ export function Nav() {
         </div>
 
         <div className="flex items-center gap-3">
-          <Link to="/pricing" hash="enrol" className="btn-lime hidden !min-h-[38px] !px-4 !text-sm md:inline-flex">
+          <Link to="/pricing" hash="enrol" className="btn-lime hidden !min-h-[44px] !px-6 md:inline-flex">
             Enrol Now
           </Link>
+
           <button
             type="button"
             aria-label="Open menu"
@@ -66,7 +68,7 @@ export function Nav() {
       {open && (
         <div className="fixed inset-0 z-[60] flex flex-col bg-ink px-6 py-6 md:hidden">
           <div className="flex items-center justify-between">
-            <span className="font-display text-[17px] font-extrabold text-headline-dark">
+            <span className="font-display text-[24px] font-bold text-headline-dark">
               Haruna Visuals
             </span>
             <button

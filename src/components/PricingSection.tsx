@@ -11,11 +11,11 @@ export function PricingSection({ dark = false }: { dark?: boolean }) {
     <section id="pricing" className={`section-y ${dark ? "bg-ink" : "bg-alt"}`}>
       <div className="shell">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">— Pricing</p>
-          <h2 className={`display-lg mt-4 ${dark ? "!text-headline-dark" : ""}`}>
+          <p className="eyebrow">Pricing</p>
+          <h2 className={`display-lg mt-2 ${dark ? "!text-headline-dark" : ""}`}>
             Invest in your craft.
           </h2>
-          <p className={`mt-5 ${dark ? "text-ash" : "text-body"}`}>
+          <p className={`lead mt-3 ${dark ? "text-ash" : "text-body"}`}>
             Start at the level that's right for you. Continuing students pay only a top-up to
             advance.
           </p>
@@ -79,7 +79,7 @@ export function PricingSection({ dark = false }: { dark?: boolean }) {
                     {plan.includes.map((f) => (
                       <li
                         key={f}
-                        className={`flex gap-2.5 text-[15px] leading-relaxed ${
+                        className={`flex gap-2.5 text-[16px] leading-relaxed ${
                           dark ? "text-ash" : "text-body"
                         }`}
                       >
@@ -95,7 +95,7 @@ export function PricingSection({ dark = false }: { dark?: boolean }) {
                         <p className={dark ? "text-headline-dark" : "text-headline"}>
                           Already completed {plan.upgradeFrom.level}?
                         </p>
-                        <p className="font-bold text-lime">
+                        <p className={`font-bold ${dark ? "text-lime" : "text-headline"}`}>
                           Upgrade for {NAIRA(plan.upgradeFrom.price)}
                         </p>
                       </div>
@@ -147,7 +147,7 @@ export function PricingSection({ dark = false }: { dark?: boolean }) {
               ].map((p) => (
                 <div
                   key={p}
-                  className={`rounded-xl border p-5 text-[15px] ${
+                  className={`rounded-xl border p-5 text-[16px] ${
                     dark
                       ? "border-border-dark bg-ink text-ash"
                       : "border-border bg-alt text-body"
@@ -196,7 +196,7 @@ export function PricingSection({ dark = false }: { dark?: boolean }) {
                   {c.title}
                 </h4>
                 <p className={`mt-3 text-[16px] ${dark ? "text-ash" : "text-body"}`}>{c.body}</p>
-                <p className="mono-label mt-5 text-lime">{c.note}</p>
+                <p className={`mono-label mt-5 ${dark ? "text-lime" : "text-headline"}`}>{c.note}</p>
               </div>
             </Reveal>
           ))}

@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from "react";
+import { Mail, Phone, MessageCircle } from "lucide-react";
 import { Reveal } from "@/components/motion";
 import { CONTACT } from "@/lib/site-data";
 
@@ -21,10 +22,10 @@ export function EnrolmentForm() {
     <section id="enrol" className="section-y bg-ink scroll-mt-[68px]">
       <div className="shell grid gap-14 lg:grid-cols-2">
         <Reveal>
-          <p className="eyebrow">— Enrolment</p>
-          <h2 className="display-lg mt-4 !text-headline-dark">Start the conversation.</h2>
-          <p className="mt-5 text-ash">
-            A quick enquiry — tell us your track and level and we'll come back to you on WhatsApp.
+          <p className="eyebrow">Enrolment</p>
+          <h2 className="display-lg mt-2 !text-headline-dark">Start the conversation.</h2>
+          <p className="lead mt-3 text-ash">
+            A quick enquiry. Tell us your track and level and we'll come back to you on WhatsApp.
           </p>
 
           <form onSubmit={onSubmit} className="mt-8 space-y-5">
@@ -53,8 +54,8 @@ export function EnrolmentForm() {
             </Field>
             <Field label="Are you a continuing student?">
               <select name="continuing" className="field-dark">
-                <option>No — I'm starting fresh</option>
-                <option>Yes — I want to upgrade</option>
+                <option>No, I am starting fresh</option>
+                <option>Yes, I want to upgrade</option>
               </select>
             </Field>
             <Field label="How did you hear about us?">
@@ -98,13 +99,13 @@ export function EnrolmentForm() {
             <p className="mono-label text-headline-dark">Direct contact</p>
             <ul className="mt-4 space-y-3 text-[16px]">
               <li>
-                <a href={`mailto:${CONTACT.email}`} className="text-ash hover:text-lime">
-                  📧 {CONTACT.email}
+                <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-3 text-ash hover:text-lime">
+                  <Mail size={20} /> {CONTACT.email}
                 </a>
               </li>
               <li>
-                <a href={`tel:${CONTACT.phone}`} className="text-ash hover:text-lime">
-                  📞 {CONTACT.phone}
+                <a href={`tel:${CONTACT.phone}`} className="flex items-center gap-3 text-ash hover:text-lime">
+                  <Phone size={20} /> {CONTACT.phone}
                 </a>
               </li>
               <li>
@@ -112,9 +113,9 @@ export function EnrolmentForm() {
                   href={CONTACT.whatsapp}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-ash hover:text-lime"
+                  className="flex items-center gap-3 text-ash hover:text-lime"
                 >
-                  💬 Chat on WhatsApp
+                  <MessageCircle size={20} /> Chat on WhatsApp
                 </a>
               </li>
             </ul>
@@ -128,7 +129,7 @@ export function EnrolmentForm() {
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <label className="block">
-      <span className="mono-label mb-2 block text-ash">{label}</span>
+      <span className="field-label text-headline-dark">{label}</span>
       {children}
     </label>
   );

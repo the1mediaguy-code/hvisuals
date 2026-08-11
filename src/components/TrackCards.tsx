@@ -13,7 +13,7 @@ export function TrackCards() {
       <div className="shell">
         <Reveal className="max-w-2xl">
           <h2 className="display-lg !text-headline-dark">Pick Your Craft.</h2>
-          <p className="mt-5 text-ash">
+          <p className="lead mt-3 text-ash">
             Choose your path. Enter at your level. Build skills that put you to work.
           </p>
         </Reveal>
@@ -82,7 +82,7 @@ function TrackCard({ trackId }: { trackId: "design" | "video" }) {
           <ul className="mt-3 space-y-2">
             {plan.curriculum.map((c) => (
               <li key={c} className="flex gap-2.5 text-[16px] leading-[1.7] text-ash">
-                <span className="text-lime">—</span>
+                <span className="text-lime">●</span>
                 <span>{c}</span>
               </li>
             ))}

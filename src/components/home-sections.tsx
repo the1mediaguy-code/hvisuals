@@ -43,14 +43,12 @@ export function Hero() {
 
       <div className="shell relative w-full py-28">
         <div className="max-w-[640px]">
-          <p
-            className="font-mono text-[11px] uppercase tracking-[0.16em] text-lime"
-            style={{ animation: "hv-fade-up 0.6s ease both" }}
-          >
-            — Haruna Visuals Creative Training
+          <p className="eyebrow" style={{ animation: "hv-fade-up 0.6s ease both" }}>
+            Haruna Visuals Creative Training
           </p>
 
-          <h1 className="display-xl mt-6 !text-headline-dark">
+
+          <h1 className="display-xl mt-3 !text-headline-dark">
             {["Training", "Creators", "to BUILD."].map((line, i) => (
               <span key={line} className="block overflow-hidden">
                 <span
@@ -74,7 +72,7 @@ export function Hero() {
           </h1>
 
           <p
-            className="mt-8 max-w-[500px] text-[18px] text-ash"
+            className="lead mt-6 max-w-[520px] text-ash"
             style={{ animation: "hv-fade-up 0.7s ease 0.9s both" }}
           >
             Graphic design and video editing training that starts with hands-on experience. Two
@@ -171,8 +169,8 @@ export function RotatingRing() {
     <section className="section-y overflow-hidden bg-ink">
       <div className="shell text-center">
         <Reveal>
-          <p className="eyebrow">— Student Work & Projects</p>
-          <h2 className="display-lg mt-4 !text-headline-dark">Real work. Real results.</h2>
+          <p className="eyebrow">Student Work & Projects</p>
+          <h2 className="display-lg mt-2 !text-headline-dark">Real work. Real results.</h2>
         </Reveal>
       </div>
 
@@ -244,8 +242,8 @@ export function HowItWorks() {
     <section className="section-y bg-alt">
       <div className="shell">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">— The process</p>
-          <h2 className="display-lg mt-4">Simple. Clear. Effective.</h2>
+          <p className="eyebrow">The Process</p>
+          <h2 className="display-lg mt-2">Simple. Clear. Effective.</h2>
         </Reveal>
 
         <div className="mt-12 grid gap-10 md:grid-cols-3">

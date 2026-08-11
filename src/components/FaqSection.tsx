@@ -9,18 +9,18 @@ export function FaqSection({ dark = false }: { dark?: boolean }) {
     <section id="faq" className={`section-y ${dark ? "bg-ink" : "bg-background"}`}>
       <div className="shell grid gap-14 lg:grid-cols-[1fr_1.4fr]">
         <Reveal>
-          <p className="eyebrow">— FAQ</p>
-          <h2 className={`display-lg mt-4 ${dark ? "!text-headline-dark" : ""}`}>
+          <p className="eyebrow">FAQ</p>
+          <h2 className={`display-lg mt-2 ${dark ? "!text-headline-dark" : ""}`}>
             Answered honestly.
           </h2>
-          <p className={`mt-5 ${dark ? "text-ash" : "text-body"}`}>
+          <p className={`lead mt-3 ${dark ? "text-ash" : "text-body"}`}>
             Still have questions? Reach out directly on WhatsApp.
           </p>
           <a
             href={CONTACT.whatsapp}
             target="_blank"
             rel="noreferrer"
-            className="mt-4 inline-block font-semibold text-lime"
+            className="lime-underline mt-4 inline-block font-semibold text-headline"
           >
             Chat on WhatsApp →
           </a>

@@ -266,3 +266,10 @@ export const selfPacedPrices = [
   { level: "Intermediate" as Level, price: 30000, discount: 21000 },
   { level: "Advanced" as Level, price: 45000, discount: 31500 },
 ];
+
+export const SOCIALS = {
+  instagram: "https://www.instagram.com/harunavisuals",
+  tiktok: "https://www.tiktok.com/@harunavisuals",
+  linkedin: "https://www.linkedin.com/in/emmanuelharuna",
+  twitter: "https://x.com/harunavisuals",
+};

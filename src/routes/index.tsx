@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Hero, StatsBar, RotatingRing, HowItWorks } from "@/components/home-sections";
 import { Marquee } from "@/components/Marquee";
+import { ToolLogos } from "@/components/ToolLogos";
+
 import { TrackCards } from "@/components/TrackCards";
 import { PricingSection } from "@/components/PricingSection";
 import { FaqSection } from "@/components/FaqSection";
@@ -40,26 +42,22 @@ function Home() {
       <StatsBar />
       <RotatingRing />
 
-      <section className="bg-ink pb-4">
-        <div className="shell pb-6">
-          <h2 className="mono-label text-ash">Tools We Use</h2>
+      <section className="bg-ink py-10">
+        <ToolLogos />
+        <div className="mt-10">
+          <Marquee
+            items={[
+              "● 30+ Creators Trained",
+              "● Lagos & UK Clients",
+              "● Certificate Included",
+              "● 3+ Years Experience",
+            ]}
+            direction="right"
+            speed={46}
+          />
         </div>
-        <Marquee
-          items={["🎨 Canva", "📸 Adobe Photoshop", "🎬 CapCut", "🎞 Align Motion"]}
-          direction="left"
-        />
-        <div className="h-3" />
-        <Marquee
-          items={[
-            "✦ 30+ Creators Trained",
-            "✦ Lagos & UK Clients",
-            "✦ Certificate Included",
-            "✦ 3+ Years Experience",
-          ]}
-          direction="right"
-          speed={46}
-        />
       </section>
+
 
       <TrackCards />
       <HowItWorks />
@@ -97,8 +95,8 @@ function InstructorSection() {
           </div>
         </Reveal>
         <Reveal delay={0.12}>
-          <p className="eyebrow">— Meet your instructor</p>
-          <h2 className="display-lg mt-4">Emmanuel Haruna</h2>
+          <p className="eyebrow">Meet Your Instructor</p>
+          <h2 className="display-lg mt-2">Emmanuel Haruna</h2>
           <p className="mt-6 text-[18px] leading-[1.85] text-body">
             "Lagos-based graphic designer, video editor, content creator, and media personality with
             3+ years of hands-on experience. I've delivered for international brands in Manchester
@@ -120,7 +118,7 @@ function InstructorSection() {
               </a>
             ))}
           </div>
-          <Link to="/about" className="group mt-8 inline-flex items-center gap-2 font-semibold text-lime">
+          <Link to="/about" className="group mt-8 inline-flex items-center gap-2 font-semibold text-headline lime-underline">
             View my portfolio
             <span className="transition-transform group-hover:translate-x-1">→</span>
           </Link>
@@ -135,8 +133,8 @@ function Testimonials() {
     <section className="section-y bg-ink">
       <div className="shell">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">— What students and clients say</p>
-          <h2 className="display-lg mt-4 !text-headline-dark">Proof from the people.</h2>
+          <p className="eyebrow">What Students Say</p>
+          <h2 className="display-lg mt-2 !text-headline-dark">Proof from the people.</h2>
         </Reveal>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
@@ -186,8 +184,8 @@ function ComparisonTable() {
     <section className="section-y bg-background">
       <div className="shell">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">— Compare your options</p>
-          <h2 className="display-lg mt-4">Which path is right for you?</h2>
+          <p className="eyebrow">Compare Your Options</p>
+          <h2 className="display-lg mt-2">Which path is right for you?</h2>
         </Reveal>
 
         <Reveal className="mt-10 overflow-x-auto rounded-2xl border border-border">
@@ -238,9 +236,9 @@ function SelfPaced() {
     <section className="section-y bg-alt">
       <div className="shell">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">— Self-Paced Courses</p>
-          <h2 className="display-lg mt-4">Learn at your own pace.</h2>
-          <p className="mt-5 text-body">
+          <p className="eyebrow">Self-Paced Courses</p>
+          <h2 className="display-lg mt-2">Learn at your own pace.</h2>
+          <p className="lead mt-3 text-body">
             Pre-recorded courses for graphic design and video editing. Watch. Practice. Build.
           </p>
           <span className="mono-label animate-pulse-lime mt-6 inline-block rounded-md bg-lime px-3 py-1.5 text-lime-ink">
@@ -317,8 +315,8 @@ function VideoShowcase() {
     <section className="section-y bg-ink">
       <div className="shell">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">— See it in action</p>
-          <h2 className="display-lg mt-4 !text-headline-dark">Watch our students grow.</h2>
+          <p className="eyebrow">See It In Action</p>
+          <h2 className="display-lg mt-2 !text-headline-dark">Watch our students grow.</h2>
         </Reveal>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -342,7 +340,7 @@ function VideoShowcase() {
                     </span>
                   </span>
                 </span>
-                <span className="block p-5 text-[15px] text-ash">{v.caption}</span>
+                <span className="block p-5 text-[16px] text-ash">{v.caption}</span>
               </button>
             </Reveal>
           ))}
@@ -373,8 +371,8 @@ function PortalPreview() {
     <section className="section-y bg-background">
       <div className="shell">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">— Student portal</p>
-          <h2 className="display-lg mt-4">Inside your student portal</h2>
+          <p className="eyebrow">Student Portal</p>
+          <h2 className="display-lg mt-2">Inside your student portal</h2>
         </Reveal>
 
         <Reveal delay={0.12} className="mt-10">
@@ -385,11 +383,11 @@ function PortalPreview() {
                   AY
                 </span>
                 <div>
-                  <p className="text-[15px] font-semibold text-headline-dark">Ayo A.</p>
+                  <p className="text-[16px] font-semibold text-headline-dark">Ayo A.</p>
                   <p className="mono-label text-lime">Design · Beginner</p>
                 </div>
               </div>
-              <ul className="mt-6 space-y-3 text-[15px] text-ash">
+              <ul className="mt-6 space-y-3 text-[16px] text-ash">
                 <li>📚 Class Materials</li>
                 <li>📝 Assignments</li>
                 <li>📊 My Progress</li>
@@ -398,7 +396,7 @@ function PortalPreview() {
             </div>
             <div className="p-7">
               <div
-                className="rounded-xl p-5 text-[15px] text-headline-dark"
+                className="rounded-xl p-5 text-[16px] text-headline-dark"
                 style={{ background: "var(--lime-highlight)", border: "1px solid var(--lime)" }}
               >
                 Hey — you made it. Your notes, assignments and progress all live here.
@@ -413,7 +411,7 @@ function PortalPreview() {
                     key={t}
                     className="flex items-center justify-between gap-4 rounded-xl border border-border-dark bg-ink-surface p-4"
                   >
-                    <span className="text-[15px] text-headline-dark">{t}</span>
+                    <span className="text-[16px] text-headline-dark">{t}</span>
                     <span className="mono-label text-ash">{s}</span>
                   </div>
                 ))}
@@ -445,7 +443,7 @@ function NotifyCapture() {
             Coming Soon
           </span>
           <h2 className="display-lg mt-6 !text-headline-dark">Self-Paced Video Courses</h2>
-          <p className="mt-5 text-ash">
+          <p className="lead mt-3 text-ash">
             Structured graphic design and video editing courses at your own pace are in production.
             Be first to know when they drop.
           </p>

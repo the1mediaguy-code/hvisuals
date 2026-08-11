@@ -25,8 +25,8 @@ function PortalPage() {
     <main className="min-h-screen bg-ink pt-[68px]">
       <div className="shell section-y">
         <Reveal>
-          <p className="eyebrow">— Student portal</p>
-          <h1 className="display-lg mt-4 !text-headline-dark">Your learning home.</h1>
+          <p className="eyebrow">Student Portal</p>
+          <h1 className="display-lg mt-2 !text-headline-dark">Your learning home.</h1>
           <p className="mt-6 max-w-xl text-ash">
             Class notes, weekly assignments, progress tracking and your certificate all live here.
             Student accounts are activated by Emmanuel once your payment is confirmed.
@@ -45,7 +45,7 @@ function PortalPage() {
                   <p className="mono-label text-lime">Track · Level</p>
                 </div>
               </div>
-              <ul className="mt-7 space-y-3 text-[15px] text-ash">
+              <ul className="mt-7 space-y-3 text-[16px] text-ash">
                 <li>📚 Class Materials</li>
                 <li>📝 Assignments</li>
                 <li>📊 My Progress</li>
@@ -88,7 +88,7 @@ function PortalPage() {
                 ))}
               </ul>
 
-              <p className="mt-8 text-[15px] text-ash">
+              <p className="mt-8 text-[16px] text-ash">
                 Portal accounts, logins and downloads go live with the backend build.
               </p>
               <Link to="/pricing" hash="enrol" className="btn-lime mt-5">
