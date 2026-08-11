@@ -95,7 +95,7 @@ export function PricingSection({ dark = false }: { dark?: boolean }) {
                         <p className={dark ? "text-headline-dark" : "text-headline"}>
                           Already completed {plan.upgradeFrom.level}?
                         </p>
-                        <p className="font-bold text-lime">
+                        <p className={`font-bold ${dark ? "text-lime" : "text-headline"}`}>
                           Upgrade for {NAIRA(plan.upgradeFrom.price)}
                         </p>
                       </div>
@@ -196,7 +196,7 @@ export function PricingSection({ dark = false }: { dark?: boolean }) {
                   {c.title}
                 </h4>
                 <p className={`mt-3 text-[16px] ${dark ? "text-ash" : "text-body"}`}>{c.body}</p>
-                <p className="mono-label mt-5 text-lime">{c.note}</p>
+                <p className={`mono-label mt-5 ${dark ? "text-lime" : "text-headline"}`}>{c.note}</p>
               </div>
             </Reveal>
           ))}

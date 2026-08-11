@@ -20,7 +20,7 @@ export function FaqSection({ dark = false }: { dark?: boolean }) {
             href={CONTACT.whatsapp}
             target="_blank"
             rel="noreferrer"
-            className="mt-4 inline-block font-semibold text-lime"
+            className="lime-underline mt-4 inline-block font-semibold text-headline"
           >
             Chat on WhatsApp →
           </a>

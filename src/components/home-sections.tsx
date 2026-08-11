@@ -48,7 +48,7 @@ export function Hero() {
           </p>
 
 
-          <h1 className="display-xl mt-6 !text-headline-dark">
+          <h1 className="display-xl mt-3 !text-headline-dark">
             {["Training", "Creators", "to BUILD."].map((line, i) => (
               <span key={line} className="block overflow-hidden">
                 <span
@@ -72,7 +72,7 @@ export function Hero() {
           </h1>
 
           <p
-            className="mt-8 max-w-[500px] text-[18px] text-ash"
+            className="lead mt-6 max-w-[520px] text-ash"
             style={{ animation: "hv-fade-up 0.7s ease 0.9s both" }}
           >
             Graphic design and video editing training that starts with hands-on experience. Two

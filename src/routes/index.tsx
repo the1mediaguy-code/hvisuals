@@ -118,7 +118,7 @@ function InstructorSection() {
               </a>
             ))}
           </div>
-          <Link to="/about" className="group mt-8 inline-flex items-center gap-2 font-semibold text-lime">
+          <Link to="/about" className="group mt-8 inline-flex items-center gap-2 font-semibold text-headline lime-underline">
             View my portfolio
             <span className="transition-transform group-hover:translate-x-1">→</span>
           </Link>
