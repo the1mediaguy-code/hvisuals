@@ -71,7 +71,9 @@
   --popover-foreground: oklch(0.16 0 0);
 
   --lime: oklch(0.9 0.2 121); /* #C8F135 */
+  --lime-bright: oklch(0.94 0.22 118); /* #E0FF3F */
   --lime-ink: oklch(0.15 0 0);
+
   --lime-glow: color-mix(in srgb, var(--lime) 6%, transparent);
   --lime-highlight: color-mix(in srgb, var(--lime) 12%, transparent);
 
