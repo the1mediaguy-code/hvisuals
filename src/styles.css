@@ -113,9 +113,14 @@
     color: var(--color-body);
     font-family: var(--font-sans);
     font-size: 18px;
-    line-height: 1.75;
+    font-weight: 500;
+    line-height: 1.8;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+  }
+
+  p {
+    line-height: 1.8;
   }
 
   h1,
@@ -123,9 +128,18 @@
   h3,
   h4 {
     color: var(--color-headline);
+    font-weight: 700;
     letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    font-style: italic;
+    color: var(--color-ash);
   }
 }
+
 
 /* ---------- Utilities ---------- */
 
