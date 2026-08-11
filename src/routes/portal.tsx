@@ -25,7 +25,7 @@ function PortalPage() {
     <main className="min-h-screen bg-ink pt-[68px]">
       <div className="shell section-y">
         <Reveal>
-          <p className="eyebrow">— Student portal</p>
+          <p className="eyebrow">Student Portal</p>
           <h1 className="display-lg mt-4 !text-headline-dark">Your learning home.</h1>
           <p className="mt-6 max-w-xl text-ash">
             Class notes, weekly assignments, progress tracking and your certificate all live here.

@@ -11,7 +11,7 @@ export function PricingSection({ dark = false }: { dark?: boolean }) {
     <section id="pricing" className={`section-y ${dark ? "bg-ink" : "bg-alt"}`}>
       <div className="shell">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">— Pricing</p>
+          <p className="eyebrow">Pricing</p>
           <h2 className={`display-lg mt-4 ${dark ? "!text-headline-dark" : ""}`}>
             Invest in your craft.
           </h2>

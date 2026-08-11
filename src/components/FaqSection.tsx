@@ -9,7 +9,7 @@ export function FaqSection({ dark = false }: { dark?: boolean }) {
     <section id="faq" className={`section-y ${dark ? "bg-ink" : "bg-background"}`}>
       <div className="shell grid gap-14 lg:grid-cols-[1fr_1.4fr]">
         <Reveal>
-          <p className="eyebrow">— FAQ</p>
+          <p className="eyebrow">FAQ</p>
           <h2 className={`display-lg mt-4 ${dark ? "!text-headline-dark" : ""}`}>
             Answered honestly.
           </h2>

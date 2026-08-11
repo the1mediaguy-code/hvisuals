@@ -97,7 +97,7 @@ function InstructorSection() {
           </div>
         </Reveal>
         <Reveal delay={0.12}>
-          <p className="eyebrow">— Meet your instructor</p>
+          <p className="eyebrow">Meet Your Instructor</p>
           <h2 className="display-lg mt-4">Emmanuel Haruna</h2>
           <p className="mt-6 text-[18px] leading-[1.85] text-body">
             "Lagos-based graphic designer, video editor, content creator, and media personality with
@@ -135,7 +135,7 @@ function Testimonials() {
     <section className="section-y bg-ink">
       <div className="shell">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">— What students and clients say</p>
+          <p className="eyebrow">What Students Say</p>
           <h2 className="display-lg mt-4 !text-headline-dark">Proof from the people.</h2>
         </Reveal>
 
@@ -186,7 +186,7 @@ function ComparisonTable() {
     <section className="section-y bg-background">
       <div className="shell">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">— Compare your options</p>
+          <p className="eyebrow">Compare Your Options</p>
           <h2 className="display-lg mt-4">Which path is right for you?</h2>
         </Reveal>
 
@@ -238,7 +238,7 @@ function SelfPaced() {
     <section className="section-y bg-alt">
       <div className="shell">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">— Self-Paced Courses</p>
+          <p className="eyebrow">Self-Paced Courses</p>
           <h2 className="display-lg mt-4">Learn at your own pace.</h2>
           <p className="mt-5 text-body">
             Pre-recorded courses for graphic design and video editing. Watch. Practice. Build.
@@ -317,7 +317,7 @@ function VideoShowcase() {
     <section className="section-y bg-ink">
       <div className="shell">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">— See it in action</p>
+          <p className="eyebrow">See It In Action</p>
           <h2 className="display-lg mt-4 !text-headline-dark">Watch our students grow.</h2>
         </Reveal>
 
@@ -373,7 +373,7 @@ function PortalPreview() {
     <section className="section-y bg-background">
       <div className="shell">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">— Student portal</p>
+          <p className="eyebrow">Student Portal</p>
           <h2 className="display-lg mt-4">Inside your student portal</h2>
         </Reveal>
 

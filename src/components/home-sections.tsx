@@ -47,7 +47,7 @@ export function Hero() {
             className="font-mono text-[11px] uppercase tracking-[0.16em] text-lime"
             style={{ animation: "hv-fade-up 0.6s ease both" }}
           >
-            — Haruna Visuals Creative Training
+            Haruna Visuals Creative Training
           </p>
 
           <h1 className="display-xl mt-6 !text-headline-dark">
@@ -171,7 +171,7 @@ export function RotatingRing() {
     <section className="section-y overflow-hidden bg-ink">
       <div className="shell text-center">
         <Reveal>
-          <p className="eyebrow">— Student Work & Projects</p>
+          <p className="eyebrow">Student Work & Projects</p>
           <h2 className="display-lg mt-4 !text-headline-dark">Real work. Real results.</h2>
         </Reveal>
       </div>
@@ -244,7 +244,7 @@ export function HowItWorks() {
     <section className="section-y bg-alt">
       <div className="shell">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">— The process</p>
+          <p className="eyebrow">The Process</p>
           <h2 className="display-lg mt-4">Simple. Clear. Effective.</h2>
         </Reveal>
 
