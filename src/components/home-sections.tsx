@@ -43,12 +43,10 @@ export function Hero() {
 
       <div className="shell relative w-full py-28">
         <div className="max-w-[640px]">
-          <p
-            className="font-mono text-[11px] uppercase tracking-[0.16em] text-lime"
-            style={{ animation: "hv-fade-up 0.6s ease both" }}
-          >
+          <p className="eyebrow" style={{ animation: "hv-fade-up 0.6s ease both" }}>
             Haruna Visuals Creative Training
           </p>
+
 
           <h1 className="display-xl mt-6 !text-headline-dark">
             {["Training", "Creators", "to BUILD."].map((line, i) => (
