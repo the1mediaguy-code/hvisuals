@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Hero, StatsBar, RotatingRing, HowItWorks } from "@/components/home-sections";
 import { Marquee } from "@/components/Marquee";
+import { ToolLogos } from "@/components/ToolLogos";
+
 import { TrackCards } from "@/components/TrackCards";
 import { PricingSection } from "@/components/PricingSection";
 import { FaqSection } from "@/components/FaqSection";
