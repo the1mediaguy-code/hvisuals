@@ -28,7 +28,7 @@ function FaqPage() {
         <div className="shell">
           <Reveal>
             <p className="eyebrow">Questions</p>
-            <h1 className="display-xl mt-4 !text-headline-dark">Before you enrol.</h1>
+            <h1 className="display-xl mt-2 !text-headline-dark">Before you enrol.</h1>
           </Reveal>
         </div>
       </section>

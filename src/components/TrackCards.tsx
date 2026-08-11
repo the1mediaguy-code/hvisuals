@@ -13,7 +13,7 @@ export function TrackCards() {
       <div className="shell">
         <Reveal className="max-w-2xl">
           <h2 className="display-lg !text-headline-dark">Pick Your Craft.</h2>
-          <p className="mt-5 text-ash">
+          <p className="lead mt-3 text-ash">
             Choose your path. Enter at your level. Build skills that put you to work.
           </p>
         </Reveal>

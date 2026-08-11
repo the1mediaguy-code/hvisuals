@@ -30,7 +30,7 @@ function CoursesPage() {
         <div className="shell">
           <Reveal>
             <p className="eyebrow">Courses</p>
-            <h1 className="display-xl mt-4 !text-headline-dark">Two tracks. Three levels.</h1>
+            <h1 className="display-xl mt-2 !text-headline-dark">Two tracks. Three levels.</h1>
             <p className="mt-6 max-w-xl text-ash">
               Every level is 12 live sessions across 4 weeks, with weekly assignments and written
               feedback on every submission.
@@ -45,7 +45,7 @@ function CoursesPage() {
         <div className="shell">
           <Reveal>
             <p className="eyebrow">Full Breakdown</p>
-            <h2 className="display-lg mt-4">Every module, every level.</h2>
+            <h2 className="display-lg mt-2">Every module, every level.</h2>
           </Reveal>
 
           <div className="mt-12 space-y-14">

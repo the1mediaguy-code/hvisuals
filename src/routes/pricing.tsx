@@ -30,7 +30,7 @@ function PricingPage() {
         <div className="shell">
           <Reveal>
             <p className="eyebrow">Pricing</p>
-            <h1 className="display-xl mt-4 !text-headline-dark">Clear rates. No surprises.</h1>
+            <h1 className="display-xl mt-2 !text-headline-dark">Clear rates. No surprises.</h1>
             <p className="mt-6 max-w-xl text-ash">
               Pay per month, per level. Continuing students pay only a top-up to move up.
             </p>

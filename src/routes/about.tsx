@@ -45,7 +45,7 @@ function AboutPage() {
 
           <Reveal delay={0.12}>
             <p className="eyebrow">Meet Your Instructor</p>
-            <h1 className="display-lg mt-4 !text-headline-dark">Emmanuel Haruna</h1>
+            <h1 className="display-lg mt-2 !text-headline-dark">Emmanuel Haruna</h1>
             <p className="mt-6 text-[18px] leading-[1.85] text-ash">
               "Lagos-based graphic designer, video editor, content creator, and media personality
               with 3+ years of hands-on experience. I've delivered for international brands in

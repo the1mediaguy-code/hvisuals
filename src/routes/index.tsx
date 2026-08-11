@@ -96,7 +96,7 @@ function InstructorSection() {
         </Reveal>
         <Reveal delay={0.12}>
           <p className="eyebrow">Meet Your Instructor</p>
-          <h2 className="display-lg mt-4">Emmanuel Haruna</h2>
+          <h2 className="display-lg mt-2">Emmanuel Haruna</h2>
           <p className="mt-6 text-[18px] leading-[1.85] text-body">
             "Lagos-based graphic designer, video editor, content creator, and media personality with
             3+ years of hands-on experience. I've delivered for international brands in Manchester
@@ -134,7 +134,7 @@ function Testimonials() {
       <div className="shell">
         <Reveal className="max-w-2xl">
           <p className="eyebrow">What Students Say</p>
-          <h2 className="display-lg mt-4 !text-headline-dark">Proof from the people.</h2>
+          <h2 className="display-lg mt-2 !text-headline-dark">Proof from the people.</h2>
         </Reveal>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
@@ -185,7 +185,7 @@ function ComparisonTable() {
       <div className="shell">
         <Reveal className="max-w-2xl">
           <p className="eyebrow">Compare Your Options</p>
-          <h2 className="display-lg mt-4">Which path is right for you?</h2>
+          <h2 className="display-lg mt-2">Which path is right for you?</h2>
         </Reveal>
 
         <Reveal className="mt-10 overflow-x-auto rounded-2xl border border-border">
@@ -237,8 +237,8 @@ function SelfPaced() {
       <div className="shell">
         <Reveal className="max-w-2xl">
           <p className="eyebrow">Self-Paced Courses</p>
-          <h2 className="display-lg mt-4">Learn at your own pace.</h2>
-          <p className="mt-5 text-body">
+          <h2 className="display-lg mt-2">Learn at your own pace.</h2>
+          <p className="lead mt-3 text-body">
             Pre-recorded courses for graphic design and video editing. Watch. Practice. Build.
           </p>
           <span className="mono-label animate-pulse-lime mt-6 inline-block rounded-md bg-lime px-3 py-1.5 text-lime-ink">
@@ -316,7 +316,7 @@ function VideoShowcase() {
       <div className="shell">
         <Reveal className="max-w-2xl">
           <p className="eyebrow">See It In Action</p>
-          <h2 className="display-lg mt-4 !text-headline-dark">Watch our students grow.</h2>
+          <h2 className="display-lg mt-2 !text-headline-dark">Watch our students grow.</h2>
         </Reveal>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -340,7 +340,7 @@ function VideoShowcase() {
                     </span>
                   </span>
                 </span>
-                <span className="block p-5 text-[15px] text-ash">{v.caption}</span>
+                <span className="block p-5 text-[16px] text-ash">{v.caption}</span>
               </button>
             </Reveal>
           ))}
@@ -372,7 +372,7 @@ function PortalPreview() {
       <div className="shell">
         <Reveal className="max-w-2xl">
           <p className="eyebrow">Student Portal</p>
-          <h2 className="display-lg mt-4">Inside your student portal</h2>
+          <h2 className="display-lg mt-2">Inside your student portal</h2>
         </Reveal>
 
         <Reveal delay={0.12} className="mt-10">
@@ -383,11 +383,11 @@ function PortalPreview() {
                   AY
                 </span>
                 <div>
-                  <p className="text-[15px] font-semibold text-headline-dark">Ayo A.</p>
+                  <p className="text-[16px] font-semibold text-headline-dark">Ayo A.</p>
                   <p className="mono-label text-lime">Design · Beginner</p>
                 </div>
               </div>
-              <ul className="mt-6 space-y-3 text-[15px] text-ash">
+              <ul className="mt-6 space-y-3 text-[16px] text-ash">
                 <li>📚 Class Materials</li>
                 <li>📝 Assignments</li>
                 <li>📊 My Progress</li>
@@ -396,7 +396,7 @@ function PortalPreview() {
             </div>
             <div className="p-7">
               <div
-                className="rounded-xl p-5 text-[15px] text-headline-dark"
+                className="rounded-xl p-5 text-[16px] text-headline-dark"
                 style={{ background: "var(--lime-highlight)", border: "1px solid var(--lime)" }}
               >
                 Hey — you made it. Your notes, assignments and progress all live here.
@@ -411,7 +411,7 @@ function PortalPreview() {
                     key={t}
                     className="flex items-center justify-between gap-4 rounded-xl border border-border-dark bg-ink-surface p-4"
                   >
-                    <span className="text-[15px] text-headline-dark">{t}</span>
+                    <span className="text-[16px] text-headline-dark">{t}</span>
                     <span className="mono-label text-ash">{s}</span>
                   </div>
                 ))}
@@ -443,7 +443,7 @@ function NotifyCapture() {
             Coming Soon
           </span>
           <h2 className="display-lg mt-6 !text-headline-dark">Self-Paced Video Courses</h2>
-          <p className="mt-5 text-ash">
+          <p className="lead mt-3 text-ash">
             Structured graphic design and video editing courses at your own pace are in production.
             Be first to know when they drop.
           </p>

@@ -172,7 +172,7 @@ export function RotatingRing() {
       <div className="shell text-center">
         <Reveal>
           <p className="eyebrow">Student Work & Projects</p>
-          <h2 className="display-lg mt-4 !text-headline-dark">Real work. Real results.</h2>
+          <h2 className="display-lg mt-2 !text-headline-dark">Real work. Real results.</h2>
         </Reveal>
       </div>
 
@@ -245,7 +245,7 @@ export function HowItWorks() {
       <div className="shell">
         <Reveal className="max-w-2xl">
           <p className="eyebrow">The Process</p>
-          <h2 className="display-lg mt-4">Simple. Clear. Effective.</h2>
+          <h2 className="display-lg mt-2">Simple. Clear. Effective.</h2>
         </Reveal>
 
         <div className="mt-12 grid gap-10 md:grid-cols-3">
