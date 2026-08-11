@@ -47,9 +47,10 @@ export function Nav() {
         </div>
 
         <div className="flex items-center gap-3">
-          <Link to="/pricing" hash="enrol" className="btn-lime hidden !min-h-[38px] !px-4 !text-sm md:inline-flex">
+          <Link to="/pricing" hash="enrol" className="btn-lime hidden !min-h-[44px] !px-6 md:inline-flex">
             Enrol Now
           </Link>
+
           <button
             type="button"
             aria-label="Open menu"
