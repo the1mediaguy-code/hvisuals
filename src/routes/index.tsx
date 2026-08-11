@@ -40,26 +40,22 @@ function Home() {
       <StatsBar />
       <RotatingRing />
 
-      <section className="bg-ink pb-4">
-        <div className="shell pb-6">
-          <h2 className="mono-label text-ash">Tools We Use</h2>
+      <section className="bg-ink py-10">
+        <ToolLogos />
+        <div className="mt-10">
+          <Marquee
+            items={[
+              "● 30+ Creators Trained",
+              "● Lagos & UK Clients",
+              "● Certificate Included",
+              "● 3+ Years Experience",
+            ]}
+            direction="right"
+            speed={46}
+          />
         </div>
-        <Marquee
-          items={["🎨 Canva", "📸 Adobe Photoshop", "🎬 CapCut", "🎞 Align Motion"]}
-          direction="left"
-        />
-        <div className="h-3" />
-        <Marquee
-          items={[
-            "✦ 30+ Creators Trained",
-            "✦ Lagos & UK Clients",
-            "✦ Certificate Included",
-            "✦ 3+ Years Experience",
-          ]}
-          direction="right"
-          speed={46}
-        />
       </section>
+
 
       <TrackCards />
       <HowItWorks />
