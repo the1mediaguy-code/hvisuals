@@ -71,7 +71,7 @@ function CoursesPage() {
                         <ul className="mt-3 space-y-2">
                           {plan.curriculum.map((c) => (
                             <li key={c} className="flex gap-2.5 text-[16px] text-body">
-                              <span className="text-lime">—</span>
+                              <span className="text-lime">●</span>
                               <span>{c}</span>
                             </li>
                           ))}

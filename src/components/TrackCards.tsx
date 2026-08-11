@@ -82,7 +82,7 @@ function TrackCard({ trackId }: { trackId: "design" | "video" }) {
           <ul className="mt-3 space-y-2">
             {plan.curriculum.map((c) => (
               <li key={c} className="flex gap-2.5 text-[16px] leading-[1.7] text-ash">
-                <span className="text-lime">—</span>
+                <span className="text-lime">●</span>
                 <span>{c}</span>
               </li>
             ))}
