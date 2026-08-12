@@ -76,7 +76,7 @@ export function EnrolmentForm() {
             </button>
             {sent && (
               <p className="mono-label text-lime">
-                Thanks — Emmanuel will reach out on WhatsApp shortly.
+                Thanks: Emmanuel will reach out on WhatsApp shortly.
               </p>
             )}
           </form>

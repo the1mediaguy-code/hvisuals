@@ -33,11 +33,11 @@ export const tracks: Track[] = [
         level: "Beginner",
         price: 50000,
         deposit: 25000,
-        note: "For fresh starters — no experience needed",
+        note: "For fresh starters: no experience needed",
         curriculum: [
           "Design thinking & visual communication",
           "The 5 principles: alignment, contrast, repetition, proximity, hierarchy",
-          "Canva mastery — tools, templates, building from scratch",
+          "Canva mastery: tools, templates, building from scratch",
           "Color theory & brand palette building",
           "Social media graphics for all platforms",
         ],
@@ -52,7 +52,7 @@ export const tracks: Track[] = [
           "WhatsApp instructor access (weekdays)",
           "Monthly progress report",
           "Student portal access",
-          "Certificate of Completion — Beginner",
+          "Certificate of Completion: Beginner",
         ],
       },
       {
@@ -62,7 +62,7 @@ export const tracks: Track[] = [
         upgradeFrom: { level: "Beginner", price: 25000 },
         note: "Fresh start · OR ₦25,000 upgrade from Beginner",
         curriculum: [
-          "Adobe Photoshop — layers, masks, smart objects",
+          "Adobe Photoshop: layers, masks, smart objects",
           "Brand identity fundamentals & logo design",
           "Building a complete brand identity kit",
           "Interpreting real client creative briefs",
@@ -76,7 +76,7 @@ export const tracks: Track[] = [
           "Mockup presentation template pack",
           "Peer review session (group feedback)",
           "Intermediate resource library access",
-          "Certificate of Completion — Intermediate",
+          "Certificate of Completion: Intermediate",
         ],
       },
       {
@@ -86,7 +86,7 @@ export const tracks: Track[] = [
         upgradeFrom: { level: "Intermediate", price: 25000 },
         note: "Fresh start · OR ₦25,000 upgrade from Intermediate",
         curriculum: [
-          "Advanced Photoshop — compositing, manipulation & effects",
+          "Advanced Photoshop: compositing, manipulation & effects",
           "Complete brand identity systems & brand guidelines",
           "Event branding & campaign design",
           "Portfolio curation & case study writing",
@@ -103,7 +103,7 @@ export const tracks: Track[] = [
           "LinkedIn & portfolio strategy session",
           "Priority WhatsApp (4-hour response)",
           "Featured on Haruna Visuals showcase",
-          "Certificate of Completion — Advanced",
+          "Certificate of Completion: Advanced",
         ],
       },
     ],
@@ -113,16 +113,16 @@ export const tracks: Track[] = [
     emoji: "🎬",
     name: "Video Editing",
     blurb:
-      "Story-first editing in CapCut and Align Motion. Reels, event films, brand films — delivered client-ready.",
+      "Story-first editing in CapCut and Align Motion. Reels, event films, brand films, delivered client-ready.",
     levels: [
       {
         level: "Beginner",
         price: 80000,
         deposit: 40000,
-        note: "For fresh starters — no experience needed",
+        note: "For fresh starters: no experience needed",
         curriculum: [
           "Video storytelling fundamentals",
-          "CapCut mastery — timeline and tools",
+          "CapCut mastery: timeline and tools",
           "Editing reels & short-form to beat",
           "Colour correction & sound mixing",
           "Export settings for every platform",
@@ -138,7 +138,7 @@ export const tracks: Track[] = [
           "WhatsApp instructor access (weekdays)",
           "Monthly progress report",
           "Student portal access",
-          "Certificate of Completion — Beginner",
+          "Certificate of Completion: Beginner",
         ],
       },
       {
@@ -148,10 +148,10 @@ export const tracks: Track[] = [
         upgradeFrom: { level: "Beginner", price: 20000 },
         note: "Fresh start · OR ₦20,000 upgrade from Beginner",
         curriculum: [
-          "Advanced CapCut — multi-layer editing",
+          "Advanced CapCut: multi-layer editing",
           "Long-form editing structure",
           "Colour grading techniques",
-          "Audio design — music, voiceover, sound effects",
+          "Audio design: music, voiceover, sound effects",
           "Event highlight reel production",
         ],
         includes: [
@@ -162,7 +162,7 @@ export const tracks: Track[] = [
           "Event coverage shot list template",
           "2 real brief simulations",
           "Peer review session",
-          "Certificate of Completion — Intermediate",
+          "Certificate of Completion: Intermediate",
         ],
       },
       {
@@ -172,7 +172,7 @@ export const tracks: Track[] = [
         upgradeFrom: { level: "Intermediate", price: 50000 },
         note: "Fresh start · OR ₦50,000 upgrade from Intermediate",
         curriculum: [
-          "Align Motion — text animations, logo reveals, lower thirds",
+          "Align Motion: text animations, logo reveals, lower thirds",
           "Brand films & corporate video",
           "Music video editing",
           "Client-grade file delivery",
@@ -188,7 +188,7 @@ export const tracks: Track[] = [
           "Capstone project (real brief)",
           "Priority WhatsApp (4-hour response)",
           "Featured on Haruna Visuals showcase",
-          "Certificate of Completion — Advanced",
+          "Certificate of Completion: Advanced",
         ],
       },
     ],
@@ -200,7 +200,7 @@ export const levels: Level[] = ["Beginner", "Intermediate", "Advanced"];
 export const faqs = [
   {
     q: "Do I need experience to join?",
-    a: "No experience needed for Beginner. Just bring curiosity and commitment. If you have existing skills, we assess you and place you at the right level — no time wasted.",
+    a: "No experience needed for Beginner. Just bring curiosity and commitment. If you have existing skills, we assess you and place you at the right level, no time wasted.",
   },
   {
     q: "What tools do I need?",
@@ -212,7 +212,7 @@ export const faqs = [
   },
   {
     q: "Is it online or in-person?",
-    a: "Primarily online via video call — join from anywhere in Nigeria. In-person sessions available for Lagos-based students on request.",
+    a: "Primarily online via video call: join from anywhere in Nigeria. In-person sessions available for Lagos-based students on request.",
   },
   {
     q: "What do I get at the end?",
@@ -220,7 +220,7 @@ export const faqs = [
   },
   {
     q: "How do upgrade prices work?",
-    a: "If you complete Beginner and want to move to Intermediate, you pay only a top-up fee — not the full price. Graphic Design: ₦25,000 top-up per level. Video Editing: ₦20,000 to Intermediate, ₦50,000 to Advanced. New students starting at a higher level pay the full price for that level.",
+    a: "If you complete Beginner and want to move to Intermediate, you pay only a top-up fee, not the full price. Graphic Design: ₦25,000 top-up per level. Video Editing: ₦20,000 to Intermediate, ₦50,000 to Advanced. New students starting at a higher level pay the full price for that level.",
   },
   {
     q: "How do payments work?",
@@ -233,7 +233,7 @@ export const testimonials = [
     name: "Ajikhe Essentials",
     role: "Broadcast Production",
     quote:
-      "I met Emmanuel while studying Mass Communication at Yabatech. He delivered clean pictures and smooth transitions — the final video was the best. Working with him, I never regretted it.",
+      "I met Emmanuel while studying Mass Communication at Yabatech. He delivered clean pictures and smooth transitions, the final video was the best. Working with him, I never regretted it.",
   },
   {
     name: "Willie",
@@ -251,7 +251,7 @@ export const testimonials = [
     name: "Ayo",
     role: "Design & Video Student",
     quote:
-      "You made me fall in love with graphic design and video editing. One of the best decisions I have made — learning from you.",
+      "You made me fall in love with graphic design and video editing. One of the best decisions I have made, learning from you.",
   },
 ];
 

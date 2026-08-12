@@ -51,7 +51,7 @@ function AboutPage() {
               with 3+ years of hands-on experience. I've delivered for international brands in
               Manchester UK, hosted bootcamps for young creators here in Lagos, won the YABATECH
               Interdepartmental Oratory Competition, and built two creative brands from the ground
-              up. This programme is everything I wish I had when I was starting out — honest,
+              up. This programme is everything I wish I had when I was starting out, honest,
               practical, and built to get you real results."
             </p>
 
