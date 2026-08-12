@@ -98,12 +98,7 @@ function InstructorSection() {
           <p className="eyebrow">Meet Your Instructor</p>
           <h2 className="display-lg mt-2">Emmanuel Haruna</h2>
           <p className="mt-6 text-[18px] leading-[1.85] text-body">
-            "Lagos-based graphic designer, video editor, content creator, and media personality with
-            3+ years of hands-on experience. I've delivered for international brands in Manchester
-            UK, hosted bootcamps for young creators here in Lagos, won the YABATECH Interdepartmental
-            Oratory Competition, and built two creative brands from the ground up. This programme is
-            everything I wish I had when I was starting out, honest, practical, and built to get you
-            real results."
+            "I have worked with brands both locally and internationally. I've built two creative brands from the ground up. This programme is everything I wish I had when starting out: honest, practical, and built to get you real results."
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             {["Haruna Visuals ↗", "The Media Guy ↗", "The Outlook Podcast ↗"].map((b) => (
