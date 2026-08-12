@@ -131,6 +131,7 @@
   h4 {
     color: var(--color-headline);
     font-family: var(--font-display);
+    word-spacing: 0.08em;
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.2;
@@ -194,6 +195,12 @@
 @utility clash-600 {
   font-family: var(--font-display);
   font-weight: 600;
+  word-spacing: 0.06em;
+}
+
+.btn-lime,
+.btn-ghost-dark {
+  word-spacing: 0.08em;
 }
 
 /* Eyebrows read black on light surfaces, lime only on dark surfaces */
