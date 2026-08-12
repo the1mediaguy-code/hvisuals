@@ -55,7 +55,7 @@ const tools: { name: string; href: string; Mark: () => ReactNode }[] = [
 
 /** Strip 1: real tool logos, continuous right-to-left scroll, pause on hover. */
 export function ToolLogos() {
-  const row = [...tools, ...tools, ...tools];
+  const row = [...tools, ...tools, ...tools, ...tools];
 
   return (
     <div>
