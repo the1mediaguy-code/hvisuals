@@ -126,7 +126,7 @@ export function Footer() {
       </div>
 
       <div className="relative border-t border-border-dark py-6">
-        <p className="shell text-[16px] text-ash">© 2026 Haruna Visuals. All rights reserved.</p>
+        <p className="shell clash-600 text-[16px] text-ash">© 2026 Haruna Visuals. All rights reserved.</p>
       </div>
     </footer>
   );

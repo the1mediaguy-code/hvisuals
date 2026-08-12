@@ -137,7 +137,7 @@ function Testimonials() {
             <Reveal key={t.name} delay={i * 0.12}>
               <article className="lift-card h-full rounded-2xl border border-border-dark bg-ink-surface p-7">
                 <p className="text-lime">★★★★★</p>
-                <p className="mt-4 text-[16px] leading-[1.7] text-ash">"{t.quote}"</p>
+                <p className="clash-600 mt-4 text-[18px] leading-[1.6] text-ash">"{t.quote}"</p>
                 <p className="mono-label mt-5 text-headline-dark">
                   {t.name} · <span className="text-ash">{t.role}</span>
                 </p>
