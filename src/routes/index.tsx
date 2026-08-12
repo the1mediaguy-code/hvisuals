@@ -54,6 +54,7 @@ function Home() {
             ]}
             direction="right"
             speed={46}
+            bold
           />
         </div>
       </section>
