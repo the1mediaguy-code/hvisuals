@@ -224,7 +224,7 @@ export function HowItWorks() {
     {
       n: "01",
       t: "Choose Your Track",
-      d: "Pick Graphic Design or Video Editing. Tell us your level. We place you at the right starting point — no wasted time, no repeating what you know.",
+      d: "Pick Graphic Design or Video Editing. Tell us your level. We place you at the right starting point, no wasted time, no repeating what you know.",
     },
     {
       n: "02",

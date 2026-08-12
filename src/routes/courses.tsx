@@ -6,7 +6,7 @@ import { NAIRA, tracks } from "@/lib/site-data";
 export const Route = createFileRoute("/courses")({
   head: () => ({
     meta: [
-      { title: "Courses — Graphic Design & Video Editing | Haruna Visuals" },
+      { title: "Courses: Graphic Design & Video Editing | Haruna Visuals" },
       {
         name: "description",
         content:

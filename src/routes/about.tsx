@@ -10,12 +10,12 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Lagos-based graphic designer, video editor and media personality with 3+ years of hands-on experience training creators.",
+          "Emmanuel Haruna trains creators in Lagos: graphic design, video editing, honest feedback and real client-ready work.",
       },
       { property: "og:title", content: "About Emmanuel Haruna | Haruna Visuals" },
       {
         property: "og:description",
-        content: "The story, the brands and the portfolio behind Haruna Visuals Creative Training.",
+        content: "Lagos-based designer and editor training creators to build real skills.",
       },
     ],
   }),
@@ -24,22 +24,18 @@ export const Route = createFileRoute("/about")({
 
 function AboutPage() {
   return (
-    <main className="pt-[68px]">
+    <main className="bg-background pt-[68px]">
       <section className="section-y bg-ink">
-        <div className="shell grid items-center gap-12 lg:grid-cols-[1fr_1.5fr] lg:gap-[72px]">
+        <div className="shell grid items-center gap-12 lg:grid-cols-2">
           <Reveal>
-            <div className="relative overflow-hidden rounded-[20px]">
+            <div className="relative overflow-hidden rounded-[20px] border border-border-dark">
               <img
                 src={instructor}
-                alt="Emmanuel Haruna, instructor at Haruna Visuals Creative Training"
-                loading="lazy"
-                width={900}
-                height={1125}
-                className="aspect-[4/5] w-full object-cover grayscale-[20%] transition-all duration-500 hover:grayscale-0"
+                alt="Emmanuel Haruna, founder of Haruna Visuals Creative Training"
+                width={1200}
+                height={1400}
+                className="h-full w-full object-cover"
               />
-              <span className="mono-label absolute bottom-4 left-4 rounded-md bg-ink/80 px-3 py-2 text-headline-dark">
-                Your Instructor
-              </span>
             </div>
           </Reveal>
 
@@ -47,13 +43,11 @@ function AboutPage() {
             <p className="eyebrow">Meet Your Instructor</p>
             <h1 className="display-lg mt-2 !text-headline-dark">Emmanuel Haruna</h1>
             <p className="mt-6 text-[18px] leading-[1.85] text-ash">
-              "Lagos-based graphic designer, video editor, content creator, and media personality
-              with 3+ years of hands-on experience. I've delivered for international brands in
-              Manchester UK, hosted bootcamps for young creators here in Lagos, won the YABATECH
-              Interdepartmental Oratory Competition, and built two creative brands from the ground
-              up. This programme is everything I wish I had when I was starting out — honest,
-              practical, and built to get you real results."
+              "I have worked with brands both locally and internationally. I've built two creative
+              brands from the ground up. This programme is everything I wish I had when starting
+              out: honest, practical, and built to get you real results."
             </p>
+
 
             <div className="mt-8 flex flex-wrap gap-3">
               {["Haruna Visuals ↗", "The Media Guy ↗", "The Outlook Podcast ↗"].map((b) => (

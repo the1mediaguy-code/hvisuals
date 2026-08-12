@@ -18,7 +18,7 @@ import hero3 from "@/assets/hero-3.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Haruna Visuals Creative Training — Design & Video Classes, Lagos" },
+      { title: "Haruna Visuals Creative Training: Design & Video Classes, Lagos" },
       {
         name: "description",
         content:
@@ -54,6 +54,7 @@ function Home() {
             ]}
             direction="right"
             speed={46}
+            bold
           />
         </div>
       </section>
@@ -98,12 +99,7 @@ function InstructorSection() {
           <p className="eyebrow">Meet Your Instructor</p>
           <h2 className="display-lg mt-2">Emmanuel Haruna</h2>
           <p className="mt-6 text-[18px] leading-[1.85] text-body">
-            "Lagos-based graphic designer, video editor, content creator, and media personality with
-            3+ years of hands-on experience. I've delivered for international brands in Manchester
-            UK, hosted bootcamps for young creators here in Lagos, won the YABATECH Interdepartmental
-            Oratory Competition, and built two creative brands from the ground up. This programme is
-            everything I wish I had when I was starting out — honest, practical, and built to get you
-            real results."
+            "I have worked with brands both locally and internationally. I've built two creative brands from the ground up. This programme is everything I wish I had when starting out: honest, practical, and built to get you real results."
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             {["Haruna Visuals ↗", "The Media Guy ↗", "The Outlook Podcast ↗"].map((b) => (
@@ -142,7 +138,7 @@ function Testimonials() {
             <Reveal key={t.name} delay={i * 0.12}>
               <article className="lift-card h-full rounded-2xl border border-border-dark bg-ink-surface p-7">
                 <p className="text-lime">★★★★★</p>
-                <p className="mt-4 text-[16px] leading-[1.7] text-ash">"{t.quote}"</p>
+                <p className="clash-600 mt-4 text-[18px] leading-[1.6] text-ash">"{t.quote}"</p>
                 <p className="mono-label mt-5 text-headline-dark">
                   {t.name} · <span className="text-ash">{t.role}</span>
                 </p>
@@ -155,10 +151,10 @@ function Testimonials() {
       <div className="mt-12">
         <Marquee
           items={[
-            '⭐ "He\'s the best at what he does" — Ajikhe Essentials',
-            '⭐ "You made design easy for me" — Willie',
-            '⭐ "One of the best decisions I\'ve made" — Ayo',
-            '⭐ "You are indeed a creative" — Hosanna',
+            '⭐ "He\'s the best at what he does"· Ajikhe Essentials',
+            '⭐ "You made design easy for me"· Willie',
+            '⭐ "One of the best decisions I\'ve made"· Ayo',
+            '⭐ "You are indeed a creative"· Hosanna',
           ]}
           direction="left"
           speed={50}
@@ -291,7 +287,7 @@ function SelfPaced() {
                     rel="noreferrer"
                     className="btn-lime mt-7"
                   >
-                    Pre-Order Now — 30% OFF
+                    Pre-Order Now: 30% OFF
                   </a>
                 </div>
               </article>
@@ -306,9 +302,9 @@ function SelfPaced() {
 function VideoShowcase() {
   const [open, setOpen] = useState<string | null>(null);
   const videos = [
-    { img: designImg, caption: "Brand identity build — student capstone" },
-    { img: videoImg, caption: "Event highlight reel — intermediate edit" },
-    { img: hero3, caption: "Workshop session — Lagos cohort" },
+    { img: designImg, caption: "Brand identity build: student capstone" },
+    { img: videoImg, caption: "Event highlight reel: intermediate edit" },
+    { img: hero3, caption: "Workshop session: Lagos cohort" },
   ];
 
   return (
@@ -355,7 +351,7 @@ function VideoShowcase() {
         >
           <div className="w-full max-w-3xl rounded-2xl border border-border-dark bg-ink-surface p-10 text-center">
             <p className="text-headline-dark">{open}</p>
-            <p className="mono-label mt-3 text-ash">Video placeholder — real footage coming soon.</p>
+            <p className="mono-label mt-3 text-ash">Video placeholder: real footage coming soon.</p>
             <button type="button" onClick={() => setOpen(null)} className="btn-lime mt-6">
               Close
             </button>
@@ -399,13 +395,13 @@ function PortalPreview() {
                 className="rounded-xl p-5 text-[16px] text-headline-dark"
                 style={{ background: "var(--lime-highlight)", border: "1px solid var(--lime)" }}
               >
-                Hey — you made it. Your notes, assignments and progress all live here.
+                Hey: you made it. Your notes, assignments and progress all live here.
               </div>
               <div className="mt-6 space-y-3">
                 {[
-                  ["Week 1 — Design Thinking", "Download PDF"],
-                  ["Week 2 — Canva Fundamentals", "🔒 Locked"],
-                  ["Certificate — Beginner", "🔒 Locked"],
+                  ["Week 1: Design Thinking", "Download PDF"],
+                  ["Week 2: Canva Fundamentals", "🔒 Locked"],
+                  ["Certificate: Beginner", "🔒 Locked"],
                 ].map(([t, s]) => (
                   <div
                     key={t}

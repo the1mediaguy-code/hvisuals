@@ -62,21 +62,21 @@ function PortalPage() {
                 style={{ background: "var(--lime-highlight)", border: "1px solid var(--lime)" }}
               >
                 <p className="text-[16px] text-headline-dark">
-                  "Hey — you made it. Your class notes, assignments, and progress all live here. Show
-                  up for every session, submit your assignments, and the growth will follow." —
+                  "Hey: you made it. Your class notes, assignments, and progress all live here. Show
+                  up for every session, submit your assignments, and the growth will follow." 
                   Emmanuel
                 </p>
               </div>
 
               <ul className="mt-8 space-y-4">
                 {[
-                  { t: "Week 1 — Introduction to Design Thinking", s: "Download PDF" },
-                  { t: "Week 2 — Canva Fundamentals", s: "🔒 Releases after Week 1 session" },
+                  { t: "Week 1: Introduction to Design Thinking", s: "Download PDF" },
+                  { t: "Week 2: Canva Fundamentals", s: "🔒 Releases after Week 1 session" },
                   {
-                    t: "Assignment 01 — The Reverse Engineer",
+                    t: "Assignment 01: The Reverse Engineer",
                     s: "🔒 Due before Week 2 · 10 points",
                   },
-                  { t: "Certificate — Beginner Level", s: "🔒 Complete course to unlock" },
+                  { t: "Certificate: Beginner Level", s: "🔒 Complete course to unlock" },
                 ].map((m) => (
                   <li
                     key={m.t}

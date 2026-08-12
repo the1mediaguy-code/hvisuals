@@ -2,10 +2,12 @@ export function Marquee({
   items,
   direction = "left",
   speed = 40,
+  bold = false,
 }: {
   items: string[];
   direction?: "left" | "right";
   speed?: number;
+  bold?: boolean;
 }) {
   const row = [...items, ...items];
   return (
@@ -29,7 +31,11 @@ export function Marquee({
         {row.map((item, i) => (
           <span
             key={`${item}-${i}`}
-            className="whitespace-nowrap font-mono text-[13px] tracking-[0.06em] text-ash"
+            className={
+              bold
+                ? "clash-600 whitespace-nowrap text-[18px] text-lime"
+                : "whitespace-nowrap font-mono text-[13px] tracking-[0.06em] text-ash"
+            }
           >
             {item}
             <span className="ml-10 text-lime">·</span>

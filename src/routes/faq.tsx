@@ -5,7 +5,7 @@ import { Reveal } from "@/components/motion";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ — Training, Tools & Payments | Haruna Visuals" },
+      { title: "FAQ: Training, Tools & Payments | Haruna Visuals" },
       {
         name: "description",
         content:

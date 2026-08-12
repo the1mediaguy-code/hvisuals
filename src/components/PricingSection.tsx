@@ -135,15 +135,15 @@ export function PricingSection({ dark = false }: { dark?: boolean }) {
               You're a student. We see you.
             </h3>
             <p className={`mt-4 max-w-3xl ${dark ? "text-ash" : "text-body"}`}>
-              Currently enrolled in school? You qualify for our student pricing — ₦30,000 for 2
+              Currently enrolled in school? You qualify for our student pricing, ₦30,000 for 2
               months + 1 month free coaching. Same materials, same feedback, same certificate. Just
               a rate built for your pocket.
             </p>
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               {[
-                "Beginner to Pro — full 3-level journey at student pricing",
+                "Beginner to Pro: full 3-level journey at student pricing",
                 "₦30,000 for 2 months + 1 month free",
-                "Same access — full materials, feedback, and certificate",
+                "Same access: full materials, feedback, and certificate",
               ].map((p) => (
                 <div
                   key={p}
