@@ -45,8 +45,3 @@ export function Marquee({
     </div>
   );
 }
-
-      </div>
-    </div>
-  );
-}
