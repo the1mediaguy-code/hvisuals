@@ -49,27 +49,23 @@ export function Hero() {
 
 
           <h1 className="display-xl mt-3 !text-headline-dark">
-            {["Training", "Creators", "to BUILD."].map((line, i) => (
-              <span key={line} className="block overflow-hidden">
+            {[
+              ["Helping Brands"],
+              ["Stand Out. ", "Training"],
+              ["Creators to Build."],
+            ].map((parts, i) => (
+              <span key={i} className="block overflow-hidden">
                 <span
                   className="relative block"
                   style={{ animation: `hv-slide-up 0.8s cubic-bezier(0.22,1,0.36,1) ${0.3 + i * 0.15}s both` }}
                 >
-                  {line === "Creators" ? (
-                    <span className="relative inline-block text-lime">
-                      Creators
-                      <span
-                        className="absolute -bottom-1 left-0 h-[6px] w-full origin-left bg-lime"
-                        style={{ animation: "hv-draw 0.7s ease 1.1s both" }}
-                      />
-                    </span>
-                  ) : (
-                    line
-                  )}
+                  {parts[0]}
+                  {parts[1] ? <span className="text-lime">{parts[1]}</span> : null}
                 </span>
               </span>
             ))}
           </h1>
+
 
           <p
             className="lead mt-6 max-w-[520px] text-ash"
