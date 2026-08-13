@@ -14,16 +14,304 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      materials: {
+        Row: {
+          created_at: string
+          description: string | null
+          external_url: string | null
+          file_path: string | null
+          id: string
+          kind: string
+          level: Database["public"]["Enums"]["level_type"]
+          points: number | null
+          published: boolean
+          title: string
+          track: Database["public"]["Enums"]["track_type"] | null
+          updated_at: string
+          week: number
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          external_url?: string | null
+          file_path?: string | null
+          id?: string
+          kind?: string
+          level?: Database["public"]["Enums"]["level_type"]
+          points?: number | null
+          published?: boolean
+          title: string
+          track?: Database["public"]["Enums"]["track_type"] | null
+          updated_at?: string
+          week?: number
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          external_url?: string | null
+          file_path?: string | null
+          id?: string
+          kind?: string
+          level?: Database["public"]["Enums"]["level_type"]
+          points?: number | null
+          published?: boolean
+          title?: string
+          track?: Database["public"]["Enums"]["track_type"] | null
+          updated_at?: string
+          week?: number
+        }
+        Relationships: []
+      }
+      notify_signups: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          source: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          source?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          source?: string | null
+        }
+        Relationships: []
+      }
+      preorders: {
+        Row: {
+          amount: number
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          is_student_special: boolean
+          level: Database["public"]["Enums"]["level_type"] | null
+          payment_status: string
+          phone: string | null
+          plan: string
+          reference: string | null
+          track: Database["public"]["Enums"]["track_type"] | null
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          amount?: number
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          is_student_special?: boolean
+          level?: Database["public"]["Enums"]["level_type"] | null
+          payment_status?: string
+          phone?: string | null
+          plan?: string
+          reference?: string | null
+          track?: Database["public"]["Enums"]["track_type"] | null
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          is_student_special?: boolean
+          level?: Database["public"]["Enums"]["level_type"] | null
+          payment_status?: string
+          phone?: string | null
+          plan?: string
+          reference?: string | null
+          track?: Database["public"]["Enums"]["track_type"] | null
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      student_progress: {
+        Row: {
+          completed: boolean
+          created_at: string
+          id: string
+          material_id: string
+          score: number | null
+          submission_url: string | null
+          submitted_at: string | null
+          user_id: string
+        }
+        Insert: {
+          completed?: boolean
+          created_at?: string
+          id?: string
+          material_id: string
+          score?: number | null
+          submission_url?: string | null
+          submitted_at?: string | null
+          user_id: string
+        }
+        Update: {
+          completed?: boolean
+          created_at?: string
+          id?: string
+          material_id?: string
+          score?: number | null
+          submission_url?: string | null
+          submitted_at?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "student_progress_material_id_fkey"
+            columns: ["material_id"]
+            isOneToOne: false
+            referencedRelation: "materials"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      student_verifications: {
+        Row: {
+          admin_note: string | null
+          amount: number | null
+          created_at: string
+          from_level: Database["public"]["Enums"]["level_type"] | null
+          id: string
+          kind: string
+          proof_url: string | null
+          reference: string | null
+          status: string
+          to_level: Database["public"]["Enums"]["level_type"] | null
+          track: Database["public"]["Enums"]["track_type"] | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          admin_note?: string | null
+          amount?: number | null
+          created_at?: string
+          from_level?: Database["public"]["Enums"]["level_type"] | null
+          id?: string
+          kind?: string
+          proof_url?: string | null
+          reference?: string | null
+          status?: string
+          to_level?: Database["public"]["Enums"]["level_type"] | null
+          track?: Database["public"]["Enums"]["track_type"] | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          admin_note?: string | null
+          amount?: number | null
+          created_at?: string
+          from_level?: Database["public"]["Enums"]["level_type"] | null
+          id?: string
+          kind?: string
+          proof_url?: string | null
+          reference?: string | null
+          status?: string
+          to_level?: Database["public"]["Enums"]["level_type"] | null
+          track?: Database["public"]["Enums"]["track_type"] | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      students: {
+        Row: {
+          access_active: boolean
+          amount_paid: number
+          created_at: string
+          email: string
+          enrolled_at: string | null
+          full_name: string
+          id: string
+          level: Database["public"]["Enums"]["level_type"] | null
+          notes: string | null
+          payment_status: string
+          phone: string | null
+          track: Database["public"]["Enums"]["track_type"] | null
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          access_active?: boolean
+          amount_paid?: number
+          created_at?: string
+          email: string
+          enrolled_at?: string | null
+          full_name: string
+          id?: string
+          level?: Database["public"]["Enums"]["level_type"] | null
+          notes?: string | null
+          payment_status?: string
+          phone?: string | null
+          track?: Database["public"]["Enums"]["track_type"] | null
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          access_active?: boolean
+          amount_paid?: number
+          created_at?: string
+          email?: string
+          enrolled_at?: string | null
+          full_name?: string
+          id?: string
+          level?: Database["public"]["Enums"]["level_type"] | null
+          notes?: string | null
+          payment_status?: string
+          phone?: string | null
+          track?: Database["public"]["Enums"]["track_type"] | null
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "student"
+      level_type: "Beginner" | "Intermediate" | "Advanced"
+      track_type: "Graphic Design" | "Video Editing"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +438,10 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "student"],
+      level_type: ["Beginner", "Intermediate", "Advanced"],
+      track_type: ["Graphic Design", "Video Editing"],
+    },
   },
 } as const
