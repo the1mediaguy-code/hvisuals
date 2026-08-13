@@ -71,7 +71,10 @@ function PortalPage() {
   const pct = visible.length ? Math.round((visible.filter((m) => done.has(m.id)).length / visible.length) * 100) : 0;
 
   const open = async (path: string | null, url: string | null) => {
-    if (url) return window.open(url, "_blank", "noopener");
+    if (url) {
+      window.open(url, "_blank", "noopener");
+      return;
+    }
     if (!path) return;
     const res = await signUrl({ data: { path } });
     window.open(res.url, "_blank", "noopener");
