@@ -50,10 +50,10 @@ export function Hero() {
 
           <h1 className="display-xl mt-3 !text-headline-dark">
             {[
-              ["Helping Brands"],
-              ["Stand Out. ", "Training"],
+              ["", "Training"],
               ["Creators to Build."],
             ].map((parts, i) => (
+
               <span key={i} className="block overflow-hidden">
                 <span
                   className="relative block"
