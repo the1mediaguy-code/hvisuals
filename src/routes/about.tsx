@@ -30,7 +30,7 @@ function AboutPage() {
           <Reveal>
             <div className="relative overflow-hidden rounded-[20px] border border-border-dark">
               <img
-                src={instructor}
+                src={instructor.url}
                 alt="Emmanuel Haruna, founder of Haruna Visuals Creative Training"
                 width={1200}
                 height={1400}
