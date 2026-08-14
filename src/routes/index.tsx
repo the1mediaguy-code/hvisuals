@@ -18,13 +18,13 @@ import hero3 from "@/assets/hero-3.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Haruna Visuals Creative Training: Design & Video Classes, Lagos" },
+      { title: "H-Visuals Creative Training: Design & Video Classes, Lagos" },
       {
         name: "description",
         content:
           "Hands-on graphic design and video editing training in Lagos. Two tracks, three levels, live sessions, personal feedback and a certificate.",
       },
-      { property: "og:title", content: "Haruna Visuals Creative Training" },
+      { property: "og:title", content: "H-Visuals Creative Training" },
       {
         property: "og:description",
         content:
@@ -102,7 +102,7 @@ function InstructorSection() {
             "I have worked with brands both locally and internationally. I've built two creative brands from the ground up. This programme is everything I wish I had when starting out: honest, practical, and built to get you real results."
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            {["Haruna Visuals ↗", "The Media Guy ↗", "The Outlook Podcast ↗"].map((b) => (
+            {["H-Visuals ↗", "The Media Guy ↗", "The Outlook Podcast ↗"].map((b) => (
               <a
                 key={b}
                 href={CONTACT.whatsapp}

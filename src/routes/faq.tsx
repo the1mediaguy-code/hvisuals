@@ -5,16 +5,16 @@ import { Reveal } from "@/components/motion";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ: Training, Tools & Payments | Haruna Visuals" },
+      { title: "FAQ: Training, Tools & Payments | H-Visuals" },
       {
         name: "description",
         content:
           "Answers on experience needed, tools, programme length, certificates, upgrade pricing and how payments work.",
       },
-      { property: "og:title", content: "FAQ | Haruna Visuals Creative Training" },
+      { property: "og:title", content: "FAQ | H-Visuals Creative Training" },
       {
         property: "og:description",
-        content: "Seven honest answers about the Haruna Visuals design and video training.",
+        content: "Seven honest answers about the H-Visuals design and video training.",
       },
     ],
   }),

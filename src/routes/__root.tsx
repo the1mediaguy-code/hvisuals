@@ -80,14 +80,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Haruna Visuals Creative Training" },
+      { title: "H-Visuals Creative Training" },
       {
         name: "description",
         content:
           "Graphic design and video editing training in Lagos. Two tracks, three levels, live sessions and certificates.",
       },
       { name: "author", content: "Emmanuel Haruna" },
-      { property: "og:title", content: "Haruna Visuals Creative Training" },
+      { property: "og:title", content: "H-Visuals Creative Training" },
       {
         property: "og:description",
         content: "Training creators to build. Graphic design and video editing, Lagos.",

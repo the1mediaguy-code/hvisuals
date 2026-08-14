@@ -6,13 +6,13 @@ import { Reveal } from "@/components/motion";
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Pricing & Payment Plans | Haruna Visuals Creative Training" },
+      { title: "Pricing & Payment Plans | H-Visuals Creative Training" },
       {
         name: "description",
         content:
           "Graphic design and video editing training from ₦50,000/month in Lagos. Level upgrades, student pricing and split payment plans.",
       },
-      { property: "og:title", content: "Pricing | Haruna Visuals Creative Training" },
+      { property: "og:title", content: "Pricing | H-Visuals Creative Training" },
       {
         property: "og:description",
         content:

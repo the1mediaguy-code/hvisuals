@@ -40,7 +40,7 @@ export function Footer() {
         <div>
           <div className="flex items-center gap-2">
             <span className="font-display text-[24px] font-bold text-headline-dark">
-              Haruna Visuals
+              H-Visuals
             </span>
             <span className="h-2 w-2 rounded-full bg-lime" />
           </div>
@@ -126,7 +126,7 @@ export function Footer() {
       </div>
 
       <div className="relative border-t border-border-dark py-6">
-        <p className="shell clash-600 text-[16px] text-ash">© 2026 Haruna Visuals. All rights reserved.</p>
+        <p className="shell clash-600 text-[16px] text-ash">© 2026 H-Visuals. All rights reserved.</p>
       </div>
     </footer>
   );

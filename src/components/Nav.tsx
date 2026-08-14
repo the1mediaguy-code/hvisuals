@@ -32,7 +32,7 @@ export function Nav() {
       <nav className="shell flex h-[68px] items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <span className="font-display text-[24px] font-bold text-headline-dark">
-            Haruna Visuals
+            H-Visuals
           </span>
           <span className="h-2 w-2 rounded-full bg-lime" />
         </Link>
@@ -69,7 +69,7 @@ export function Nav() {
         <div className="fixed inset-0 z-[60] flex flex-col bg-ink px-6 py-6 md:hidden">
           <div className="flex items-center justify-between">
             <span className="font-display text-[24px] font-bold text-headline-dark">
-              Haruna Visuals
+              H-Visuals
             </span>
             <button
               type="button"
