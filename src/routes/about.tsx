@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/motion";
 import { CONTACT } from "@/lib/site-data";
+import mediaGuy from "@/assets/the-media-guy.jpg.asset.json";
 import instructor from "@/assets/instructor.png.asset.json";
 
 export const Route = createFileRoute("/about")({
@@ -50,15 +51,18 @@ function AboutPage() {
 
 
             <div className="mt-8 flex flex-wrap gap-3">
-              {["H-Visuals ↗", "The Media Guy ↗", "The Outlook Podcast ↗"].map((b) => (
+              {brandChips.map((b) => (
                 <a
-                  key={b}
+                  key={b.label}
                   href={CONTACT.whatsapp}
                   target="_blank"
                   rel="noreferrer"
-                  className="mono-label rounded-md border border-border-dark px-4 py-2.5 text-ash transition-colors hover:border-lime hover:text-lime"
+                  className="mono-label flex items-center gap-2 rounded-md border border-border-dark px-4 py-2.5 text-ash transition-colors hover:border-lime hover:text-lime"
                 >
-                  {b}
+                  {b.logo ? (
+                    <img src={b.logo} alt="" aria-hidden className="h-5 w-5 rounded-[4px] object-cover" />
+                  ) : null}
+                  {b.label} ↗
                 </a>
               ))}
             </div>
