@@ -4,9 +4,13 @@ import { Counter, Reveal } from "@/components/motion";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
-import designImg from "@/assets/track-design.jpg";
-import videoImg from "@/assets/track-video.jpg";
-import instructor from "@/assets/instructor.jpg";
+import portrait1 from "@/assets/portrait-1.png.asset.json";
+import portrait2 from "@/assets/portrait-2.png.asset.json";
+import spacedit from "@/assets/work-spacedit.jpg.asset.json";
+import childrensDay from "@/assets/work-childrens-day.jpg.asset.json";
+import eid from "@/assets/work-eid.jpg.asset.json";
+import epb from "@/assets/work-epb.jpg.asset.json";
+import merci from "@/assets/work-merci.jpg.asset.json";
 
 const slides = [hero1, hero2, hero3];
 
