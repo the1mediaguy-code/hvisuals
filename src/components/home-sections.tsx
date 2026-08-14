@@ -140,7 +140,15 @@ export function StatsBar() {
   );
 }
 
-const ringImages = [designImg, videoImg, hero1, hero2, hero3, instructor, designImg, videoImg];
+const ringImages = [
+  { src: portrait1.url, alt: "Haruna, founder of Haruna Visuals" },
+  { src: spacedit.url, alt: "Spacedit payment plans design" },
+  { src: childrensDay.url, alt: "Children's Day campaign design" },
+  { src: eid.url, alt: "Eid-el-Kabir greeting design" },
+  { src: epb.url, alt: "EPB Luxe Collection launch design" },
+  { src: merci.url, alt: "Merci Luxe fashion promo design" },
+  { src: portrait2.url, alt: "Haruna, creative director portrait" },
+];
 
 export function RotatingRing() {
   const wrap = useRef<HTMLDivElement>(null);
