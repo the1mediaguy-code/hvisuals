@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/motion";
 import { CONTACT } from "@/lib/site-data";
-import instructor from "@/assets/instructor.jpg";
+import instructor from "@/assets/portrait-1.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -30,7 +30,7 @@ function AboutPage() {
           <Reveal>
             <div className="relative overflow-hidden rounded-[20px] border border-border-dark">
               <img
-                src={instructor}
+                src={instructor.url}
                 alt="Emmanuel Haruna, founder of Haruna Visuals Creative Training"
                 width={1200}
                 height={1400}
