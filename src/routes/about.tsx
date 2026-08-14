@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/motion";
 import { CONTACT } from "@/lib/site-data";
-import instructor from "@/assets/portrait-1.png.asset.json";
+import instructor from "@/assets/instructor.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
