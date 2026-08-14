@@ -10,7 +10,7 @@ import { FaqSection } from "@/components/FaqSection";
 import { EnrolmentForm } from "@/components/EnrolmentForm";
 import { Reveal } from "@/components/motion";
 import { CONTACT, NAIRA, selfPacedPrices, testimonials } from "@/lib/site-data";
-import instructor from "@/assets/instructor.jpg";
+import instructorAsset from "@/assets/instructor.png.asset.json";
 import designImg from "@/assets/track-design.jpg";
 import videoImg from "@/assets/track-video.jpg";
 import hero3 from "@/assets/hero-3.jpg";
@@ -83,7 +83,7 @@ function InstructorSection() {
         <Reveal>
           <div className="relative overflow-hidden rounded-[20px]">
             <img
-              src={instructor}
+              src={instructorAsset.url}
               alt="Emmanuel Haruna, creative instructor"
               loading="lazy"
               width={900}
