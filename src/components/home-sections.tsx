@@ -4,9 +4,13 @@ import { Counter, Reveal } from "@/components/motion";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
-import designImg from "@/assets/track-design.jpg";
-import videoImg from "@/assets/track-video.jpg";
-import instructor from "@/assets/instructor.jpg";
+import portrait1 from "@/assets/portrait-1.png.asset.json";
+import portrait2 from "@/assets/portrait-2.png.asset.json";
+import spacedit from "@/assets/work-spacedit.jpg.asset.json";
+import childrensDay from "@/assets/work-childrens-day.jpg.asset.json";
+import eid from "@/assets/work-eid.jpg.asset.json";
+import epb from "@/assets/work-epb.jpg.asset.json";
+import merci from "@/assets/work-merci.jpg.asset.json";
 
 const slides = [hero1, hero2, hero3];
 
@@ -140,7 +144,15 @@ export function StatsBar() {
   );
 }
 
-const ringImages = [designImg, videoImg, hero1, hero2, hero3, instructor, designImg, videoImg];
+const ringImages = [
+  { src: portrait1.url, alt: "Haruna, founder of Haruna Visuals" },
+  { src: spacedit.url, alt: "Spacedit payment plans design" },
+  { src: childrensDay.url, alt: "Children's Day campaign design" },
+  { src: eid.url, alt: "Eid-el-Kabir greeting design" },
+  { src: epb.url, alt: "EPB Luxe Collection launch design" },
+  { src: merci.url, alt: "Merci Luxe fashion promo design" },
+  { src: portrait2.url, alt: "Haruna, creative director portrait" },
+];
 
 export function RotatingRing() {
   const wrap = useRef<HTMLDivElement>(null);
@@ -191,17 +203,17 @@ export function RotatingRing() {
           className="absolute left-1/2 top-1/2 h-0 w-0"
           style={{ transform: `translate(-50%, -50%) rotate(${angle}deg)` }}
         >
-          {ringImages.map((src, i) => {
+          {ringImages.map((img, i) => {
             const step = 360 / ringImages.length;
             return (
               <div
-                key={`${src}-${i}`}
+                key={`${img.src}-${i}`}
                 className="absolute left-0 top-0 h-[170px] w-[130px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl border border-border-dark transition-transform duration-300 hover:z-10 hover:scale-110"
                 style={{ transform: `rotate(${i * step}deg) translateY(-190px) rotate(2deg)` }}
               >
                 <img
-                  src={src}
-                  alt="Student project placeholder"
+                  src={img.src}
+                  alt={img.alt}
                   loading="lazy"
                   className="h-full w-full object-cover brightness-[0.8] transition-all duration-300 hover:brightness-110"
                   draggable={false}
