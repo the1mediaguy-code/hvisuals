@@ -1,18 +1,26 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/motion";
 import { CONTACT } from "@/lib/site-data";
+import mediaGuy from "@/assets/the-media-guy.jpg.asset.json";
 import instructor from "@/assets/instructor.png.asset.json";
+
+const brandChips = [
+  { label: "H-Visuals", logo: null as string | null },
+  { label: "The Media Guy", logo: mediaGuy.url },
+  { label: "The Outlook Podcast", logo: null as string | null },
+];
+
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Emmanuel Haruna | Haruna Visuals Creative Training" },
+      { title: "About Emmanuel Haruna | H-Visuals Creative Training" },
       {
         name: "description",
         content:
           "Emmanuel Haruna trains creators in Lagos: graphic design, video editing, honest feedback and real client-ready work.",
       },
-      { property: "og:title", content: "About Emmanuel Haruna | Haruna Visuals" },
+      { property: "og:title", content: "About Emmanuel Haruna | H-Visuals" },
       {
         property: "og:description",
         content: "Lagos-based designer and editor training creators to build real skills.",
@@ -31,7 +39,7 @@ function AboutPage() {
             <div className="relative overflow-hidden rounded-[20px] border border-border-dark">
               <img
                 src={instructor.url}
-                alt="Emmanuel Haruna, founder of Haruna Visuals Creative Training"
+                alt="Emmanuel Haruna, founder of H-Visuals Creative Training"
                 width={1200}
                 height={1400}
                 className="h-full w-full object-cover"
@@ -50,15 +58,18 @@ function AboutPage() {
 
 
             <div className="mt-8 flex flex-wrap gap-3">
-              {["Haruna Visuals ↗", "The Media Guy ↗", "The Outlook Podcast ↗"].map((b) => (
+              {brandChips.map((b) => (
                 <a
-                  key={b}
+                  key={b.label}
                   href={CONTACT.whatsapp}
                   target="_blank"
                   rel="noreferrer"
-                  className="mono-label rounded-md border border-border-dark px-4 py-2.5 text-ash transition-colors hover:border-lime hover:text-lime"
+                  className="mono-label flex items-center gap-2 rounded-md border border-border-dark px-4 py-2.5 text-ash transition-colors hover:border-lime hover:text-lime"
                 >
-                  {b}
+                  {b.logo ? (
+                    <img src={b.logo} alt="" aria-hidden className="h-5 w-5 rounded-[4px] object-cover" />
+                  ) : null}
+                  {b.label} ↗
                 </a>
               ))}
             </div>
@@ -85,7 +96,7 @@ function AboutPage() {
             },
             {
               t: "Client delivery",
-              d: "Brand and content work delivered for Lagos and UK-based clients.",
+              d: "Brand and content work delivered for clients both locally and internationally.",
             },
             {
               t: "Teaching style",

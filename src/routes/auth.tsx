@@ -7,16 +7,16 @@ import { Reveal } from "@/components/motion";
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Student Login | Haruna Visuals Creative Training" },
+      { title: "Student Login | H-Visuals Creative Training" },
       {
         name: "description",
         content:
-          "Sign in or create your Haruna Visuals student account to reach your class materials, assignments and certificates.",
+          "Sign in or create your H-Visuals student account to reach your class materials, assignments and certificates.",
       },
-      { property: "og:title", content: "Student Login | Haruna Visuals" },
+      { property: "og:title", content: "Student Login | H-Visuals" },
       {
         property: "og:description",
-        content: "Access your Haruna Visuals student portal.",
+        content: "Access your H-Visuals student portal.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

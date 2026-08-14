@@ -6,13 +6,13 @@ import { NAIRA, tracks } from "@/lib/site-data";
 export const Route = createFileRoute("/courses")({
   head: () => ({
     meta: [
-      { title: "Courses: Graphic Design & Video Editing | Haruna Visuals" },
+      { title: "Courses: Graphic Design & Video Editing | H-Visuals" },
       {
         name: "description",
         content:
           "Full curricula for six track/level combinations: graphic design and video editing at Beginner, Intermediate and Advanced.",
       },
-      { property: "og:title", content: "Courses | Haruna Visuals Creative Training" },
+      { property: "og:title", content: "Courses | H-Visuals Creative Training" },
       {
         property: "og:description",
         content:

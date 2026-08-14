@@ -48,7 +48,7 @@ export function Hero() {
       <div className="shell relative w-full py-28">
         <div className="max-w-[640px]">
           <p className="eyebrow" style={{ animation: "hv-fade-up 0.6s ease both" }}>
-            Haruna Visuals Creative Training
+            H-Visuals Creative Training
           </p>
 
 
@@ -145,7 +145,7 @@ export function StatsBar() {
 }
 
 const ringImages = [
-  { src: portrait1.url, alt: "Haruna, founder of Haruna Visuals" },
+  { src: portrait1.url, alt: "Haruna, founder of H-Visuals" },
   { src: spacedit.url, alt: "Spacedit payment plans design" },
   { src: childrensDay.url, alt: "Children's Day campaign design" },
   { src: eid.url, alt: "Eid-el-Kabir greeting design" },

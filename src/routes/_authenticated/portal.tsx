@@ -15,12 +15,12 @@ import { NAIRA, levels } from "@/lib/site-data";
 export const Route = createFileRoute("/_authenticated/portal")({
   head: () => ({
     meta: [
-      { title: "Student Portal | Haruna Visuals Creative Training" },
+      { title: "Student Portal | H-Visuals Creative Training" },
       {
         name: "description",
         content: "Class notes, assignments, progress tracking and certificates for enrolled students.",
       },
-      { property: "og:title", content: "Student Portal | Haruna Visuals" },
+      { property: "og:title", content: "Student Portal | H-Visuals" },
       { property: "og:description", content: "Materials, assignments and certificates for students." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

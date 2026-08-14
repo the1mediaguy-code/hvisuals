@@ -16,10 +16,10 @@ import { NAIRA, levels } from "@/lib/site-data";
 export const Route = createFileRoute("/_authenticated/admin")({
   head: () => ({
     meta: [
-      { title: "Admin Dashboard | Haruna Visuals Creative Training" },
+      { title: "Admin Dashboard | H-Visuals Creative Training" },
       { name: "description", content: "Manage students, payments, materials and verifications." },
-      { property: "og:title", content: "Admin Dashboard | Haruna Visuals" },
-      { property: "og:description", content: "Internal dashboard for Haruna Visuals training." },
+      { property: "og:title", content: "Admin Dashboard | H-Visuals" },
+      { property: "og:description", content: "Internal dashboard for H-Visuals training." },
       { name: "robots", content: "noindex" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
@@ -98,7 +98,7 @@ function AdminPage() {
       <div className="shell section-y">
         <Reveal>
           <p className="eyebrow">Admin Dashboard</p>
-          <h1 className="display-lg mt-2 !text-headline-dark">Haruna Visuals control room.</h1>
+          <h1 className="display-lg mt-2 !text-headline-dark">H-Visuals control room.</h1>
         </Reveal>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-4">

@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import capcutIcon from "@/assets/capcut.png.asset.json";
+import alignIcon from "@/assets/align-motion.png.asset.json";
 
 /* Official-style marks. Canva and Photoshop use their brand glyph paths;
    CapCut and Align Motion use their squared app-tile marks. */
@@ -21,28 +23,23 @@ function PhotoshopMark() {
 
 function CapCutMark() {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden focusable="false" className="h-full w-full">
-      <rect x="0.5" y="0.5" width="23" height="23" rx="6" fill="currentColor" opacity="0.14" />
-      <g fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="7.2" cy="16.4" r="2.2" />
-        <circle cx="16.8" cy="16.4" r="2.2" />
-        <path d="M8.9 14.9 17.4 5.4" />
-        <path d="M15.1 14.9 6.6 5.4" />
-      </g>
-    </svg>
+    <img
+      src={capcutIcon.url}
+      alt=""
+      aria-hidden
+      className="h-full w-full rounded-[6px] object-contain"
+    />
   );
 }
 
 function AlignMotionMark() {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden focusable="false" className="h-full w-full">
-      <rect x="0.5" y="0.5" width="23" height="23" rx="6" fill="currentColor" opacity="0.14" />
-      <g fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
-        <path d="M12 4v16" />
-        <rect x="4.5" y="7" width="6" height="4" rx="1.2" />
-        <rect x="13.5" y="13" width="6" height="4" rx="1.2" />
-      </g>
-    </svg>
+    <img
+      src={alignIcon.url}
+      alt=""
+      aria-hidden
+      className="h-full w-full rounded-[6px] object-contain"
+    />
   );
 }
 

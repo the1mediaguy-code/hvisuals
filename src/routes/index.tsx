@@ -9,22 +9,30 @@ import { PricingSection } from "@/components/PricingSection";
 import { FaqSection } from "@/components/FaqSection";
 import { EnrolmentForm } from "@/components/EnrolmentForm";
 import { Reveal } from "@/components/motion";
+import mediaGuy from "@/assets/the-media-guy.jpg.asset.json";
 import { CONTACT, NAIRA, selfPacedPrices, testimonials } from "@/lib/site-data";
 import instructorAsset from "@/assets/instructor.png.asset.json";
 import designImg from "@/assets/track-design.jpg";
 import videoImg from "@/assets/track-video.jpg";
 import hero3 from "@/assets/hero-3.jpg";
 
+const brandChips = [
+  { label: "H-Visuals", logo: null as string | null },
+  { label: "The Media Guy", logo: mediaGuy.url },
+  { label: "The Outlook Podcast", logo: null as string | null },
+];
+
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Haruna Visuals Creative Training: Design & Video Classes, Lagos" },
+      { title: "H-Visuals Creative Training: Design & Video Classes, Lagos" },
       {
         name: "description",
         content:
           "Hands-on graphic design and video editing training in Lagos. Two tracks, three levels, live sessions, personal feedback and a certificate.",
       },
-      { property: "og:title", content: "Haruna Visuals Creative Training" },
+      { property: "og:title", content: "H-Visuals Creative Training" },
       {
         property: "og:description",
         content:
@@ -102,15 +110,18 @@ function InstructorSection() {
             "I have worked with brands both locally and internationally. I've built two creative brands from the ground up. This programme is everything I wish I had when starting out: honest, practical, and built to get you real results."
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            {["Haruna Visuals ↗", "The Media Guy ↗", "The Outlook Podcast ↗"].map((b) => (
+            {brandChips.map((b) => (
               <a
-                key={b}
+                key={b.label}
                 href={CONTACT.whatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="mono-label rounded-md border border-border px-4 py-2.5 text-body transition-colors hover:border-lime hover:text-headline"
+                className="mono-label flex items-center gap-2 rounded-md border border-border px-4 py-2.5 text-body transition-colors hover:border-lime hover:text-headline"
               >
-                {b}
+                {b.logo ? (
+                  <img src={b.logo} alt="" aria-hidden className="h-5 w-5 rounded-[4px] object-cover" />
+                ) : null}
+                {b.label} ↗
               </a>
             ))}
           </div>
