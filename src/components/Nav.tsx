@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import hvLogo from "@/assets/hv-logo-white.png.asset.json";
 
 const links = [
   { to: "/courses", label: "Courses" },
@@ -30,11 +31,8 @@ export function Nav() {
       }}
     >
       <nav className="shell flex h-[68px] items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="font-display text-[24px] font-bold text-headline-dark">
-            H-Visuals
-          </span>
-          <span className="h-2 w-2 rounded-full bg-lime" />
+        <Link to="/" className="flex items-center">
+          <img src={hvLogo.url} alt="H-Visuals" className="h-7 w-auto" width={200} height={40} />
         </Link>
 
 
@@ -68,9 +66,7 @@ export function Nav() {
       {open && (
         <div className="fixed inset-0 z-[60] flex flex-col bg-ink px-6 py-6 md:hidden">
           <div className="flex items-center justify-between">
-            <span className="font-display text-[24px] font-bold text-headline-dark">
-              H-Visuals
-            </span>
+            <img src={hvLogo.url} alt="H-Visuals" className="h-7 w-auto" width={200} height={40} />
             <button
               type="button"
               aria-label="Close menu"

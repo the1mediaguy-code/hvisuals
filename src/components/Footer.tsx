@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Linkedin, Twitter, MessageCircle, Mail, Phone } from "lucide-react";
 import { CONTACT, SOCIALS } from "@/lib/site-data";
+import hvLogo from "@/assets/hv-logo-white.png.asset.json";
 
 function TikTokIcon({ size = 26 }: { size?: number }) {
   return (
@@ -38,12 +39,7 @@ export function Footer() {
       />
       <div className="shell relative grid gap-10 py-14 md:grid-cols-3">
         <div>
-          <div className="flex items-center gap-2">
-            <span className="font-display text-[24px] font-bold text-headline-dark">
-              H-Visuals
-            </span>
-            <span className="h-2 w-2 rounded-full bg-lime" />
-          </div>
+          <img src={hvLogo.url} alt="H-Visuals" className="h-8 w-auto" width={220} height={44} />
           <p className="mt-4 max-w-xs text-[16px] text-ash">
             Helping Brands Stand Out. Training Creators to Build.
           </p>
