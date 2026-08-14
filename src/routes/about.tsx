@@ -4,6 +4,13 @@ import { CONTACT } from "@/lib/site-data";
 import mediaGuy from "@/assets/the-media-guy.jpg.asset.json";
 import instructor from "@/assets/instructor.png.asset.json";
 
+const brandChips = [
+  { label: "H-Visuals", logo: null as string | null },
+  { label: "The Media Guy", logo: mediaGuy.url },
+  { label: "The Outlook Podcast", logo: null as string | null },
+];
+
+
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [

@@ -16,6 +16,13 @@ import designImg from "@/assets/track-design.jpg";
 import videoImg from "@/assets/track-video.jpg";
 import hero3 from "@/assets/hero-3.jpg";
 
+const brandChips = [
+  { label: "H-Visuals", logo: null as string | null },
+  { label: "The Media Guy", logo: mediaGuy.url },
+  { label: "The Outlook Podcast", logo: null as string | null },
+];
+
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
