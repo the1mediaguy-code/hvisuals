@@ -203,17 +203,17 @@ export function RotatingRing() {
           className="absolute left-1/2 top-1/2 h-0 w-0"
           style={{ transform: `translate(-50%, -50%) rotate(${angle}deg)` }}
         >
-          {ringImages.map((src, i) => {
+          {ringImages.map((img, i) => {
             const step = 360 / ringImages.length;
             return (
               <div
-                key={`${src}-${i}`}
+                key={`${img.src}-${i}`}
                 className="absolute left-0 top-0 h-[170px] w-[130px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl border border-border-dark transition-transform duration-300 hover:z-10 hover:scale-110"
                 style={{ transform: `rotate(${i * step}deg) translateY(-190px) rotate(2deg)` }}
               >
                 <img
-                  src={src}
-                  alt="Student project placeholder"
+                  src={img.src}
+                  alt={img.alt}
                   loading="lazy"
                   className="h-full w-full object-cover brightness-[0.8] transition-all duration-300 hover:brightness-110"
                   draggable={false}
