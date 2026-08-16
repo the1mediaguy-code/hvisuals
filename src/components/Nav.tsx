@@ -23,14 +23,14 @@ export function Nav() {
 
   return (
     <header
-      className="fixed inset-x-0 top-0 z-50 h-[68px] transition-all duration-[400ms]"
+      className="fixed inset-x-0 top-0 z-50 h-[88px] transition-all duration-[400ms]"
       style={{
         backgroundColor: scrolled ? "color-mix(in srgb, var(--ink) 95%, transparent)" : "transparent",
         backdropFilter: scrolled ? "blur(20px)" : "none",
         borderBottom: scrolled ? "1px solid var(--border-dark)" : "1px solid transparent",
       }}
     >
-      <nav className="shell flex h-[68px] items-center justify-between">
+      <nav className="shell flex h-[88px] items-center justify-between">
         <Link to="/" className="flex items-center">
           <img src={hvLogo.url} alt="H-Visuals" className="h-14 w-auto md:h-16" width={480} height={96} />
         </Link>
