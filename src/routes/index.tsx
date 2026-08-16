@@ -16,6 +16,8 @@ import hvLogoWhite from "@/assets/hv-logo-white.png.asset.json";
 import { BrandLogos } from "@/components/BrandLogos";
 import { CONTACT, NAIRA, selfPacedPrices, testimonials } from "@/lib/site-data";
 import instructorAsset from "@/assets/instructor.png.asset.json";
+import designImg from "@/assets/track-design.jpg";
+import videoImg from "@/assets/track-video.jpg";
 
 const brandChips = [
   { label: "H-Visuals", logo: hvLogoWhite.url, invert: true },
