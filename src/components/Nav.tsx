@@ -32,7 +32,7 @@ export function Nav() {
     >
       <nav className="shell flex h-[68px] items-center justify-between">
         <Link to="/" className="flex items-center">
-          <img src={hvLogo.url} alt="H-Visuals" className="h-7 w-auto" width={200} height={40} />
+          <img src={hvLogo.url} alt="H-Visuals" className="h-11 w-auto md:h-12" width={320} height={64} />
         </Link>
 
 
@@ -66,7 +66,7 @@ export function Nav() {
       {open && (
         <div className="fixed inset-0 z-[60] flex flex-col bg-ink px-6 py-6 md:hidden">
           <div className="flex items-center justify-between">
-            <img src={hvLogo.url} alt="H-Visuals" className="h-7 w-auto" width={200} height={40} />
+            <img src={hvLogo.url} alt="H-Visuals" className="h-11 w-auto md:h-12" width={320} height={64} />
             <button
               type="button"
               aria-label="Close menu"

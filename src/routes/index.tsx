@@ -56,6 +56,9 @@ function Home() {
 
       <section className="bg-ink py-10">
         <ToolLogos />
+        <div className="mt-12">
+          <BrandLogos />
+        </div>
         <div className="mt-10">
           <Marquee
             items={[
@@ -122,9 +125,12 @@ function InstructorSection() {
                 rel="noreferrer"
                 className="mono-label flex items-center gap-2 rounded-md border border-border px-4 py-2.5 text-body transition-colors hover:border-lime hover:text-headline"
               >
-                {b.logo ? (
-                  <img src={b.logo} alt="" aria-hidden className="h-5 w-5 rounded-[4px] object-cover" />
-                ) : null}
+                <img
+                  src={b.logo}
+                  alt=""
+                  aria-hidden
+                  className={`h-6 w-auto max-w-[90px] object-contain ${b.invert ? "invert" : "rounded-[4px]"}`}
+                />
                 {b.label} ↗
               </a>
             ))}
