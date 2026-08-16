@@ -2,12 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/motion";
 import { CONTACT } from "@/lib/site-data";
 import mediaGuy from "@/assets/the-media-guy.jpg.asset.json";
+import outlookLogo from "@/assets/outlook-podcast.jpg.asset.json";
+import hvLogoWhite from "@/assets/hv-logo-white.png.asset.json";
 import instructor from "@/assets/instructor.png.asset.json";
 
 const brandChips = [
-  { label: "H-Visuals", logo: null as string | null },
+  { label: "H-Visuals", logo: hvLogoWhite.url },
   { label: "The Media Guy", logo: mediaGuy.url },
-  { label: "The Outlook Podcast", logo: null as string | null },
+  { label: "The Outlook Podcast", logo: outlookLogo.url },
 ];
 
 
@@ -67,7 +69,7 @@ function AboutPage() {
                   className="mono-label flex items-center gap-2 rounded-md border border-border-dark px-4 py-2.5 text-ash transition-colors hover:border-lime hover:text-lime"
                 >
                   {b.logo ? (
-                    <img src={b.logo} alt="" aria-hidden className="h-5 w-5 rounded-[4px] object-cover" />
+                    <img src={b.logo} alt="" aria-hidden className="h-6 w-auto max-w-[90px] rounded-[4px] object-contain" />
                   ) : null}
                   {b.label} ↗
                 </a>
