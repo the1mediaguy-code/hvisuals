@@ -39,7 +39,7 @@ export function Footer() {
       />
       <div className="shell relative grid gap-10 py-14 md:grid-cols-3">
         <div>
-          <img src={hvLogo.url} alt="H-Visuals" className="h-14 w-auto" width={360} height={72} />
+          <img src={hvLogo.url} alt="H-Visuals" className="h-20 w-auto" width={480} height={96} />
           <p className="mt-4 max-w-xs text-[16px] text-ash">
             Helping Brands Stand Out. Training Creators to Build.
           </p>

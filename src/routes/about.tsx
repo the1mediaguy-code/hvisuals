@@ -50,8 +50,7 @@ function AboutPage() {
           </Reveal>
 
           <Reveal delay={0.12}>
-            <p className="eyebrow">Meet Your Instructor</p>
-            <h1 className="display-lg mt-2 !text-headline-dark">Emmanuel Haruna</h1>
+            <h1 className="display-lg !text-headline-dark">Emmanuel Haruna</h1>
             <p className="mt-6 text-[18px] leading-[1.85] text-ash">
               "I have worked with brands both locally and internationally. I've built two creative
               brands from the ground up. This programme is everything I wish I had when starting
