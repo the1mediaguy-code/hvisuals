@@ -9,15 +9,13 @@ import { PricingSection } from "@/components/PricingSection";
 import { FaqSection } from "@/components/FaqSection";
 import { EnrolmentForm } from "@/components/EnrolmentForm";
 import { Reveal } from "@/components/motion";
+import { VideoShowcase, VideoTestimonials } from "@/components/VideoSections";
 import mediaGuy from "@/assets/the-media-guy.jpg.asset.json";
 import outlookLogo from "@/assets/outlook-podcast.jpg.asset.json";
 import hvLogoWhite from "@/assets/hv-logo-white.png.asset.json";
 import { BrandLogos } from "@/components/BrandLogos";
 import { CONTACT, NAIRA, selfPacedPrices, testimonials } from "@/lib/site-data";
 import instructorAsset from "@/assets/instructor.png.asset.json";
-import designImg from "@/assets/track-design.jpg";
-import videoImg from "@/assets/track-video.jpg";
-import hero3 from "@/assets/hero-3.jpg";
 
 const brandChips = [
   { label: "H-Visuals", logo: hvLogoWhite.url, invert: true },
@@ -79,6 +77,7 @@ function Home() {
       <HowItWorks />
       <InstructorSection />
       <Testimonials />
+      <VideoTestimonials />
       <PricingSection />
       <ComparisonTable />
       <SelfPaced />
@@ -111,8 +110,7 @@ function InstructorSection() {
           </div>
         </Reveal>
         <Reveal delay={0.12}>
-          <p className="eyebrow">Meet Your Instructor</p>
-          <h2 className="display-lg mt-2">Emmanuel Haruna</h2>
+          <h2 className="display-lg">Emmanuel Haruna</h2>
           <p className="mt-6 text-[18px] leading-[1.85] text-body">
             "I have worked with brands both locally and internationally. I've built two creative brands from the ground up. This programme is everything I wish I had when starting out: honest, practical, and built to get you real results."
           </p>
@@ -150,8 +148,7 @@ function Testimonials() {
     <section className="section-y bg-ink">
       <div className="shell">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">What Students Say</p>
-          <h2 className="display-lg mt-2 !text-headline-dark">Proof from the people.</h2>
+          <h2 className="display-lg !text-headline-dark">Proof from the people.</h2>
         </Reveal>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
@@ -201,8 +198,7 @@ function ComparisonTable() {
     <section className="section-y bg-background">
       <div className="shell">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">Compare Your Options</p>
-          <h2 className="display-lg mt-2">Which path is right for you?</h2>
+          <h2 className="display-lg">Which path is right for you?</h2>
         </Reveal>
 
         <Reveal className="mt-10 overflow-x-auto rounded-2xl border border-border">
@@ -253,8 +249,7 @@ function SelfPaced() {
     <section className="section-y bg-alt">
       <div className="shell">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">Self-Paced Courses</p>
-          <h2 className="display-lg mt-2">Learn at your own pace.</h2>
+          <h2 className="display-lg">Learn at your own pace.</h2>
           <p className="lead mt-3 text-body">
             Pre-recorded courses for graphic design and video editing. Watch. Practice. Build.
           </p>
@@ -320,76 +315,12 @@ function SelfPaced() {
   );
 }
 
-function VideoShowcase() {
-  const [open, setOpen] = useState<string | null>(null);
-  const videos = [
-    { img: designImg, caption: "Brand identity build: student capstone" },
-    { img: videoImg, caption: "Event highlight reel: intermediate edit" },
-    { img: hero3, caption: "Workshop session: Lagos cohort" },
-  ];
-
-  return (
-    <section className="section-y bg-ink">
-      <div className="shell">
-        <Reveal className="max-w-2xl">
-          <p className="eyebrow">See It In Action</p>
-          <h2 className="display-lg mt-2 !text-headline-dark">Watch our students grow.</h2>
-        </Reveal>
-
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {videos.map((v, i) => (
-            <Reveal key={v.caption} delay={i * 0.12}>
-              <button
-                type="button"
-                onClick={() => setOpen(v.caption)}
-                className="lift-card block w-full overflow-hidden rounded-2xl border border-border-dark bg-ink-surface text-left"
-              >
-                <span className="relative block">
-                  <img
-                    src={v.img}
-                    alt={v.caption}
-                    loading="lazy"
-                    className="h-[200px] w-full object-cover grayscale-[30%] transition-all duration-500 hover:grayscale-0"
-                  />
-                  <span className="absolute inset-0 grid place-items-center">
-                    <span className="grid h-14 w-14 place-items-center rounded-full bg-lime text-lime-ink">
-                      ▶
-                    </span>
-                  </span>
-                </span>
-                <span className="block p-5 text-[16px] text-ash">{v.caption}</span>
-              </button>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-
-      {open && (
-        <div
-          className="fixed inset-0 z-[80] grid place-items-center p-6"
-          style={{ background: "rgba(0,0,0,0.88)", backdropFilter: "blur(8px)" }}
-          onClick={() => setOpen(null)}
-        >
-          <div className="w-full max-w-3xl rounded-2xl border border-border-dark bg-ink-surface p-10 text-center">
-            <p className="text-headline-dark">{open}</p>
-            <p className="mono-label mt-3 text-ash">Video placeholder: real footage coming soon.</p>
-            <button type="button" onClick={() => setOpen(null)} className="btn-lime mt-6">
-              Close
-            </button>
-          </div>
-        </div>
-      )}
-    </section>
-  );
-}
-
 function PortalPreview() {
   return (
     <section className="section-y bg-background">
       <div className="shell">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">Student Portal</p>
-          <h2 className="display-lg mt-2">Inside your student portal</h2>
+          <h2 className="display-lg">Inside your student portal</h2>
         </Reveal>
 
         <Reveal delay={0.12} className="mt-10">

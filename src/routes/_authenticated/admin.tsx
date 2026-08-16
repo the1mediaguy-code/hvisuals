@@ -55,8 +55,7 @@ function AdminPage() {
     return (
       <main className="min-h-screen bg-ink pt-[68px]">
         <div className="shell section-y max-w-md">
-          <p className="eyebrow">Admin</p>
-          <h1 className="display-lg mt-2 !text-headline-dark">Enter admin passcode.</h1>
+          <h1 className="display-lg !text-headline-dark">Enter admin passcode.</h1>
           <form
             className="mt-8 space-y-5"
             onSubmit={async (e) => {
@@ -97,8 +96,7 @@ function AdminPage() {
     <main className="min-h-screen bg-ink pt-[68px]">
       <div className="shell section-y">
         <Reveal>
-          <p className="eyebrow">Admin Dashboard</p>
-          <h1 className="display-lg mt-2 !text-headline-dark">H-Visuals control room.</h1>
+          <h1 className="display-lg !text-headline-dark">H-Visuals control room.</h1>
         </Reveal>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-4">

@@ -82,8 +82,7 @@ function AuthPage() {
     <main className="min-h-screen bg-ink pt-[68px]">
       <div className="shell section-y max-w-lg">
         <Reveal>
-          <p className="eyebrow">Student Access</p>
-          <h1 className="display-lg mt-2 !text-headline-dark">
+          <h1 className="display-lg !text-headline-dark">
             {mode === "signin" ? "Welcome back." : "Create your account."}
           </h1>
           <p className="mt-4 text-ash">

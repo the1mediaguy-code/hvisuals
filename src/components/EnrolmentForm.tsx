@@ -22,8 +22,7 @@ export function EnrolmentForm() {
     <section id="enrol" className="section-y bg-ink scroll-mt-[68px]">
       <div className="shell grid gap-14 lg:grid-cols-2">
         <Reveal>
-          <p className="eyebrow">Enrolment</p>
-          <h2 className="display-lg mt-2 !text-headline-dark">Start the conversation.</h2>
+          <h2 className="display-lg !text-headline-dark">Start the conversation.</h2>
           <p className="lead mt-3 text-ash">
             A quick enquiry. Tell us your track and level and we'll come back to you on WhatsApp.
           </p>

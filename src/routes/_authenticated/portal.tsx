@@ -84,8 +84,7 @@ function PortalPage() {
     <main className="min-h-screen bg-ink pt-[68px]">
       <div className="shell section-y">
         <Reveal>
-          <p className="eyebrow">Student Portal</p>
-          <h1 className="display-lg mt-2 !text-headline-dark">Your learning home.</h1>
+          <h1 className="display-lg !text-headline-dark">Your learning home.</h1>
         </Reveal>
 
         <div className="mt-10 grid gap-6 md:grid-cols-[260px_1fr]">
