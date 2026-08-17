@@ -36,11 +36,11 @@ export const Route = createFileRoute("/")({
         content:
           "Hands-on graphic design and video editing training in Lagos. Two tracks, three levels, live sessions, personal feedback and a certificate.",
       },
-      { property: "og:title", content: "H-Visuals Creative Training" },
+      { property: "og:title", content: "H-Visuals Creative Training: Design & Video Classes, Lagos" },
       {
         property: "og:description",
         content:
-          "Graphic design and video editing training that starts with hands-on experience. Two tracks, three levels.",
+          "Hands-on graphic design and video editing training in Lagos. Two tracks, three levels, live sessions, personal feedback and a certificate.",
       },
     ],
   }),

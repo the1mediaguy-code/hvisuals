@@ -80,20 +80,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "H-Visuals Creative Training" },
+      { title: "H-Visuals Creative Training: Design & Video Classes, Lagos" },
       {
         name: "description",
         content:
-          "Graphic design and video editing training in Lagos. Two tracks, three levels, live sessions and certificates.",
+          "Hands-on graphic design and video editing training in Lagos. Two tracks, three levels, live sessions, personal feedback and a certificate.",
       },
       { name: "author", content: "Emmanuel Haruna" },
-      { property: "og:title", content: "H-Visuals Creative Training" },
+      { property: "og:title", content: "H-Visuals Creative Training: Design & Video Classes, Lagos" },
       {
         property: "og:description",
-        content: "Training creators to build. Graphic design and video editing, Lagos.",
+        content: "Hands-on graphic design and video editing training in Lagos. Two tracks, three levels, live sessions, personal feedback and a certificate.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "H-Visuals Creative Training: Design & Video Classes, Lagos" },
+      { name: "twitter:description", content: "Hands-on graphic design and video editing training in Lagos. Two tracks, three levels, live sessions, personal feedback and a certificate." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/7108af43-a322-424e-aec0-df1367acdbbb" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/7108af43-a322-424e-aec0-df1367acdbbb" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
