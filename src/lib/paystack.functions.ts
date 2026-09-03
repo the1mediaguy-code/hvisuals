@@ -135,9 +135,19 @@ export const verifyPayment = createServerFn({ method: "POST" })
       status: boolean;
       data?: { status: string; amount: number; customer?: { email?: string } };
     };
-    const paid = Boolean(json.status && json.data?.status === "success");
+    const success = Boolean(json.status && json.data?.status === "success");
 
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    const { data: existing } = await supabaseAdmin
+      .from("preorders")
+      .select("*")
+      .eq("reference", data.reference)
+      .maybeSingle();
+
+    // Only accept the payment when Paystack confirms at least the catalog amount.
+    const paid =
+      success && !!existing && (json.data?.amount ?? 0) >= Math.round((existing.amount ?? 0) * 100);
+
     const { data: order } = await supabaseAdmin
       .from("preorders")
       .update({ payment_status: paid ? "paid" : "failed" })
@@ -158,6 +168,7 @@ export const verifyPayment = createServerFn({ method: "POST" })
         })
         .eq("email", order.email);
     }
+
 
     return { paid, amount: order?.amount ?? 0, email: order?.email ?? null };
   });
