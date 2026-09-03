@@ -5,9 +5,8 @@ import { lovable } from "@/integrations/lovable/index";
 import { Reveal } from "@/components/motion";
 
 export const Route = createFileRoute("/auth")({
-  validateSearch: (s: Record<string, unknown>) => ({
-    next: typeof s['next'] === "string" ? s['next'] : undefined,
-  }),
+  validateSearch: (s: Record<string, unknown>): { next?: string } =>
+    typeof s['next'] === "string" ? { next: s['next'] } : {},
   head: () => ({
     meta: [
       { title: "Student Login | H-Visuals Creative Training" },

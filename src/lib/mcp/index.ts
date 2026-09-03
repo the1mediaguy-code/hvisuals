@@ -1,4 +1,5 @@
 import { auth, defineMcp } from "@lovable.dev/mcp-js";
+import type { AnyToolDefinition } from "@lovable.dev/mcp-js";
 import getMyEnrollment from "./tools/get-my-enrollment";
 import listMaterials from "./tools/list-materials";
 import listMyProgress from "./tools/list-my-progress";
@@ -16,5 +17,5 @@ export default defineMcp({
     issuer: `https://${projectRef}.supabase.co/auth/v1`,
     acceptedAudiences: "authenticated",
   }),
-  tools: [getMyEnrollment, listMaterials, listMyProgress, markMaterialComplete],
+  tools: [getMyEnrollment, listMaterials, listMyProgress, markMaterialComplete] as unknown as AnyToolDefinition[],
 });
