@@ -55,7 +55,7 @@ function AdminPage() {
     return (
       <main className="min-h-screen bg-ink pt-[68px]">
         <div className="shell section-y max-w-md">
-          <h1 className="display-lg !text-headline-dark">Enter admin passcode.</h1>
+          <h1 className="display-lg !text-headline-dark">Enter admin setup key.</h1>
           <form
             className="mt-8 space-y-5"
             onSubmit={async (e) => {
