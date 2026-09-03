@@ -55,7 +55,7 @@ function AdminPage() {
     return (
       <main className="min-h-screen bg-ink pt-[68px]">
         <div className="shell section-y max-w-md">
-          <h1 className="display-lg !text-headline-dark">Enter admin passcode.</h1>
+          <h1 className="display-lg !text-headline-dark">Enter admin setup key.</h1>
           <form
             className="mt-8 space-y-5"
             onSubmit={async (e) => {
@@ -66,12 +66,12 @@ function AdminPage() {
                 setPassError(null);
                 refetch();
               } catch {
-                setPassError("Incorrect admin passcode.");
+                setPassError("Not authorised.");
               }
             }}
           >
             <label className="block">
-              <span className="field-label text-headline-dark">Passcode</span>
+              <span className="field-label text-headline-dark">Setup key</span>
               <input required type="password" name="passcode" className="field-dark" />
             </label>
             {passError && <p className="mono-label text-red-400">{passError}</p>}
