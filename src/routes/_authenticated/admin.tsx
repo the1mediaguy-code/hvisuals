@@ -66,7 +66,7 @@ function AdminPage() {
                 setPassError(null);
                 refetch();
               } catch {
-                setPassError("Incorrect admin passcode.");
+                setPassError("Not authorised.");
               }
             }}
           >
