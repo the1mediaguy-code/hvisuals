@@ -71,7 +71,7 @@ function AdminPage() {
             }}
           >
             <label className="block">
-              <span className="field-label text-headline-dark">Passcode</span>
+              <span className="field-label text-headline-dark">Setup key</span>
               <input required type="password" name="passcode" className="field-dark" />
             </label>
             {passError && <p className="mono-label text-red-400">{passError}</p>}
