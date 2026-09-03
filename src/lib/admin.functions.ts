@@ -1,14 +1,46 @@
 import { createServerFn } from "@tanstack/react-start";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 
-const ADMIN_PASSCODE = "HVAdmin2026";
+async function isAdmin(context: { supabase: any; userId: string }) {
+  const { data } = await context.supabase
+    .from("user_roles")
+    .select("role")
+    .eq("user_id", context.userId)
+    .eq("role", "admin")
+    .maybeSingle();
+  return Boolean(data);
+}
 
+async function assertAdmin(context: { supabase: any; userId: string }) {
+  if (!(await isAdmin(context))) throw new Error("Forbidden");
+}
+
+/**
+ * One-time bootstrap: only works while no admin exists yet, and requires the
+ * ADMIN_BOOTSTRAP_TOKEN secret (never stored in source). Existing admins grant
+ * further admins with grantAdmin.
+ */
 export const claimAdmin = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((input: { passcode: string }) => input)
+  .inputValidator((input: { passcode: string }) => {
+    if (!input?.passcode || typeof input.passcode !== "string" || input.passcode.length > 200) {
+      throw new Error("Invalid passcode");
+    }
+    return input;
+  })
   .handler(async ({ data, context }) => {
-    if (data.passcode !== ADMIN_PASSCODE) throw new Error("Incorrect admin passcode");
+    const token = process.env["ADMIN_BOOTSTRAP_TOKEN"];
+    if (!token) throw new Error("Admin bootstrap is not configured");
+
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    const { count } = await supabaseAdmin
+      .from("user_roles")
+      .select("id", { count: "exact", head: true })
+      .eq("role", "admin");
+
+    if ((count ?? 0) > 0) throw new Error("Forbidden");
+    if (data.passcode !== token) throw new Error("Forbidden");
+
     const { error } = await supabaseAdmin
       .from("user_roles")
       .upsert({ user_id: context.userId, role: "admin" }, { onConflict: "user_id,role" });
@@ -16,13 +48,21 @@ export const claimAdmin = createServerFn({ method: "POST" })
     return { ok: true };
   });
 
-async function assertAdmin(context: { supabase: any; userId: string }) {
-  const { data } = await context.supabase.rpc("has_role", {
-    _user_id: context.userId,
-    _role: "admin",
+export const grantAdmin = createServerFn({ method: "POST" })
+  .middleware([requireSupabaseAuth])
+  .inputValidator((input: { user_id: string }) => {
+    if (!/^[0-9a-f-]{36}$/i.test(input?.user_id ?? "")) throw new Error("Invalid user id");
+    return input;
+  })
+  .handler(async ({ data, context }) => {
+    await assertAdmin(context);
+    const { error } = await context.supabase
+      .from("user_roles")
+      .upsert({ user_id: data.user_id, role: "admin" }, { onConflict: "user_id,role" });
+    if (error) throw new Error(error.message);
+    return { ok: true };
   });
-  if (!data) throw new Error("Forbidden");
-}
+
 
 export const getAdminData = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
