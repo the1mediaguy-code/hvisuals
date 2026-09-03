@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "sdk_version": "1.0.0",
+  "path": "/mcp",
+  "auth": {
+    "type": "oauth",
+    "issuer": "https://oicnflwtjwxfrjebcjty.supabase.co/auth/v1",
+    "accepted_audiences": [
+      "authenticated"
+    ]
+  },
+  "mcp": {
+    "server": {
+      "name": "h-visuals-creative-training",
+      "version": "0.1.0",
+      "title": "H-Visuals Creative Training"
+    },
+    "tools": [
+      {
+        "name": "get_my_enrollment",
+        "title": "Get my enrollment",
+        "description": "Get the signed-in student's H-Visuals enrollment: track, level, payment status and whether portal access is active.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_materials",
+        "title": "List course materials",
+        "description": "List published H-Visuals class materials the signed-in student can access, optionally filtered by track, level or week.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "track": {
+              "description": "Filter by training track.",
+              "type": "string",
+              "enum": [
+                "Graphic Design",
+                "Video Editing"
+              ]
+            },
+            "level": {
+              "description": "Filter by level.",
+              "type": "string",
+              "enum": [
+                "Beginner",
+                "Intermediate",
+                "Advanced"
+              ]
+            },
+            "week": {
+              "description": "Filter by week number.",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991
+            },
+            "limit": {
+              "default": 25,
+              "description": "Maximum rows to return.",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100
+            }
+          }
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_my_progress",
+        "title": "List my progress",
+        "description": "List the signed-in student's progress records: completed materials, submissions and scores.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "only_completed": {
+              "default": false,
+              "description": "Return only completed items.",
+              "type": "boolean"
+            },
+            "limit": {
+              "default": 50,
+              "description": "Maximum rows to return.",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100
+            }
+          }
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "mark_material_complete",
+        "title": "Mark material complete",
+        "description": "Mark a class material as completed for the signed-in student, optionally attaching a submission link.",
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "material_id": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$",
+              "description": "ID of the material (from list_materials)."
+            },
+            "submission_url": {
+              "description": "Optional link to the submitted work.",
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "required": [
+            "material_id"
+          ]
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}

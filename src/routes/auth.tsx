@@ -5,6 +5,8 @@ import { lovable } from "@/integrations/lovable/index";
 import { Reveal } from "@/components/motion";
 
 export const Route = createFileRoute("/auth")({
+  validateSearch: (s: Record<string, unknown>): { next?: string } =>
+    typeof s['next'] === "string" ? { next: s['next'] } : {},
   head: () => ({
     meta: [
       { title: "Student Login | H-Visuals Creative Training" },
@@ -25,18 +27,32 @@ export const Route = createFileRoute("/auth")({
   component: AuthPage,
 });
 
+/** Only same-origin relative paths are accepted as a post-login destination. */
+function safeNext(next: string | undefined): string | null {
+  if (!next || !next.startsWith("/") || next.startsWith("//")) return null;
+  return next;
+}
+
 function AuthPage() {
   const navigate = useNavigate();
+  const { next } = Route.useSearch();
   const [mode, setMode] = useState<"signin" | "signup">("signin");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [info, setInfo] = useState<string | null>(null);
 
+  const goNext = () => {
+    const target = safeNext(next);
+    if (target) window.location.href = target;
+    else navigate({ to: "/portal" });
+  };
+
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
-      if (data.session) navigate({ to: "/portal" });
+      if (data.session) goNext();
     });
-  }, [navigate]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [navigate, next]);
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -52,7 +68,7 @@ function AuthPage() {
         email,
         password,
         options: {
-          emailRedirectTo: `${window.location.origin}/portal`,
+          emailRedirectTo: `${window.location.origin}${safeNext(next) ?? "/portal"}`,
           data: { full_name: String(form.get("full_name") ?? ""), phone: String(form.get("phone") ?? "") },
         },
       });
@@ -65,18 +81,20 @@ function AuthPage() {
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     setBusy(false);
     if (error) return setError(error.message);
-    navigate({ to: "/portal" });
+    goNext();
   };
 
   const google = async () => {
     setError(null);
+    const target = safeNext(next);
     const result = await lovable.auth.signInWithOAuth("google", {
-      redirect_uri: window.location.origin,
+      redirect_uri: target ? `${window.location.origin}${target}` : window.location.origin,
     });
     if (result.error) return setError("Google sign-in failed. Try email instead.");
     if (result.redirected) return;
-    navigate({ to: "/portal" });
+    goNext();
   };
+
 
   return (
     <main className="min-h-screen bg-ink pt-[68px]">

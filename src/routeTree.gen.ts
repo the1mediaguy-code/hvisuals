@@ -15,9 +15,12 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as CoursesRouteImport } from './routes/courses'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as McpRouteImport } from './routes/mcp'
 import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as AuthenticatedPortalRouteImport } from './routes/_authenticated/portal'
+import { Route as DotlovableOauthConsentRouteImport } from './routes/[.]lovable.oauth.consent'
 import { Route as ApiPublicPaystackWebhookRouteImport } from './routes/api/public/paystack-webhook'
 
 const IndexRoute = IndexRouteImport.update({
@@ -49,11 +52,22 @@ const FaqRoute = FaqRouteImport.update({
   path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
+const McpRoute = McpRouteImport.update({
+  id: '/mcp',
+  path: '/mcp',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Char91DotwellKnownChar93OauthProtectedResourceRoute =
+  Char91DotwellKnownChar93OauthProtectedResourceRouteImport.update({
+    id: '/.well-known/oauth-protected-resource',
+    path: '/.well-known/oauth-protected-resource',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
   id: '/admin',
   path: '/admin',
@@ -63,6 +77,11 @@ const AuthenticatedPortalRoute = AuthenticatedPortalRouteImport.update({
   id: '/portal',
   path: '/portal',
   getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const DotlovableOauthConsentRoute = DotlovableOauthConsentRouteImport.update({
+  id: '/.lovable/oauth/consent',
+  path: '/.lovable/oauth/consent',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ApiPublicPaystackWebhookRoute =
   ApiPublicPaystackWebhookRouteImport.update({
@@ -77,9 +96,12 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/courses': typeof CoursesRoute
   '/faq': typeof FaqRoute
+  '/mcp': typeof McpRoute
   '/pricing': typeof PricingRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/portal': typeof AuthenticatedPortalRoute
+  '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/api/public/paystack-webhook': typeof ApiPublicPaystackWebhookRoute
 }
 export interface FileRoutesByTo {
@@ -88,9 +110,12 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/courses': typeof CoursesRoute
   '/faq': typeof FaqRoute
+  '/mcp': typeof McpRoute
   '/pricing': typeof PricingRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/portal': typeof AuthenticatedPortalRoute
+  '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/api/public/paystack-webhook': typeof ApiPublicPaystackWebhookRoute
 }
 export interface FileRoutesById {
@@ -101,9 +126,12 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/courses': typeof CoursesRoute
   '/faq': typeof FaqRoute
+  '/mcp': typeof McpRoute
   '/pricing': typeof PricingRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/_authenticated/portal': typeof AuthenticatedPortalRoute
+  '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/api/public/paystack-webhook': typeof ApiPublicPaystackWebhookRoute
 }
 export interface FileRouteTypes {
@@ -114,9 +142,12 @@ export interface FileRouteTypes {
     | '/auth'
     | '/courses'
     | '/faq'
+    | '/mcp'
     | '/pricing'
+    | '/.well-known/oauth-protected-resource'
     | '/admin'
     | '/portal'
+    | '/.lovable/oauth/consent'
     | '/api/public/paystack-webhook'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -125,9 +156,12 @@ export interface FileRouteTypes {
     | '/auth'
     | '/courses'
     | '/faq'
+    | '/mcp'
     | '/pricing'
+    | '/.well-known/oauth-protected-resource'
     | '/admin'
     | '/portal'
+    | '/.lovable/oauth/consent'
     | '/api/public/paystack-webhook'
   id:
     | '__root__'
@@ -137,9 +171,12 @@ export interface FileRouteTypes {
     | '/auth'
     | '/courses'
     | '/faq'
+    | '/mcp'
     | '/pricing'
+    | '/.well-known/oauth-protected-resource'
     | '/_authenticated/admin'
     | '/_authenticated/portal'
+    | '/.lovable/oauth/consent'
     | '/api/public/paystack-webhook'
   fileRoutesById: FileRoutesById
 }
@@ -150,7 +187,10 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   CoursesRoute: typeof CoursesRoute
   FaqRoute: typeof FaqRoute
+  McpRoute: typeof McpRoute
   PricingRoute: typeof PricingRoute
+  Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
+  DotlovableOauthConsentRoute: typeof DotlovableOauthConsentRoute
   ApiPublicPaystackWebhookRoute: typeof ApiPublicPaystackWebhookRoute
 }
 
@@ -198,11 +238,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mcp': {
+      id: '/mcp'
+      path: '/mcp'
+      fullPath: '/mcp'
+      preLoaderRoute: typeof McpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pricing': {
       id: '/pricing'
       path: '/pricing'
       fullPath: '/pricing'
       preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/.well-known/oauth-protected-resource': {
+      id: '/.well-known/oauth-protected-resource'
+      path: '/.well-known/oauth-protected-resource'
+      fullPath: '/.well-known/oauth-protected-resource'
+      preLoaderRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated/admin': {
@@ -218,6 +272,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/portal'
       preLoaderRoute: typeof AuthenticatedPortalRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/.lovable/oauth/consent': {
+      id: '/.lovable/oauth/consent'
+      path: '/.lovable/oauth/consent'
+      fullPath: '/.lovable/oauth/consent'
+      preLoaderRoute: typeof DotlovableOauthConsentRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/api/public/paystack-webhook': {
       id: '/api/public/paystack-webhook'
@@ -249,7 +310,11 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   CoursesRoute: CoursesRoute,
   FaqRoute: FaqRoute,
+  McpRoute: McpRoute,
   PricingRoute: PricingRoute,
+  Char91DotwellKnownChar93OauthProtectedResourceRoute:
+    Char91DotwellKnownChar93OauthProtectedResourceRoute,
+  DotlovableOauthConsentRoute: DotlovableOauthConsentRoute,
   ApiPublicPaystackWebhookRoute: ApiPublicPaystackWebhookRoute,
 }
 export const routeTree = rootRouteImport
