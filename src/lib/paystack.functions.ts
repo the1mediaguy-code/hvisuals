@@ -103,7 +103,7 @@ export const startCheckout = createServerFn({ method: "POST" })
       headers: { Authorization: `Bearer ${secret}`, "Content-Type": "application/json" },
       body: JSON.stringify({
         email: data.email,
-        amount: data.amount * 100,
+        amount: amount * 100,
         reference,
         callback_url: data.callback_url,
         metadata: { full_name: data.full_name, track: data.track, level: data.level, plan: data.plan },
