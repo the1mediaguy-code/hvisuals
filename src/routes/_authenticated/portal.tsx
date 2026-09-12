@@ -13,6 +13,7 @@ import {
 import { NAIRA, levels } from "@/lib/site-data";
 
 export const Route = createFileRoute("/_authenticated/portal")({
+  staticData: { sitemap: false },
   head: () => ({
     meta: [
       { title: "Student Portal | H-Visuals Creative Training" },

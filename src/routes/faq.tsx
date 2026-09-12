@@ -3,6 +3,7 @@ import { FaqSection } from "@/components/FaqSection";
 import { Reveal } from "@/components/motion";
 
 export const Route = createFileRoute("/faq")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "FAQ: Training, Tools & Payments | H-Visuals" },

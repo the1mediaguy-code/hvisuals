@@ -28,6 +28,7 @@ const brandChips = [
 
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "H-Visuals Creative Training: Design & Video Classes, Lagos" },

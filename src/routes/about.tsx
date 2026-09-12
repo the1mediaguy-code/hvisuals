@@ -14,6 +14,7 @@ const brandChips = [
 
 
 export const Route = createFileRoute("/about")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "About Emmanuel Haruna | H-Visuals Creative Training" },

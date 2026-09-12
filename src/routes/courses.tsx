@@ -4,6 +4,7 @@ import { Reveal } from "@/components/motion";
 import { NAIRA, tracks } from "@/lib/site-data";
 
 export const Route = createFileRoute("/courses")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Courses: Graphic Design & Video Editing | H-Visuals" },
