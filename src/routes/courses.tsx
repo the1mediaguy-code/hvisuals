@@ -19,6 +19,42 @@ export const Route = createFileRoute("/courses")({
         content:
           "Two tracks, three levels, 12 live sessions per level with personal feedback and a certificate.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://hvisuals.lovable.app/courses" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "https://hvisuals.lovable.app/courses" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": tracks.flatMap((track) =>
+            track.levels.map((plan) => ({
+              "@type": "Course",
+              name: `${track.name} — ${plan.level}`,
+              description: plan.curriculum.join(", "),
+              provider: {
+                "@type": "Organization",
+                name: "H-Visuals Creative Training",
+                url: "https://hvisuals.lovable.app",
+              },
+              hasCourseInstance: {
+                "@type": "CourseInstance",
+                courseMode: "Blended",
+                courseWorkload: "P4W",
+              },
+              offers: {
+                "@type": "Offer",
+                price: plan.price,
+                priceCurrency: "NGN",
+                category: "Paid",
+                url: "https://hvisuals.lovable.app/pricing",
+              },
+            })),
+          ),
+        }),
+      },
     ],
   }),
   component: CoursesPage,
