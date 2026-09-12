@@ -4,6 +4,7 @@ import { EnrolmentForm } from "@/components/EnrolmentForm";
 import { Reveal } from "@/components/motion";
 
 export const Route = createFileRoute("/pricing")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Pricing & Payment Plans | H-Visuals Creative Training" },

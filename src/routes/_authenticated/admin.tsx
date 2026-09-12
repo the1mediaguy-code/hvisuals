@@ -14,6 +14,7 @@ import {
 import { NAIRA, levels } from "@/lib/site-data";
 
 export const Route = createFileRoute("/_authenticated/admin")({
+  staticData: { sitemap: false },
   head: () => ({
     meta: [
       { title: "Admin Dashboard | H-Visuals Creative Training" },

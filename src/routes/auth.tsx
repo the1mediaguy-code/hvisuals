@@ -5,6 +5,7 @@ import { lovable } from "@/integrations/lovable/index";
 import { Reveal } from "@/components/motion";
 
 export const Route = createFileRoute("/auth")({
+  staticData: { sitemap: false },
   validateSearch: (s: Record<string, unknown>): { next?: string } =>
     typeof s['next'] === "string" ? { next: s['next'] } : {},
   head: () => ({
