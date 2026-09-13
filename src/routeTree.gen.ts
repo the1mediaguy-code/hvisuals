@@ -18,6 +18,7 @@ import { Route as FaqRouteImport } from './routes/faq'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TrainingRouteImport } from './routes/training'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as AuthenticatedPortalRouteImport } from './routes/_authenticated/portal'
@@ -68,6 +69,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TrainingRoute = TrainingRouteImport.update({
+  id: '/training',
+  path: '/training',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const Char91DotwellKnownChar93OauthProtectedResourceRoute =
   Char91DotwellKnownChar93OauthProtectedResourceRouteImport.update({
     id: '/.well-known/oauth-protected-resource',
@@ -105,6 +111,7 @@ export interface FileRoutesByFullPath {
   '/mcp': typeof McpRoute
   '/pricing': typeof PricingRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/training': typeof TrainingRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/portal': typeof AuthenticatedPortalRoute
@@ -120,6 +127,7 @@ export interface FileRoutesByTo {
   '/mcp': typeof McpRoute
   '/pricing': typeof PricingRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/training': typeof TrainingRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/portal': typeof AuthenticatedPortalRoute
@@ -137,6 +145,7 @@ export interface FileRoutesById {
   '/mcp': typeof McpRoute
   '/pricing': typeof PricingRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/training': typeof TrainingRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/_authenticated/portal': typeof AuthenticatedPortalRoute
@@ -154,6 +163,7 @@ export interface FileRouteTypes {
     | '/mcp'
     | '/pricing'
     | '/sitemap.xml'
+    | '/training'
     | '/.well-known/oauth-protected-resource'
     | '/admin'
     | '/portal'
@@ -169,6 +179,7 @@ export interface FileRouteTypes {
     | '/mcp'
     | '/pricing'
     | '/sitemap.xml'
+    | '/training'
     | '/.well-known/oauth-protected-resource'
     | '/admin'
     | '/portal'
@@ -185,6 +196,7 @@ export interface FileRouteTypes {
     | '/mcp'
     | '/pricing'
     | '/sitemap.xml'
+    | '/training'
     | '/.well-known/oauth-protected-resource'
     | '/_authenticated/admin'
     | '/_authenticated/portal'
@@ -202,6 +214,7 @@ export interface RootRouteChildren {
   McpRoute: typeof McpRoute
   PricingRoute: typeof PricingRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TrainingRoute: typeof TrainingRoute
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   DotlovableOauthConsentRoute: typeof DotlovableOauthConsentRoute
   ApiPublicPaystackWebhookRoute: typeof ApiPublicPaystackWebhookRoute
@@ -272,6 +285,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/training': {
+      id: '/training'
+      path: '/training'
+      fullPath: '/training'
+      preLoaderRoute: typeof TrainingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/.well-known/oauth-protected-resource': {
       id: '/.well-known/oauth-protected-resource'
       path: '/.well-known/oauth-protected-resource'
@@ -333,6 +353,7 @@ const rootRouteChildren: RootRouteChildren = {
   McpRoute: McpRoute,
   PricingRoute: PricingRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TrainingRoute: TrainingRoute,
   Char91DotwellKnownChar93OauthProtectedResourceRoute:
     Char91DotwellKnownChar93OauthProtectedResourceRoute,
   DotlovableOauthConsentRoute: DotlovableOauthConsentRoute,
