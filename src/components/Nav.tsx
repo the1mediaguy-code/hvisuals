@@ -1,13 +1,13 @@
 import { Link } from "@tanstack/react-router";
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import hvLogo from "@/assets/hv-logo-white.png.asset.json";
 
 const links = [
-  { to: "/courses", label: "Courses" },
-  { to: "/pricing", label: "Pricing" },
+  { to: "/work", label: "Work" },
   { to: "/about", label: "About" },
-  { to: "/portal", label: "Portal" },
-  { to: "/faq", label: "FAQ" },
+  { to: "/services", label: "Services" },
+  { to: "/journal", label: "Journal" },
+  { to: "/contact", label: "Contact" },
 ] as const;
 
 export function Nav() {
@@ -15,89 +15,29 @@ export function Nav() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 16);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <header
-      className="fixed inset-x-0 top-0 z-50 h-[88px] transition-all duration-[400ms]"
-      style={{
-        backgroundColor: scrolled ? "color-mix(in srgb, var(--ink) 95%, transparent)" : "transparent",
-        backdropFilter: scrolled ? "blur(20px)" : "none",
-        borderBottom: scrolled ? "1px solid var(--border-dark)" : "1px solid transparent",
-      }}
-    >
-      <nav className="shell flex h-[88px] items-center justify-between">
-        <Link to="/" className="flex items-center">
-          <img src={hvLogo.url} alt="H-Visuals" className="h-14 w-auto md:h-16" width={480} height={96} />
+    <header className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${scrolled || open ? "border-cream/20 bg-forest" : "border-transparent bg-forest/95"}`}>
+      <nav className="studio-shell flex h-24 items-center justify-between" aria-label="Main navigation">
+        <Link to="/" className="group leading-none text-cream" onClick={() => setOpen(false)}>
+          <span className="block font-display text-2xl md:text-3xl">H-VISUALS<span className="text-sunshine">.</span></span>
+          <span className="mt-1 hidden font-mono text-[9px] uppercase text-cream/60 sm:block">Visual Strategy & Creative Direction</span>
         </Link>
-
-
-        <div className="hidden items-center gap-8 md:flex">
-          {links.map((l) => (
-            <Link key={l.to} to={l.to} className="nav-link">
-              {l.label}
-            </Link>
-          ))}
+        <div className="hidden items-center gap-7 lg:flex">
+          {links.map((link) => <Link key={link.to} to={link.to} activeProps={{ className: "text-sunshine" }} className="studio-nav-link">{link.label}</Link>)}
+          <Link to="/training" className="studio-nav-link border-l border-cream/25 pl-7">Training</Link>
+          <Link to="/contact" className="studio-button-sun !min-h-11 !px-5">Let&apos;s Talk</Link>
         </div>
-
-        <div className="flex items-center gap-3">
-          <Link to="/pricing" hash="enrol" className="btn-lime hidden !min-h-[44px] !px-6 md:inline-flex">
-            Enrol Now
-          </Link>
-
-          <button
-            type="button"
-            aria-label="Open menu"
-            onClick={() => setOpen(true)}
-            className="grid h-10 w-10 place-items-center rounded-md border border-border-dark text-headline-dark md:hidden"
-          >
-            <span className="sr-only">Menu</span>
-            <span aria-hidden className="text-lg">
-              ☰
-            </span>
-          </button>
-        </div>
+        <button type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? "Close menu" : "Open menu"} className="grid h-11 w-11 place-items-center border border-cream/30 text-cream lg:hidden">
+          {open ? <X size={21} /> : <Menu size={21} />}
+        </button>
       </nav>
-
-      {open && (
-        <div className="fixed inset-0 z-[60] flex flex-col bg-ink px-6 py-6 md:hidden">
-          <div className="flex items-center justify-between">
-            <img src={hvLogo.url} alt="H-Visuals" className="h-14 w-auto md:h-16" width={480} height={96} />
-            <button
-              type="button"
-              aria-label="Close menu"
-              onClick={() => setOpen(false)}
-              className="grid h-10 w-10 place-items-center rounded-md border border-border-dark text-headline-dark"
-            >
-              ✕
-            </button>
-          </div>
-          <div className="mt-10 flex flex-col gap-6">
-            {links.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                onClick={() => setOpen(false)}
-                className="font-display text-3xl font-bold text-headline-dark"
-              >
-                {l.label}
-              </Link>
-            ))}
-            <Link
-              to="/pricing"
-              hash="enrol"
-              onClick={() => setOpen(false)}
-              className="btn-lime mt-4 w-fit"
-            >
-              Enrol Now →
-            </Link>
-          </div>
-        </div>
-      )}
+      {open && <div id="mobile-navigation" className="min-h-[calc(100svh-6rem)] border-t border-cream/20 bg-forest px-5 py-10 text-cream lg:hidden"><div className="flex flex-col">{links.map((link, index) => <Link key={link.to} to={link.to} onClick={() => setOpen(false)} className="flex items-center justify-between border-b border-cream/20 py-4 font-display text-3xl"><span>{link.label}</span><span className="font-mono text-xs text-sunshine">0{index + 1}</span></Link>)}<Link to="/training" onClick={() => setOpen(false)} className="mt-8 font-mono text-sm text-cream/70">Enter Creative Training →</Link><Link to="/contact" onClick={() => setOpen(false)} className="studio-button-sun mt-8 w-full">Let&apos;s Talk</Link></div></div>}
     </header>
   );
 }

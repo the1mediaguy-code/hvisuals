@@ -13,7 +13,6 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-import { CustomCursor } from "@/components/motion";
 
 function NotFoundComponent() {
   return (
@@ -81,38 +80,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "H-Visuals Creative Training: Design & Video Classes, Lagos" },
+      { title: "H-Visuals | Visual Strategy & Creative Direction" },
       {
         name: "description",
         content:
-          "Hands-on graphic design and video editing training in Lagos. Two tracks, three levels, live sessions, personal feedback and a certificate.",
+          "H-Visuals makes ideas visible through visual strategy, creative direction, design, campaigns, motion and video.",
       },
       { name: "author", content: "Emmanuel Haruna" },
-      { property: "og:title", content: "H-Visuals Creative Training: Design & Video Classes, Lagos" },
+      { property: "og:title", content: "H-Visuals | Ideas, made visible." },
       {
         property: "og:description",
-        content: "Hands-on graphic design and video editing training in Lagos. Two tracks, three levels, live sessions, personal feedback and a certificate.",
+        content: "Visual strategy and creative direction for brands, people and ideas that deserve to be seen.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "H-Visuals Creative Training: Design & Video Classes, Lagos" },
-      { name: "twitter:description", content: "Hands-on graphic design and video editing training in Lagos. Two tracks, three levels, live sessions, personal feedback and a certificate." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/7108af43-a322-424e-aec0-df1367acdbbb" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/7108af43-a322-424e-aec0-df1367acdbbb" },
+      { name: "twitter:title", content: "H-Visuals | Ideas, made visible." },
+      { name: "twitter:description", content: "Visual strategy and creative direction for brands, people and ideas that deserve to be seen." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "preconnect", href: "https://api.fontshare.com" },
-      { rel: "preconnect", href: "https://cdn.fontshare.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://api.fontshare.com/v2/css?f[]=clash-display@700,600,500&f[]=satoshi@400,500,600&display=swap",
-      },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap",
       },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
@@ -143,7 +134,6 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <div style={{ animation: "hv-fade-up 0.6s ease both" }}>
-        <CustomCursor />
         <Nav />
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />

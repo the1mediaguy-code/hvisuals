@@ -1,129 +1,22 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Linkedin, Twitter, MessageCircle, Mail, Phone } from "lucide-react";
+import { Instagram, Linkedin, MessageCircle, Twitter } from "lucide-react";
 import { CONTACT, SOCIALS } from "@/lib/site-data";
-import hvLogo from "@/assets/hv-logo-white.png.asset.json";
 
-function TikTokIcon({ size = 26 }: { size?: number }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      width={size}
-      height={size}
-      fill="currentColor"
-      aria-hidden
-      focusable="false"
-    >
-      <path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-1.85-2.48v-3.2a5.79 5.79 0 1 0 4.94 5.72V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.27 4.27 0 0 1-3.24-1.48z" />
-    </svg>
-  );
-}
-
-const socialLinks = [
-  { label: "Instagram", href: SOCIALS.instagram, Icon: Instagram },
-  { label: "TikTok", href: SOCIALS.tiktok, Icon: TikTokIcon },
-  { label: "LinkedIn", href: SOCIALS.linkedin, Icon: Linkedin },
-  { label: "Twitter / X", href: SOCIALS.twitter, Icon: Twitter },
-  { label: "WhatsApp", href: CONTACT.whatsapp, Icon: MessageCircle },
-];
+const studioLinks = [{ to: "/work", label: "Work" }, { to: "/about", label: "About" }, { to: "/services", label: "Services" }, { to: "/journal", label: "Journal" }, { to: "/contact", label: "Contact" }] as const;
+const trainingLinks = [{ to: "/training", label: "Training" }, { to: "/courses", label: "Courses" }, { to: "/pricing", label: "Pricing" }, { to: "/portal", label: "Student portal" }, { to: "/faq", label: "FAQ" }] as const;
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-border-dark bg-ink">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E\")",
-        }}
-      />
-      <div className="shell relative grid gap-10 py-14 md:grid-cols-3">
-        <div>
-          <img src={hvLogo.url} alt="H-Visuals" className="h-20 w-auto" width={480} height={96} />
-          <p className="mt-4 max-w-xs text-[16px] text-ash">
-            Helping Brands Stand Out. Training Creators to Build.
-          </p>
-          <div className="mt-6 flex items-center gap-5">
-            {socialLinks.map(({ label, href, Icon }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={label}
-                className="text-ash transition-all duration-300 hover:-translate-y-1 hover:text-lime"
-              >
-                <Icon size={26} />
-              </a>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <h3 className="mono-label text-headline-dark">Programme</h3>
-          <ul className="mt-4 space-y-2 text-[16px]">
-            <li>
-              <Link to="/courses" className="text-ash transition-colors hover:text-lime">
-                Courses
-              </Link>
-            </li>
-            <li>
-              <Link to="/pricing" className="text-ash transition-colors hover:text-lime">
-                Pricing
-              </Link>
-            </li>
-            <li>
-              <Link to="/portal" className="text-ash transition-colors hover:text-lime">
-                Student Portal
-              </Link>
-            </li>
-            <li>
-              <Link to="/faq" className="text-ash transition-colors hover:text-lime">
-                FAQ
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="mono-label text-headline-dark">Connect</h3>
-          <ul className="mt-4 space-y-3 text-[16px]">
-            <li>
-              <a
-                href={`mailto:${CONTACT.email}`}
-                className="flex items-center gap-3 text-ash transition-colors hover:text-lime"
-              >
-                <Mail size={20} />
-                {CONTACT.email}
-              </a>
-            </li>
-            <li>
-              <a
-                href={`tel:+234${CONTACT.phone.slice(1)}`}
-                className="flex items-center gap-3 text-ash transition-colors hover:text-lime"
-              >
-                <Phone size={20} />
-                {CONTACT.phone}
-              </a>
-            </li>
-            <li>
-              <a
-                href={CONTACT.whatsapp}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-3 text-ash transition-colors hover:text-lime"
-              >
-                <MessageCircle size={20} />
-                Chat on WhatsApp
-              </a>
-            </li>
-          </ul>
+    <footer className="bg-forest text-cream">
+      <div className="studio-shell border-t border-cream/25 py-14 md:py-20">
+        <div className="grid gap-12 md:grid-cols-12">
+          <div className="md:col-span-6"><p className="font-display text-5xl md:text-7xl">H-VISUALS<span className="text-sunshine">.</span></p><p className="mt-5 font-serif text-2xl italic text-cream/80">Ideas, made visible.</p><p className="mt-2 text-sm text-cream/60">Visual Strategy & Creative Direction</p></div>
+          <div className="md:col-span-2"><p className="font-mono text-xs uppercase text-sunshine">Studio</p><ul className="mt-5 space-y-2">{studioLinks.map((link) => <li key={link.to}><Link to={link.to} className="footer-link">{link.label}</Link></li>)}</ul></div>
+          <div className="md:col-span-2"><p className="font-mono text-xs uppercase text-sunshine">Training</p><ul className="mt-5 space-y-2">{trainingLinks.map((link) => <li key={link.to}><Link to={link.to} className="footer-link">{link.label}</Link></li>)}</ul></div>
+          <div className="md:col-span-2"><p className="font-mono text-xs uppercase text-sunshine">Connect</p><div className="mt-5 flex gap-4"><a href={SOCIALS.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="footer-icon"><Instagram size={19} /></a><a href={SOCIALS.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="footer-icon"><Linkedin size={19} /></a><a href={SOCIALS.twitter} target="_blank" rel="noreferrer" aria-label="X" className="footer-icon"><Twitter size={19} /></a><a href={CONTACT.whatsapp} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="footer-icon"><MessageCircle size={19} /></a></div><a href={`mailto:${CONTACT.email}`} className="mt-6 block break-all text-sm text-cream/65 hover:text-sunshine">{CONTACT.email}</a></div>
         </div>
       </div>
-
-      <div className="relative border-t border-border-dark py-6">
-        <p className="shell clash-600 text-[16px] text-ash">© 2026 H-Visuals. All rights reserved.</p>
-      </div>
+      <div className="border-t border-cream/20"><div className="studio-shell flex flex-col justify-between gap-2 py-5 font-mono text-[11px] text-cream/55 sm:flex-row"><span>© 2026 H-Visuals. All rights reserved.</span><span>Lagos, Nigeria · Working locally and internationally</span></div></div>
     </footer>
   );
 }
