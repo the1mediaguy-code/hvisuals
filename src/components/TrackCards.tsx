@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/motion";
 import { NAIRA, levels, tracks, type Level } from "@/lib/site-data";
-import designImg from "@/assets/track-design.jpg";
-import videoImg from "@/assets/track-video.jpg";
+import designImg from "@/assets/training-track-design.jpg";
+import videoImg from "@/assets/training-track-video.jpg";
 
 const images: Record<string, string> = { design: designImg, video: videoImg };
 
@@ -37,7 +37,7 @@ function TrackCard({ trackId }: { trackId: "design" | "video" }) {
 
   return (
     <article className="lift-card group h-full overflow-hidden rounded-[20px] border border-border-dark bg-ink-surface">
-      <div className="h-[240px] overflow-hidden">
+      <div className="editorial-media h-[240px] overflow-hidden">
         <img
           src={images[trackId]}
           alt={`${track.name} training`}

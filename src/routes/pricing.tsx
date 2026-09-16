@@ -13,6 +13,8 @@ export const Route = createFileRoute("/pricing")({
         content:
           "Graphic design and video editing training from ₦50,000/month in Lagos. Level upgrades, student pricing and split payment plans.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "Pricing | H-Visuals Creative Training" },
       {
         property: "og:description",

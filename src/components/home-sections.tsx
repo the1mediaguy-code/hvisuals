@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Counter, Reveal } from "@/components/motion";
-import hero1 from "@/assets/hero-1.jpg";
-import hero2 from "@/assets/hero-2.jpg";
-import hero3 from "@/assets/hero-3.jpg";
+import hero1 from "@/assets/training-hero-editorial-1.jpg";
+import hero2 from "@/assets/training-hero-editorial-2.jpg";
+import hero3 from "@/assets/training-hero-editorial-3.jpg";
 import portrait1 from "@/assets/portrait-1.png.asset.json";
 import portrait2 from "@/assets/portrait-2.png.asset.json";
 import spacedit from "@/assets/work-spacedit.jpg.asset.json";
@@ -36,14 +36,7 @@ export function Hero() {
           style={{ opacity: i === index ? 1 : 0 }}
         />
       ))}
-      <div
-        aria-hidden
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(to right, rgba(12,12,12,0.93) 40%, rgba(12,12,12,0.4) 100%)",
-        }}
-      />
+      <div aria-hidden className="training-hero-scrim absolute inset-0" />
 
       <div className="shell relative w-full py-28">
         <div className="max-w-[640px]">
