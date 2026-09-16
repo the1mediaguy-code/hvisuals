@@ -16,8 +16,8 @@ import hvLogoWhite from "@/assets/hv-logo-white.png.asset.json";
 import { BrandLogos } from "@/components/BrandLogos";
 import { CONTACT, NAIRA, selfPacedPrices, testimonials } from "@/lib/site-data";
 import instructorAsset from "@/assets/instructor.png.asset.json";
-import designImg from "@/assets/track-design.jpg";
-import videoImg from "@/assets/track-video.jpg";
+import designImg from "@/assets/training-track-design.jpg";
+import videoImg from "@/assets/training-track-video.jpg";
 
 const brandChips = [
   { label: "H-Visuals", logo: hvLogoWhite.url, invert: true },
@@ -37,6 +37,8 @@ export const Route = createFileRoute("/training")({
         content:
           "Hands-on graphic design and video editing training in Lagos. Two tracks, three levels, live sessions, personal feedback and a certificate.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "H-Visuals Creative Training: Design & Video Classes, Lagos" },
       {
         property: "og:description",
@@ -50,7 +52,7 @@ export const Route = createFileRoute("/training")({
 
 function TrainingPage() {
   return (
-    <main>
+    <main className="training-page">
       <Hero />
       <StatsBar />
       <RotatingRing />
@@ -98,17 +100,17 @@ function InstructorSection() {
     <section className="section-y bg-background">
       <div className="shell grid items-center gap-12 lg:grid-cols-[1fr_1.5fr] lg:gap-[72px]">
         <Reveal>
-          <div className="relative overflow-hidden rounded-[20px]">
+          <div className="editorial-media portrait-glow relative overflow-hidden rounded-lg">
             <img
               src={instructorAsset.url}
               alt="Emmanuel Haruna, creative instructor"
               loading="lazy"
               width={900}
               height={1125}
-              className="aspect-[4/5] w-full object-cover grayscale-[20%] transition-all duration-500 hover:grayscale-0"
+              className="aspect-[4/5] w-full object-cover grayscale-[15%] transition-all duration-500 hover:-translate-y-1 hover:grayscale-0"
             />
-            <span className="mono-label absolute bottom-4 left-4 rounded-md bg-ink/80 px-3 py-2 text-headline-dark">
-              Your Instructor
+            <span className="absolute bottom-4 left-4 z-10 flex items-center gap-2 rounded-sm bg-ink/90 px-3 py-2 font-mono text-[11px] text-headline-dark">
+              <span className="h-2 w-2 rounded-full bg-sunshine" /> Visual Director · Lagos
             </span>
           </div>
         </Reveal>
@@ -264,15 +266,15 @@ function SelfPaced() {
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           {cards.map((c, i) => (
             <Reveal key={c.name} delay={i * 0.12}>
-              <article className="lift-card group h-full overflow-hidden rounded-2xl border border-border bg-background">
-                <img
+              <article className="lift-card group h-full overflow-hidden rounded-lg border border-border bg-background">
+                <div className="editorial-media h-[200px] overflow-hidden"><img
                   src={c.img}
                   alt={c.name}
                   loading="lazy"
                   width={1200}
                   height={800}
-                  className="h-[200px] w-full object-cover grayscale-[30%] transition-all duration-500 group-hover:grayscale-0"
-                />
+                  className="h-full w-full object-cover grayscale-[15%] transition-all duration-500 group-hover:scale-[1.03] group-hover:grayscale-0"
+                /></div>
                 <div className="p-7">
                   <h3 className="font-display text-xl font-bold">
                     {c.emoji} {c.name}

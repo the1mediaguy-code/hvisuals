@@ -23,18 +23,20 @@ export function Reveal({
   delay = 0,
   className = "",
   as: Tag = "div",
+  variant = "text",
 }: {
   children: ReactNode;
   delay?: number;
   className?: string;
   as?: "div" | "section" | "li" | "article" | "header";
+  variant?: "text" | "image";
 }) {
   const { ref, visible } = useInView<HTMLDivElement>();
   return (
     <Tag
       ref={ref as never}
       data-visible={visible}
-      className={`reveal ${className}`}
+      className={`reveal reveal-${variant} ${className}`}
       style={{ transitionDelay: `${delay}s` }}
     >
       {children}

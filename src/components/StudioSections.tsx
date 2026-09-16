@@ -4,10 +4,24 @@ import { useState } from "react";
 import { Reveal } from "@/components/motion";
 import { services, studioProjects, studioVideos } from "@/lib/studio-data";
 import portrait from "@/assets/instructor.png.asset.json";
+import brandReel from "@/assets/hvisuals-brand-reel.mp4.asset.json";
+import heroFallback from "@/assets/training-hero-editorial-1.jpg";
+import processStrategy from "@/assets/process-strategy.jpg";
+import processDesign from "@/assets/process-design.jpg";
+import processFilm from "@/assets/process-film.jpg";
+import processOutput from "@/assets/process-output.jpg";
+import trainingDesign from "@/assets/training-track-design.jpg";
+import trainingVideo from "@/assets/training-track-video.jpg";
+
+const processImages = [processStrategy, processDesign, processFilm, processOutput];
+const serviceImages = [processOutput, processStrategy, processFilm, processDesign, trainingVideo, trainingDesign];
 
 export function StudioHero() {
   return (
-    <section className="relative min-h-[92svh] overflow-hidden bg-forest pt-32 text-cream">
+    <section className="studio-hero relative min-h-[92svh] overflow-hidden bg-ink pt-32 text-cream">
+      <img src={heroFallback} alt="Nigerian creative director working in a forest green studio" width={1536} height={1024} className="absolute inset-0 h-full w-full object-cover md:hidden" />
+      <video src={brandReel.url} autoPlay loop muted playsInline preload="metadata" aria-hidden className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <div aria-hidden className="studio-hero-overlay absolute inset-0" />
       <div className="studio-shell flex min-h-[calc(92svh-8rem)] flex-col justify-between py-10 md:py-16">
         <div className="flex items-center justify-between border-t border-cream/30 pt-4 font-mono text-xs uppercase text-cream/70">
           <span>Visual Strategy & Creative Direction</span>
@@ -32,7 +46,6 @@ export function StudioHero() {
           <ArrowDownRight className="text-sunshine" size={28} />
         </div>
       </div>
-      <span aria-hidden className="absolute -right-10 top-32 font-serif text-[18rem] leading-none text-cream/5">H</span>
     </section>
   );
 }
@@ -48,9 +61,9 @@ export function SelectedWork({ all = false }: { all?: boolean }) {
         </div>
         <div className="mt-12 grid gap-x-6 gap-y-14 md:grid-cols-12">
           {items.map((project, index) => (
-            <Reveal key={project.name} className={index % 3 === 0 ? "md:col-span-7" : index % 3 === 1 ? "md:col-span-5 md:pt-24" : "md:col-span-6"}>
+            <Reveal variant="image" key={project.name} className={index % 3 === 0 ? "md:col-span-7" : index % 3 === 1 ? "md:col-span-5 md:pt-24" : "md:col-span-6"}>
               <article className="project-card group">
-                <div className="overflow-hidden bg-cream-deep">
+                <div className="editorial-media overflow-hidden bg-cream-deep">
                   <img src={project.src} alt={`${project.name}, ${project.category}`} loading={index > 1 ? "lazy" : undefined} width={1000} height={1200} className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]" />
                 </div>
                 <div className="mt-4 grid grid-cols-[auto_1fr_auto] items-baseline gap-4 border-t border-forest pt-3">
@@ -69,23 +82,28 @@ export function SelectedWork({ all = false }: { all?: boolean }) {
 
 export function ServicesBand({ compact = false }: { compact?: boolean }) {
   return (
-    <section className="studio-section bg-sunshine text-forest">
-      <div className="studio-shell grid gap-12 lg:grid-cols-[1.05fr_1fr]">
-        <Reveal>
-          <p className="editorial-label">What we do</p>
-          <h2 className="studio-h2 max-w-[720px]">From strategy to execution, we bring ideas to life.</h2>
-          <p className="mt-8 max-w-lg text-lg">Creative work grows when every decision has a reason. We build the thinking and the visual expression together.</p>
-          {compact && <Link to="/services" className="studio-text-link mt-8">Explore services <ArrowRight size={17} /></Link>}
+    <section className="studio-section bg-cream text-forest">
+      <div className="studio-shell grid gap-12 lg:grid-cols-[1.05fr_1fr] lg:items-start">
+        <Reveal variant="image">
+          <div className="grid grid-cols-2 gap-3">
+            {processImages.map((src, index) => <div key={src} className={`editorial-media aspect-[4/3] overflow-hidden ${index % 2 ? "translate-y-6" : ""}`}><img src={src} alt={["Brand strategy being sketched", "Design work being developed on screen", "A filmmaker composing a shot", "A finished visual identity presentation"][index]} loading="lazy" width={1200} height={912} className="h-full w-full object-cover" /></div>)}
+          </div>
         </Reveal>
-        <div className="border-t border-forest">
+        <Reveal className="strategy-copy bg-ink p-7 text-cream md:p-10">
+          <p className="editorial-label">What we do</p>
+          <h2 className="studio-h2 max-w-[720px] text-cream">From strategy to execution, we bring ideas to life.</h2>
+          <p className="mt-8 max-w-lg text-lg text-cream/75">Creative work grows when every decision has a reason. We build the thinking and the visual expression together.</p>
+          {compact && <Link to="/services" className="studio-text-link mt-8 text-sunshine">Explore services <ArrowRight size={17} /></Link>}
+        </Reveal>
+      </div>
+      <div className="studio-shell mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
-            <div key={service.name} className="grid grid-cols-[42px_1fr_auto] items-start gap-3 border-b border-forest py-5">
-              <span className="font-mono text-xs">{service.number}</span>
-              <div><h3 className="font-display text-xl md:text-2xl">{service.name}</h3>{!compact && <p className="mt-2 max-w-md text-base text-forest/75">{service.detail}</p>}</div>
-              <Asterisk size={18} />
-            </div>
+            <article key={service.name} className="service-image-card group relative min-h-[360px] overflow-hidden">
+              <img src={serviceImages[Number(service.number) - 1]} alt="" aria-hidden loading="lazy" width={1200} height={912} className="absolute inset-0 h-full w-full object-cover" />
+              <div className="service-card-overlay absolute inset-0" />
+              <div className="absolute inset-x-0 bottom-0 z-10 p-6 text-cream"><div className="flex items-center justify-between"><span className="font-mono text-xs text-sunshine">{service.number}</span><Asterisk size={18} className="text-sunshine" /></div><h3 className="mt-5 font-display text-2xl text-cream md:text-3xl">{service.name}</h3>{!compact && <p className="mt-3 max-w-md text-base text-cream/75">{service.detail}</p>}</div>
+            </article>
           ))}
-        </div>
       </div>
     </section>
   );
@@ -95,8 +113,9 @@ export function StudioAbout({ full = false }: { full?: boolean }) {
   return (
     <section className="studio-section bg-forest text-cream">
       <div className="studio-shell grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
-        <Reveal className="relative">
-          <img src={portrait.url} alt="Emmanuel Haruna, founder and creative director of H-Visuals" loading="lazy" width={900} height={1125} className="aspect-[4/5] w-full object-cover" />
+        <Reveal variant="image" className="portrait-glow relative">
+          <div className="editorial-media portrait-media overflow-hidden"><img src={portrait.url} alt="Emmanuel Haruna, founder and creative director of H-Visuals" loading="lazy" width={900} height={1125} className="aspect-[4/5] w-full object-cover grayscale-[15%]" /></div>
+          <div className="absolute bottom-4 left-4 z-10 flex items-center gap-2 bg-ink px-3 py-2 font-mono text-[11px] text-cream"><span className="h-2 w-2 rounded-full bg-sunshine" />Visual Director · Lagos</div>
           <div className="absolute -bottom-5 -right-4 bg-sunshine p-5 text-forest"><Sprout size={34} /><span className="mt-3 block font-mono text-xs uppercase">Purpose before polish</span></div>
         </Reveal>
         <Reveal delay={0.1}>

@@ -12,6 +12,8 @@ export const Route = createFileRoute("/faq")({
         content:
           "Answers on experience needed, tools, programme length, certificates, upgrade pricing and how payments work.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "FAQ | H-Visuals Creative Training" },
       {
         property: "og:description",
