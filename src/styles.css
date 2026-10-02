@@ -172,7 +172,7 @@ body::before {
 }
 
 .studio-hero-overlay {
-  background: linear-gradient(to right, color-mix(in oklab, var(--ink) 88%, transparent) 0%, color-mix(in oklab, var(--ink) 62%, transparent) 55%, color-mix(in oklab, var(--ink) 72%, transparent) 100%);
+  background: linear-gradient(to right, rgba(5, 5, 5, 0.55) 0%, rgba(5, 5, 5, 0.25) 55%, rgba(5, 5, 5, 0.35) 100%);
 }
 
 .training-hero-scrim {

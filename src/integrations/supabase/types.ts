@@ -14,6 +14,30 @@ export type Database = {
   }
   public: {
     Tables: {
+      audience_signups: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          name: string | null
+          source: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          name?: string | null
+          source: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          name?: string | null
+          source?: string
+        }
+        Relationships: []
+      }
       materials: {
         Row: {
           created_at: string
@@ -271,6 +295,39 @@ export type Database = {
           track?: Database["public"]["Enums"]["track_type"] | null
           updated_at?: string
           user_id?: string | null
+        }
+        Relationships: []
+      }
+      studio_submissions: {
+        Row: {
+          created_at: string
+          details: Json
+          email: string
+          id: string
+          kind: string
+          name: string
+          reviewed_at: string | null
+          status: string
+        }
+        Insert: {
+          created_at?: string
+          details?: Json
+          email: string
+          id?: string
+          kind: string
+          name: string
+          reviewed_at?: string | null
+          status?: string
+        }
+        Update: {
+          created_at?: string
+          details?: Json
+          email?: string
+          id?: string
+          kind?: string
+          name?: string
+          reviewed_at?: string | null
+          status?: string
         }
         Relationships: []
       }
