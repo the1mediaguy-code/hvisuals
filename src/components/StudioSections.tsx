@@ -6,15 +6,15 @@ import { services, studioProjects, studioVideos } from "@/lib/studio-data";
 import portrait from "@/assets/instructor.png.asset.json";
 import brandReel from "@/assets/hvisuals-brand-reel.mp4.asset.json";
 import heroFallback from "@/assets/training-hero-editorial-1.jpg";
-import processStrategy from "@/assets/process-strategy.jpg";
-import processDesign from "@/assets/process-design.jpg";
-import processFilm from "@/assets/process-film.jpg";
-import processOutput from "@/assets/process-output.jpg";
-import trainingDesign from "@/assets/training-track-design.jpg";
-import trainingVideo from "@/assets/training-track-video.jpg";
+import processStrategy from "@/assets/editorial-strategy.jpg";
+import processDesign from "@/assets/editorial-design.jpg";
+import processFilm from "@/assets/editorial-film.jpg";
+import processOutput from "@/assets/editorial-output.jpg";
+import socialImage from "@/assets/editorial-social.jpg";
+import digitalImage from "@/assets/editorial-digital.jpg";
 
 const processImages = [processStrategy, processDesign, processFilm, processOutput];
-const serviceImages = [processOutput, processStrategy, processFilm, processDesign, trainingVideo, trainingDesign];
+const serviceImages = [processOutput, processStrategy, processFilm, socialImage, processDesign, digitalImage];
 
 export function StudioHero() {
   return (
@@ -22,7 +22,7 @@ export function StudioHero() {
       <img src={heroFallback} alt="Nigerian creative director working in a forest green studio" width={1536} height={1024} className="absolute inset-0 h-full w-full object-cover md:hidden" />
       <video src={brandReel.url} autoPlay loop muted playsInline preload="metadata" aria-hidden className="absolute inset-0 hidden h-full w-full object-cover md:block" />
       <div aria-hidden className="studio-hero-overlay absolute inset-0" />
-      <div className="studio-shell flex min-h-[calc(92svh-8rem)] flex-col justify-between py-10 md:py-16">
+      <div className="studio-shell relative z-10 flex min-h-[calc(92svh-8rem)] flex-col justify-between py-10 md:py-16">
         <div className="flex items-center justify-between border-t border-cream/30 pt-4 font-mono text-xs uppercase text-cream/70">
           <span>Visual Strategy & Creative Direction</span>
           <span className="hidden md:inline">Lagos, Nigeria</span>
