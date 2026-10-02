@@ -1,0 +1,16 @@
+CREATE TABLE public.studio_submissions (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), kind text NOT NULL CHECK (kind IN ('collective_brief','collective_creative','creative_dump')), name text NOT NULL, email text NOT NULL, details jsonb NOT NULL DEFAULT '{}'::jsonb, status text NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','approved','rejected')), created_at timestamptz NOT NULL DEFAULT now(), reviewed_at timestamptz);
+GRANT INSERT, SELECT ON public.studio_submissions TO anon;
+GRANT INSERT, SELECT, UPDATE ON public.studio_submissions TO authenticated;
+GRANT ALL ON public.studio_submissions TO service_role;
+ALTER TABLE public.studio_submissions ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "public submit studio entry" ON public.studio_submissions FOR INSERT TO anon, authenticated WITH CHECK (status = 'pending' AND reviewed_at IS NULL);
+CREATE POLICY "published creative dump visible" ON public.studio_submissions FOR SELECT TO anon, authenticated USING (kind = 'creative_dump' AND status = 'approved');
+CREATE POLICY "admin sees studio submissions" ON public.studio_submissions FOR SELECT TO authenticated USING (private.has_role(auth.uid(), 'admin'));
+CREATE POLICY "admin reviews studio submissions" ON public.studio_submissions FOR UPDATE TO authenticated USING (private.has_role(auth.uid(), 'admin')) WITH CHECK (private.has_role(auth.uid(), 'admin'));
+CREATE TABLE public.audience_signups (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), name text, email text NOT NULL, source text NOT NULL CHECK (source IN ('focal_waitlist','creative_resources','creative_dump_updates','training_updates')), created_at timestamptz NOT NULL DEFAULT now(), UNIQUE(email, source));
+GRANT INSERT ON public.audience_signups TO anon;
+GRANT INSERT, SELECT ON public.audience_signups TO authenticated;
+GRANT ALL ON public.audience_signups TO service_role;
+ALTER TABLE public.audience_signups ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "public audience signup" ON public.audience_signups FOR INSERT TO anon, authenticated WITH CHECK (true);
+CREATE POLICY "admin reads audience signups" ON public.audience_signups FOR SELECT TO authenticated USING (private.has_role(auth.uid(), 'admin'));
