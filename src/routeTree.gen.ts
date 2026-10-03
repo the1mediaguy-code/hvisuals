@@ -13,9 +13,11 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as CollectiveRouteImport } from './routes/collective'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CoursesRouteImport } from './routes/courses'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as FocalRouteImport } from './routes/focal'
 import { Route as JournalRouteImport } from './routes/journal'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as PricingRouteImport } from './routes/pricing'
@@ -48,6 +50,11 @@ const AuthRoute = AuthRouteImport.update({
   path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CollectiveRoute = CollectiveRouteImport.update({
+  id: '/collective',
+  path: '/collective',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -61,6 +68,11 @@ const CoursesRoute = CoursesRouteImport.update({
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FocalRoute = FocalRouteImport.update({
+  id: '/focal',
+  path: '/focal',
   getParentRoute: () => rootRouteImport,
 } as any)
 const JournalRoute = JournalRouteImport.update({
@@ -130,9 +142,11 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
+  '/collective': typeof CollectiveRoute
   '/contact': typeof ContactRoute
   '/courses': typeof CoursesRoute
   '/faq': typeof FaqRoute
+  '/focal': typeof FocalRoute
   '/journal': typeof JournalRoute
   '/mcp': typeof McpRoute
   '/pricing': typeof PricingRoute
@@ -150,9 +164,11 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
+  '/collective': typeof CollectiveRoute
   '/contact': typeof ContactRoute
   '/courses': typeof CoursesRoute
   '/faq': typeof FaqRoute
+  '/focal': typeof FocalRoute
   '/journal': typeof JournalRoute
   '/mcp': typeof McpRoute
   '/pricing': typeof PricingRoute
@@ -172,9 +188,11 @@ export interface FileRoutesById {
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
+  '/collective': typeof CollectiveRoute
   '/contact': typeof ContactRoute
   '/courses': typeof CoursesRoute
   '/faq': typeof FaqRoute
+  '/focal': typeof FocalRoute
   '/journal': typeof JournalRoute
   '/mcp': typeof McpRoute
   '/pricing': typeof PricingRoute
@@ -194,9 +212,11 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/auth'
+    | '/collective'
     | '/contact'
     | '/courses'
     | '/faq'
+    | '/focal'
     | '/journal'
     | '/mcp'
     | '/pricing'
@@ -214,9 +234,11 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/auth'
+    | '/collective'
     | '/contact'
     | '/courses'
     | '/faq'
+    | '/focal'
     | '/journal'
     | '/mcp'
     | '/pricing'
@@ -235,9 +257,11 @@ export interface FileRouteTypes {
     | '/_authenticated'
     | '/about'
     | '/auth'
+    | '/collective'
     | '/contact'
     | '/courses'
     | '/faq'
+    | '/focal'
     | '/journal'
     | '/mcp'
     | '/pricing'
@@ -257,9 +281,11 @@ export interface RootRouteChildren {
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AboutRoute: typeof AboutRoute
   AuthRoute: typeof AuthRoute
+  CollectiveRoute: typeof CollectiveRoute
   ContactRoute: typeof ContactRoute
   CoursesRoute: typeof CoursesRoute
   FaqRoute: typeof FaqRoute
+  FocalRoute: typeof FocalRoute
   JournalRoute: typeof JournalRoute
   McpRoute: typeof McpRoute
   PricingRoute: typeof PricingRoute
@@ -302,6 +328,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/collective': {
+      id: '/collective'
+      path: '/collective'
+      fullPath: '/collective'
+      preLoaderRoute: typeof CollectiveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -321,6 +354,13 @@ declare module '@tanstack/react-router' {
       path: '/faq'
       fullPath: '/faq'
       preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/focal': {
+      id: '/focal'
+      path: '/focal'
+      fullPath: '/focal'
+      preLoaderRoute: typeof FocalRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/journal': {
@@ -428,9 +468,11 @@ const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AboutRoute: AboutRoute,
   AuthRoute: AuthRoute,
+  CollectiveRoute: CollectiveRoute,
   ContactRoute: ContactRoute,
   CoursesRoute: CoursesRoute,
   FaqRoute: FaqRoute,
+  FocalRoute: FocalRoute,
   JournalRoute: JournalRoute,
   McpRoute: McpRoute,
   PricingRoute: PricingRoute,
