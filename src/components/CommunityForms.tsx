@@ -43,7 +43,8 @@ export function SubmissionForm({ kind, children, label }: { kind: SubmissionKind
     e.preventDefault(); setState("sending");
     const form = e.currentTarget;
     const entries = Object.fromEntries(new FormData(form).entries());
-    const { name, email, ...details } = entries;
+    const { name, email, ...rawDetails } = entries;
+    const details = Object.fromEntries(Object.entries(rawDetails).map(([key, value]) => [key, String(value)]));
     const { error } = await supabase.from("studio_submissions").insert({ kind, name: String(name || "").trim(), email: String(email || "").trim().toLowerCase(), details, status: "pending" });
     if (error) { setState("error"); return; }
     form.reset(); setState("done");

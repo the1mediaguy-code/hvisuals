@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
+import { SignupForm } from "@/components/CommunityForms";
 import { Hero, StatsBar, RotatingRing, HowItWorks } from "@/components/home-sections";
 import { Marquee } from "@/components/Marquee";
 import { ToolLogos } from "@/components/ToolLogos";
@@ -89,6 +90,7 @@ function TrainingPage() {
       <VideoShowcase />
       <PortalPreview />
       <NotifyCapture />
+      <section className="community-section bg-ink text-cream"><div className="studio-shell max-w-4xl"><p className="editorial-label text-sunshine">Training news</p><h2 className="community-heading text-cream">Get Free Training Updates</h2><p className="mt-6 mb-9 text-lg text-cream/75">Sign up to be notified when new free events drop. Paid events too — you'll always hear first.</p><SignupForm source="training_updates" label="Sign Me Up" /><p className="mt-5 text-sm text-cream/60">No spam. Just training updates and event announcements.</p></div></section>
       <FaqSection />
       <EnrolmentForm />
     </main>

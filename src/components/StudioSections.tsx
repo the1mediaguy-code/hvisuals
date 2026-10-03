@@ -5,7 +5,6 @@ import { Reveal } from "@/components/motion";
 import { services, studioProjects, studioVideos } from "@/lib/studio-data";
 import portrait from "@/assets/instructor.png.asset.json";
 import brandReel from "@/assets/hvisuals-brand-reel.mp4.asset.json";
-import heroFallback from "@/assets/training-hero-editorial-1.jpg";
 import processStrategy from "@/assets/editorial-strategy.jpg";
 import processDesign from "@/assets/editorial-design.jpg";
 import processFilm from "@/assets/editorial-film.jpg";
@@ -18,11 +17,8 @@ const serviceImages = [processOutput, processStrategy, processFilm, socialImage,
 
 export function StudioHero() {
   return (
-    <section className="studio-hero relative min-h-[92svh] overflow-hidden bg-ink pt-32 text-cream">
-      <img src={heroFallback} alt="Nigerian creative director working in a forest green studio" width={1536} height={1024} className="absolute inset-0 h-full w-full object-cover md:hidden" />
-      <video src={brandReel.url} autoPlay loop muted playsInline preload="metadata" aria-hidden className="absolute inset-0 hidden h-full w-full object-cover md:block" />
-      <div aria-hidden className="studio-hero-overlay absolute inset-0" />
-      <div className="studio-shell relative z-10 flex min-h-[calc(92svh-8rem)] flex-col justify-between py-10 md:py-16">
+    <section className="studio-hero relative min-h-[70svh] overflow-hidden bg-studio-night pt-32 text-cream">
+      <div className="studio-shell relative flex min-h-[calc(70svh-8rem)] flex-col justify-between py-10 md:py-16">
         <div className="flex items-center justify-between border-t border-cream/30 pt-4 font-mono text-xs uppercase text-cream/70">
           <span>Visual Strategy & Creative Direction</span>
           <span className="hidden md:inline">Lagos, Nigeria</span>
@@ -48,6 +44,10 @@ export function StudioHero() {
       </div>
     </section>
   );
+}
+
+export function BrandReel() {
+  return <section aria-label="H-Visuals brand reel" className="h-[50svh] w-full overflow-hidden border-y-2 border-sunshine bg-studio-night md:h-[75svh]"><video src={brandReel.url} autoPlay loop muted playsInline preload="metadata" aria-label="H-Visuals studio showreel" className="h-full w-full object-cover" /></section>;
 }
 
 export function SelectedWork({ all = false }: { all?: boolean }) {
@@ -113,7 +113,7 @@ export function StudioAbout({ full = false }: { full?: boolean }) {
   return (
     <section className="studio-section bg-forest text-cream">
       <div className="studio-shell grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
-        <Reveal variant="image" className="portrait-glow relative">
+        <Reveal variant="image" className="portrait-glow relative mr-2">
           <div className="editorial-media portrait-media overflow-hidden"><img src={portrait.url} alt="Emmanuel Haruna, founder and creative director of H-Visuals" loading="lazy" width={900} height={1125} className="aspect-[4/5] w-full object-cover grayscale-[15%]" /></div>
           <div className="absolute bottom-4 left-4 z-10 flex items-center gap-2 bg-ink px-3 py-2 font-mono text-[11px] text-cream"><span className="h-2 w-2 rounded-full bg-sunshine" />Visual Director · Lagos</div>
           <div className="absolute -bottom-5 -right-4 bg-sunshine p-5 text-forest"><Sprout size={34} /><span className="mt-3 block font-mono text-xs uppercase">Purpose before polish</span></div>
