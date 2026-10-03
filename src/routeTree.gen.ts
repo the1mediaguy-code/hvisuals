@@ -18,6 +18,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CoursesRouteImport } from './routes/courses'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as FocalRouteImport } from './routes/focal'
+import { Route as InfovibesRouteImport } from './routes/infovibes'
 import { Route as JournalRouteImport } from './routes/journal'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as PricingRouteImport } from './routes/pricing'
@@ -73,6 +74,11 @@ const FaqRoute = FaqRouteImport.update({
 const FocalRoute = FocalRouteImport.update({
   id: '/focal',
   path: '/focal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InfovibesRoute = InfovibesRouteImport.update({
+  id: '/infovibes',
+  path: '/infovibes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const JournalRoute = JournalRouteImport.update({
@@ -147,6 +153,7 @@ export interface FileRoutesByFullPath {
   '/courses': typeof CoursesRoute
   '/faq': typeof FaqRoute
   '/focal': typeof FocalRoute
+  '/infovibes': typeof InfovibesRoute
   '/journal': typeof JournalRoute
   '/mcp': typeof McpRoute
   '/pricing': typeof PricingRoute
@@ -169,6 +176,7 @@ export interface FileRoutesByTo {
   '/courses': typeof CoursesRoute
   '/faq': typeof FaqRoute
   '/focal': typeof FocalRoute
+  '/infovibes': typeof InfovibesRoute
   '/journal': typeof JournalRoute
   '/mcp': typeof McpRoute
   '/pricing': typeof PricingRoute
@@ -193,6 +201,7 @@ export interface FileRoutesById {
   '/courses': typeof CoursesRoute
   '/faq': typeof FaqRoute
   '/focal': typeof FocalRoute
+  '/infovibes': typeof InfovibesRoute
   '/journal': typeof JournalRoute
   '/mcp': typeof McpRoute
   '/pricing': typeof PricingRoute
@@ -217,6 +226,7 @@ export interface FileRouteTypes {
     | '/courses'
     | '/faq'
     | '/focal'
+    | '/infovibes'
     | '/journal'
     | '/mcp'
     | '/pricing'
@@ -239,6 +249,7 @@ export interface FileRouteTypes {
     | '/courses'
     | '/faq'
     | '/focal'
+    | '/infovibes'
     | '/journal'
     | '/mcp'
     | '/pricing'
@@ -262,6 +273,7 @@ export interface FileRouteTypes {
     | '/courses'
     | '/faq'
     | '/focal'
+    | '/infovibes'
     | '/journal'
     | '/mcp'
     | '/pricing'
@@ -286,6 +298,7 @@ export interface RootRouteChildren {
   CoursesRoute: typeof CoursesRoute
   FaqRoute: typeof FaqRoute
   FocalRoute: typeof FocalRoute
+  InfovibesRoute: typeof InfovibesRoute
   JournalRoute: typeof JournalRoute
   McpRoute: typeof McpRoute
   PricingRoute: typeof PricingRoute
@@ -361,6 +374,13 @@ declare module '@tanstack/react-router' {
       path: '/focal'
       fullPath: '/focal'
       preLoaderRoute: typeof FocalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/infovibes': {
+      id: '/infovibes'
+      path: '/infovibes'
+      fullPath: '/infovibes'
+      preLoaderRoute: typeof InfovibesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/journal': {
@@ -473,6 +493,7 @@ const rootRouteChildren: RootRouteChildren = {
   CoursesRoute: CoursesRoute,
   FaqRoute: FaqRoute,
   FocalRoute: FocalRoute,
+  InfovibesRoute: InfovibesRoute,
   JournalRoute: JournalRoute,
   McpRoute: McpRoute,
   PricingRoute: PricingRoute,
