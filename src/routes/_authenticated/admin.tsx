@@ -7,6 +7,8 @@ import {
   claimAdmin,
   deleteMaterial,
   getAdminData,
+  getCommunityData,
+  reviewStudioSubmission,
   reviewVerification,
   saveMaterial,
   updateStudent,
@@ -32,12 +34,14 @@ export const Route = createFileRoute("/_authenticated/admin")({
 function AdminPage() {
   const qc = useQueryClient();
   const fetchAdmin = useServerFn(getAdminData);
+  const fetchCommunity = useServerFn(getCommunityData);
+  const reviewSubmission = useServerFn(reviewStudioSubmission);
   const claim = useServerFn(claimAdmin);
   const patchStudent = useServerFn(updateStudent);
   const review = useServerFn(reviewVerification);
   const upsertMaterial = useServerFn(saveMaterial);
   const removeMaterial = useServerFn(deleteMaterial);
-  const [tab, setTab] = useState<"students" | "payments" | "verifications" | "materials" | "list">("students");
+  const [tab, setTab] = useState<"students" | "payments" | "verifications" | "materials" | "list" | "community">("students");
   const [passError, setPassError] = useState<string | null>(null);
 
   const { data, isLoading, error, refetch } = useQuery({
@@ -45,6 +49,8 @@ function AdminPage() {
     queryFn: () => fetchAdmin({ data: undefined as never }),
     retry: false,
   });
+  const community = useQuery({ queryKey: ["community-admin"], queryFn: () => fetchCommunity({ data: undefined as never }), enabled: tab === "community" && !error, retry: false });
+  const communityReview = useMutation({ mutationFn: (v: { id: string; status: "approved" | "rejected" }) => reviewSubmission({ data: v }), onSuccess: () => qc.invalidateQueries({ queryKey: ["community-admin"] }) });
 
   const invalidate = () => qc.invalidateQueries({ queryKey: ["admin"] });
   const studentMut = useMutation({ mutationFn: (v: Parameters<typeof patchStudent>[0]["data"]) => patchStudent({ data: v }), onSuccess: invalidate });
@@ -122,6 +128,7 @@ function AdminPage() {
               ["verifications", "Verifications"],
               ["materials", "Add Material"],
               ["list", "Materials & Notify"],
+              ["community", "Community"],
             ] as const
           ).map(([k, label]) => (
             <button
@@ -344,6 +351,11 @@ function AdminPage() {
               </div>
             </div>
           )}
+          {tab === "community" && <div className="space-y-10 text-cream">
+            <section><h2 className="font-display text-2xl text-cream">Studio submissions</h2>{community.isLoading && <p>Loading…</p>}{community.error && <p role="alert">Could not load submissions.</p>}
+              <ul className="mt-5 space-y-4">{(community.data?.submissions ?? []).map(item => <li key={item.id} className="border border-border-dark bg-ink p-5"><div className="flex flex-wrap justify-between gap-3"><div><p className="font-semibold">{item.name} · {item.kind} · {item.status}</p><p className="text-sm text-ash">{item.email}</p></div>{item.status === "pending" && <div className="flex gap-2"><button className="btn-lime" disabled={communityReview.isPending} onClick={() => communityReview.mutate({ id: item.id, status: "approved" })}>Approve</button><button className="btn-ghost-dark" disabled={communityReview.isPending} onClick={() => communityReview.mutate({ id: item.id, status: "rejected" })}>Reject</button></div>}</div><dl className="mt-4 space-y-2 text-sm">{Object.entries(item.details && typeof item.details === "object" && !Array.isArray(item.details) ? item.details : {}).map(([key, value]) => <div key={key} className="break-words"><dt className="inline font-mono text-sunshine">{key}: </dt><dd className="inline whitespace-pre-wrap text-ash">{typeof value === "string" ? value : JSON.stringify(value)}</dd></div>)}</dl></li>)}</ul>{communityReview.error && <p role="alert">Could not save review. Please retry.</p>}
+            </section><section><h2 className="font-display text-2xl text-cream">Audience signups</h2><ul className="mt-5 space-y-2">{(community.data?.signups ?? []).map(item => <li key={item.id} className="break-words border-b border-border-dark py-2 text-sm text-ash">{item.name ?? "—"} · {item.email} · {item.source}</li>)}</ul></section>
+          </div>}
         </div>
       </div>
     </main>

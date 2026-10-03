@@ -165,3 +165,28 @@ export const deleteMaterial = createServerFn({ method: "POST" })
     if (error) throw new Error(error.message);
     return { ok: true };
   });
+
+export const getCommunityData = createServerFn({ method: "POST" })
+  .middleware([requireSupabaseAuth])
+  .handler(async ({ context }) => {
+    await assertAdmin(context);
+    const [submissions, signups] = await Promise.all([
+      context.supabase.from("studio_submissions").select("*").order("created_at", { ascending: false }),
+      context.supabase.from("audience_signups").select("*").order("created_at", { ascending: false }),
+    ]);
+    if (submissions.error || signups.error) throw new Error("Could not load submissions");
+    return { submissions: submissions.data ?? [], signups: signups.data ?? [] };
+  });
+
+export const reviewStudioSubmission = createServerFn({ method: "POST" })
+  .middleware([requireSupabaseAuth])
+  .inputValidator((input: { id: string; status: "approved" | "rejected" }) => {
+    if (!/^[0-9a-f-]{36}$/i.test(input?.id ?? "") || !["approved", "rejected"].includes(input?.status)) throw new Error("Invalid review");
+    return input;
+  })
+  .handler(async ({ data, context }) => {
+    await assertAdmin(context);
+    const { error } = await context.supabase.from("studio_submissions").update({ status: data.status, reviewed_at: new Date().toISOString() }).eq("id", data.id);
+    if (error) throw new Error("Could not save review");
+    return { ok: true };
+  });
