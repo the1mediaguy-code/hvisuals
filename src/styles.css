@@ -54,6 +54,7 @@
   --color-body: var(--body);
   --color-ash: var(--ash);
   --color-forest: var(--forest);
+  --color-studio-night: var(--studio-night);
   --color-cream: var(--cream);
   --color-cream-deep: var(--cream-deep);
   --color-sunshine: var(--sunshine);
@@ -66,6 +67,7 @@
   --radius: 0.75rem;
 
   --forest: oklch(0.39 0.1 145);
+  --studio-night: oklch(0.17 0.015 145);
   --cream: oklch(0.93 0.045 84);
   --cream-deep: oklch(0.89 0.06 82);
   --sunshine: oklch(0.85 0.17 88);

@@ -113,7 +113,7 @@ export function StudioAbout({ full = false }: { full?: boolean }) {
   return (
     <section className="studio-section bg-forest text-cream">
       <div className="studio-shell grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
-        <Reveal variant="image" className="portrait-glow relative">
+        <Reveal variant="image" className="portrait-glow relative mr-2">
           <div className="editorial-media portrait-media overflow-hidden"><img src={portrait.url} alt="Emmanuel Haruna, founder and creative director of H-Visuals" loading="lazy" width={900} height={1125} className="aspect-[4/5] w-full object-cover grayscale-[15%]" /></div>
           <div className="absolute bottom-4 left-4 z-10 flex items-center gap-2 bg-ink px-3 py-2 font-mono text-[11px] text-cream"><span className="h-2 w-2 rounded-full bg-sunshine" />Visual Director · Lagos</div>
           <div className="absolute -bottom-5 -right-4 bg-sunshine p-5 text-forest"><Sprout size={34} /><span className="mt-3 block font-mono text-xs uppercase">Purpose before polish</span></div>
