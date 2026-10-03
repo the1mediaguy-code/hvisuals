@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CreativeApproach, MediaGrid, SelectedWork, ServicesBand, StudioAbout, StudioCta, StudioHero } from "@/components/StudioSections";
+import { BrandReel, CreativeApproach, MediaGrid, SelectedWork, ServicesBand, StudioAbout, StudioCta, StudioHero } from "@/components/StudioSections";
 
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
@@ -18,5 +18,5 @@ export const Route = createFileRoute("/")({
 });
 
 function StudioHome() {
-  return <main><StudioHero /><SelectedWork /><ServicesBand compact /><StudioAbout /><CreativeApproach /><MediaGrid /><StudioCta /></main>;
+  return <main><StudioHero /><BrandReel /><ServicesBand compact /><SelectedWork /><StudioAbout /><CreativeApproach /><MediaGrid /><StudioCta /></main>;
 }
