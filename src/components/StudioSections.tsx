@@ -17,7 +17,7 @@ const serviceImages = [processOutput, processStrategy, processFilm, socialImage,
 
 export function StudioHero() {
   return (
-    <section className="studio-hero relative min-h-[70svh] overflow-hidden bg-ink pt-32 text-cream">
+    <section className="studio-hero relative min-h-[70svh] overflow-hidden bg-studio-night pt-32 text-cream">
       <div className="studio-shell relative flex min-h-[calc(70svh-8rem)] flex-col justify-between py-10 md:py-16">
         <div className="flex items-center justify-between border-t border-cream/30 pt-4 font-mono text-xs uppercase text-cream/70">
           <span>Visual Strategy & Creative Direction</span>
@@ -47,7 +47,7 @@ export function StudioHero() {
 }
 
 export function BrandReel() {
-  return <section aria-label="H-Visuals brand reel" className="h-[50svh] w-full overflow-hidden border-y-2 border-sunshine bg-ink md:h-[75svh]"><video src={brandReel.url} autoPlay loop muted playsInline preload="metadata" aria-label="H-Visuals studio showreel" className="h-full w-full object-cover" /></section>;
+  return <section aria-label="H-Visuals brand reel" className="h-[50svh] w-full overflow-hidden border-y-2 border-sunshine bg-studio-night md:h-[75svh]"><video src={brandReel.url} autoPlay loop muted playsInline preload="metadata" aria-label="H-Visuals studio showreel" className="h-full w-full object-cover" /></section>;
 }
 
 export function SelectedWork({ all = false }: { all?: boolean }) {
