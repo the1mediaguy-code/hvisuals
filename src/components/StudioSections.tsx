@@ -4,7 +4,8 @@ import { useState } from "react";
 import { Reveal } from "@/components/motion";
 import { services, studioProjects, studioVideos } from "@/lib/studio-data";
 import portrait from "@/assets/instructor.png.asset.json";
-import brandReel from "@/assets/hvisuals-brand-reel.mp4.asset.json";
+import brandReel from "@/assets/hvisuals-brand-reel-web.mp4.asset.json";
+import brandReelWebm from "@/assets/hvisuals-brand-reel-web.webm.asset.json";
 import processStrategy from "@/assets/editorial-strategy.jpg";
 import processDesign from "@/assets/editorial-design.jpg";
 import processFilm from "@/assets/editorial-film.jpg";
@@ -47,7 +48,7 @@ export function StudioHero() {
 }
 
 export function BrandReel() {
-  return <section aria-label="H-Visuals brand reel" className="h-[50svh] w-full overflow-hidden border-y-2 border-sunshine bg-studio-night md:h-[75svh]"><video src={brandReel.url} autoPlay loop muted playsInline preload="metadata" aria-label="H-Visuals studio showreel" className="h-full w-full object-cover" /></section>;
+  return <section aria-label="H-Visuals brand reel" className="h-[50svh] w-full overflow-hidden border-y-2 border-sunshine bg-studio-night md:h-[75svh]"><video autoPlay loop muted playsInline preload="auto" aria-label="H-Visuals studio showreel" className="h-full w-full object-cover"><source src={brandReelWebm.url} type="video/webm" /><source src={brandReel.url} type="video/mp4" /></video></section>;
 }
 
 export function SelectedWork({ all = false }: { all?: boolean }) {
@@ -82,7 +83,7 @@ export function SelectedWork({ all = false }: { all?: boolean }) {
 
 export function ServicesBand({ compact = false }: { compact?: boolean }) {
   return (
-    <section className="studio-section bg-cream text-forest">
+    <section className="studio-section overflow-hidden bg-cream text-forest">
       <div className="studio-shell grid gap-12 lg:grid-cols-[1.05fr_1fr] lg:items-start">
         <Reveal variant="image">
           <div className="grid grid-cols-2 gap-3">
@@ -111,7 +112,7 @@ export function ServicesBand({ compact = false }: { compact?: boolean }) {
 
 export function StudioAbout({ full = false }: { full?: boolean }) {
   return (
-    <section className="studio-section bg-forest text-cream">
+    <section className="studio-section overflow-hidden bg-forest text-cream">
       <div className="studio-shell grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
         <Reveal variant="image" className="portrait-glow relative mr-2">
           <div className="editorial-media portrait-media overflow-hidden"><img src={portrait.url} alt="Emmanuel Haruna, founder and creative director of H-Visuals" loading="lazy" width={900} height={1125} className="aspect-[4/5] w-full object-cover grayscale-[15%]" /></div>
