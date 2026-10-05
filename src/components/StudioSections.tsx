@@ -112,7 +112,7 @@ export function ServicesBand({ compact = false }: { compact?: boolean }) {
 
 export function StudioAbout({ full = false }: { full?: boolean }) {
   return (
-    <section className="studio-section bg-forest text-cream">
+    <section className="studio-section overflow-hidden bg-forest text-cream">
       <div className="studio-shell grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
         <Reveal variant="image" className="portrait-glow relative mr-2">
           <div className="editorial-media portrait-media overflow-hidden"><img src={portrait.url} alt="Emmanuel Haruna, founder and creative director of H-Visuals" loading="lazy" width={900} height={1125} className="aspect-[4/5] w-full object-cover grayscale-[15%]" /></div>
