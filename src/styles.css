@@ -29,6 +29,7 @@
   --color-ink: var(--ink);
   --color-ink-surface: var(--ink-surface);
   --color-ink-raised: var(--ink-raised);
+  --color-publication: var(--publication);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -82,6 +83,7 @@
   --ink: var(--forest);
   --ink-surface: oklch(0.34 0.085 145);
   --ink-raised: oklch(0.43 0.09 145);
+  --publication: oklch(0.16 0 0);
 
   --card: var(--cream);
   --card-foreground: var(--forest);
@@ -204,6 +206,10 @@ body::before {
 .service-image-card:hover { border-bottom-color: var(--sunshine); }
 .service-image-card:hover img { transform: scale(1.05); }
 .service-image-card:hover .service-card-overlay { opacity: 0.84; }
+
+.publication-card { transition: transform 250ms ease, border-color 250ms ease, box-shadow 250ms ease; }
+.publication-card:hover { transform: translateY(-3px); border-color: var(--lime-bright); box-shadow: inset 3px 0 var(--sunshine); }
+@media (prefers-reduced-motion: reduce) { .publication-card { transition: none; } .publication-card:hover { transform: none; } }
 
 
 /* ---------- Utilities ---------- */
