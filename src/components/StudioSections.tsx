@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Reveal } from "@/components/motion";
 import { services, studioProjects, studioVideos } from "@/lib/studio-data";
 import portrait from "@/assets/instructor.png.asset.json";
-import brandReel from "@/assets/hvisuals-brand-reel.mp4.asset.json";
+import brandReel from "@/assets/hvisuals-brand-reel-web.mp4.asset.json";
 import processStrategy from "@/assets/editorial-strategy.jpg";
 import processDesign from "@/assets/editorial-design.jpg";
 import processFilm from "@/assets/editorial-film.jpg";
