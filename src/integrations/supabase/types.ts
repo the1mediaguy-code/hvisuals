@@ -305,7 +305,9 @@ export type Database = {
           email: string
           id: string
           kind: string
+          moderated_by: string | null
           name: string
+          rejection_reason: string | null
           reviewed_at: string | null
           status: string
         }
@@ -315,7 +317,9 @@ export type Database = {
           email: string
           id?: string
           kind: string
+          moderated_by?: string | null
           name: string
+          rejection_reason?: string | null
           reviewed_at?: string | null
           status?: string
         }
@@ -325,7 +329,9 @@ export type Database = {
           email?: string
           id?: string
           kind?: string
+          moderated_by?: string | null
           name?: string
+          rejection_reason?: string | null
           reviewed_at?: string | null
           status?: string
         }
