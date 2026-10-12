@@ -676,3 +676,6 @@ body::before {
 
 @utility community-section { padding-block: 80px; @media (min-width: 768px) { padding-block: 120px; } }
 @utility community-heading { font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 5.5rem); line-height: 1; text-transform: uppercase; overflow-wrap: anywhere; }
+.pub-cover::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .18; mix-blend-mode: overlay; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"); }
+.pub-cover img { transition: transform 400ms ease; } .publication-card:hover .pub-cover img { transform: scale(1.04); }
+@media (prefers-reduced-motion: reduce) { .publication-card:hover .pub-cover img { transform: none; } }
