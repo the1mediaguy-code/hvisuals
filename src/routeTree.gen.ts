@@ -21,6 +21,7 @@ import { Route as FocalRouteImport } from './routes/focal'
 import { Route as InfovibesRouteImport } from './routes/infovibes'
 import { Route as JournalRouteImport } from './routes/journal'
 import { Route as McpRouteImport } from './routes/mcp'
+import { Route as MySubmissionsRouteImport } from './routes/my-submissions'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -91,6 +92,11 @@ const McpRoute = McpRouteImport.update({
   path: '/mcp',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MySubmissionsRoute = MySubmissionsRouteImport.update({
+  id: '/my-submissions',
+  path: '/my-submissions',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
@@ -156,6 +162,7 @@ export interface FileRoutesByFullPath {
   '/infovibes': typeof InfovibesRoute
   '/journal': typeof JournalRoute
   '/mcp': typeof McpRoute
+  '/my-submissions': typeof MySubmissionsRoute
   '/pricing': typeof PricingRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -179,6 +186,7 @@ export interface FileRoutesByTo {
   '/infovibes': typeof InfovibesRoute
   '/journal': typeof JournalRoute
   '/mcp': typeof McpRoute
+  '/my-submissions': typeof MySubmissionsRoute
   '/pricing': typeof PricingRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -204,6 +212,7 @@ export interface FileRoutesById {
   '/infovibes': typeof InfovibesRoute
   '/journal': typeof JournalRoute
   '/mcp': typeof McpRoute
+  '/my-submissions': typeof MySubmissionsRoute
   '/pricing': typeof PricingRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -229,6 +238,7 @@ export interface FileRouteTypes {
     | '/infovibes'
     | '/journal'
     | '/mcp'
+    | '/my-submissions'
     | '/pricing'
     | '/services'
     | '/sitemap.xml'
@@ -252,6 +262,7 @@ export interface FileRouteTypes {
     | '/infovibes'
     | '/journal'
     | '/mcp'
+    | '/my-submissions'
     | '/pricing'
     | '/services'
     | '/sitemap.xml'
@@ -276,6 +287,7 @@ export interface FileRouteTypes {
     | '/infovibes'
     | '/journal'
     | '/mcp'
+    | '/my-submissions'
     | '/pricing'
     | '/services'
     | '/sitemap.xml'
@@ -301,6 +313,7 @@ export interface RootRouteChildren {
   InfovibesRoute: typeof InfovibesRoute
   JournalRoute: typeof JournalRoute
   McpRoute: typeof McpRoute
+  MySubmissionsRoute: typeof MySubmissionsRoute
   PricingRoute: typeof PricingRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -395,6 +408,13 @@ declare module '@tanstack/react-router' {
       path: '/mcp'
       fullPath: '/mcp'
       preLoaderRoute: typeof McpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/my-submissions': {
+      id: '/my-submissions'
+      path: '/my-submissions'
+      fullPath: '/my-submissions'
+      preLoaderRoute: typeof MySubmissionsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pricing': {
@@ -496,6 +516,7 @@ const rootRouteChildren: RootRouteChildren = {
   InfovibesRoute: InfovibesRoute,
   JournalRoute: JournalRoute,
   McpRoute: McpRoute,
+  MySubmissionsRoute: MySubmissionsRoute,
   PricingRoute: PricingRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
