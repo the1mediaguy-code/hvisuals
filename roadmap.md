@@ -6,3 +6,4 @@
 - [ ] Restyle training and account pages without changing their behaviour
 - [ ] Verify protected media, metadata, navigation, accessibility, and responsive layouts
 - [x] Wire seven publication links, repair brand reel playback, and verify desktop/mobile routes and forms
+- [x] My Submissions page, non-fatal emails, end-to-end Creative Dump tests
