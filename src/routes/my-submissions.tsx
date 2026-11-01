@@ -45,8 +45,8 @@ function MySubmissionsPage() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-ink pt-24 text-cream">
       <section className="studio-shell py-20">
-        <p className="editorial-label text-sunshine reveal-text">The Creative Dump</p>
-        <h1 className="community-heading text-cream reveal-text">My submissions.</h1>
+        <p className="editorial-label text-sunshine cine-in">The Creative Dump</p>
+        <h1 className="community-heading text-cream cine-in">My submissions.</h1>
         {state.kind === "loading" && <p className="mt-10 text-cream/70" aria-live="polite">Loading your submissions…</p>}
         {state.kind === "invalid" && (
           <div className="mt-10 max-w-2xl border-l-2 border-sunshine bg-ink-surface p-6 sm:p-8">
@@ -68,7 +68,7 @@ function MySubmissionsPage() {
                 {state.submissions.map(s => {
                   const b = BADGE[s.status] ?? { label: "Pending review", cls: "bg-muted text-muted-foreground" };
                   return (
-                    <li key={s.id} className="reveal-text border-t border-sunshine bg-ink-surface p-6">
+                    <li key={s.id} className="cine-in border-t border-sunshine bg-ink-surface p-6">
                       <div className="flex flex-wrap items-start justify-between gap-3">
                         <h2 className="min-w-0 break-words font-display text-2xl text-cream">{s.title}</h2>
                         <span className={`shrink-0 px-2 py-1 font-mono text-[11px] uppercase tracking-wider ${b.cls}`}>{b.label}</span>
