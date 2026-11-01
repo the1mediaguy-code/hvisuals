@@ -25,13 +25,19 @@ export const subscribe = createServerFn({ method: "POST" })
     if (data.source === "training_updates" && !duplicate) {
       const { sendEmail, notifyOwner } = await import("@/services/emailService");
       const name = data.name ?? "there";
-      await Promise.all([
+      await settleEmails([
         sendEmail({ to: data.email, subject: "You're in — H-Visuals Training Updates", text: `Hey ${name},\n\nYou're now on the H-Visuals training list. You'll hear from us first when new free sessions drop — and when paid events open up, you'll get early access before anyone else.\n\nStay creative.\n— Emmanuel, H-Visuals` }),
         notifyOwner("New training signup", `Name: ${data.name ?? "—"}\nEmail: ${data.email}\nTime: ${new Date().toISOString()}`),
       ]);
     }
     return { ok: true };
   });
+
+// Email delivery must never break a user-facing flow; failures are logged server-side only.
+async function settleEmails(jobs: Promise<unknown>[]) {
+  const results = await Promise.allSettled(jobs);
+  results.forEach(r => { if (r.status === "rejected") console.error("Email job failed", r.reason); else if ((r.value as { sent?: boolean })?.sent === false) console.error("Email not delivered", (r.value as { error?: string }).error); });
+}
 
 type Verdict = { approved: boolean; reason: string };
 
@@ -95,13 +101,13 @@ export const submitCreativeDump = createServerFn({ method: "POST" })
     const verdict = await moderate(data.title, data.content);
     const { sendEmail, notifyOwner } = await import("@/services/emailService");
     if (!verdict) {
-      await notifyOwner("Creative Dump: needs manual review", `AI moderation was unavailable.\n\nTitle: ${data.title}\nFrom: ${data.name} <${data.email}>\n\n${data.content || data.draft}`);
+      await settleEmails([notifyOwner("Creative Dump: needs manual review", `AI moderation was unavailable.\n\nTitle: ${data.title}\nFrom: ${data.name} <${data.email}>\n\n${data.content || data.draft}`)]);
       return { status: "pending_review" as const, reason: null };
     }
     const status = verdict.approved ? "approved" : "rejected";
     await supabaseAdmin.from("studio_submissions").update({ status, rejection_reason: verdict.approved ? null : verdict.reason, reviewed_at: new Date().toISOString(), moderated_by: "ai" }).eq("id", row.id);
     const link = `${SITE}/infovibes#piece-${row.id}`;
-    await Promise.all([
+    await settleEmails([
       verdict.approved
         ? sendEmail({ to: data.email, subject: "Your piece is live on The Creative Dump 🎉", text: `Hey ${data.name},\n\nYour piece "${data.title}" has been reviewed and is now live on The Creative Dump. Thank you for contributing.\n\nRead it here: ${link}\n\n— The H-Visuals Team` })
         : sendEmail({ to: data.email, subject: "Your Creative Dump submission — needs a little work", text: `Hey ${data.name},\n\nThanks for submitting "${data.title}" to The Creative Dump.\n\nAfter review, we weren't able to publish it this time. Here's why:\n\n${verdict.reason}\n\nYou're welcome to revise and resubmit anytime. We want to see your work here.\n\n— The H-Visuals Team` }),
@@ -126,7 +132,7 @@ export const requestSubmissionsLink = createServerFn({ method: "POST" })
     const payload = btoa(JSON.stringify({ e: data.email, x: exp })).replace(/=+$/, "");
     const token = `${payload}.${await sign(payload)}`;
     const { sendEmail } = await import("@/services/emailService");
-    await sendEmail({ to: data.email, subject: "Your Creative Dump submissions", text: `Here's your private link to see all your Creative Dump submissions and their status (valid for 24 hours):\n\n${SITE}/my-submissions?token=${encodeURIComponent(token)}\n\nIf you didn't ask for this, you can ignore this email.\n\n— The H-Visuals Team` });
+    await settleEmails([sendEmail({ to: data.email, subject: "Your Creative Dump submissions", text: `Here's your private link to see all your Creative Dump submissions and their status (valid for 24 hours):\n\n${SITE}/my-submissions?token=${encodeURIComponent(token)}\n\nIf you didn't ask for this, you can ignore this email.\n\n— The H-Visuals Team` })]);
     return { ok: true };
   });
 
