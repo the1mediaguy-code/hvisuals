@@ -8,7 +8,7 @@ type Sub = { id: string; title: string; status: string; reason: string | null; c
 type State = { kind: "loading" } | { kind: "invalid"; message: string } | { kind: "ok"; email: string; submissions: Sub[] };
 
 export const Route = createFileRoute("/my-submissions")({
-  validateSearch: (s: Record<string, unknown>) => ({ token: typeof s.token === "string" ? s.token : "" }),
+  validateSearch: (s: Record<string, unknown>) => ({ token: typeof s["token"] === "string" ? s["token"] : "" }),
   head: () => ({
     meta: [
       { title: "My Submissions | The Creative Dump | H-Visuals" },
