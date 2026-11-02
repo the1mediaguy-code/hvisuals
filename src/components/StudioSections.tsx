@@ -6,10 +6,10 @@ import { services, studioProjects, studioVideos } from "@/lib/studio-data";
 import portrait from "@/assets/instructor.png.asset.json";
 import brandReel from "@/assets/hvisuals-brand-reel-web.mp4.asset.json";
 import brandReelWebm from "@/assets/hvisuals-brand-reel-web.webm.asset.json";
-import processStrategy from "@/assets/editorial-strategy.jpg";
-import processDesign from "@/assets/editorial-design.jpg";
-import processFilm from "@/assets/editorial-film.jpg";
-import processOutput from "@/assets/editorial-output.jpg";
+import processStrategy from "@/assets/process-strategy.jpg";
+import processDesign from "@/assets/process-design.jpg";
+import processFilm from "@/assets/process-film.jpg";
+import processOutput from "@/assets/process-output.jpg";
 import socialImage from "@/assets/editorial-social.jpg";
 import digitalImage from "@/assets/editorial-digital.jpg";
 
